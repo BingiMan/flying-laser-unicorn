@@ -10,13 +10,17 @@ POST MVP -
 Implementing a random search button. So that when you don't have any idea what you feel like eating. You just have to press the button and the app will randomly generate a website for you, so you don't have to choose.
 Adding a like option on restaurants that are posted and on other users comments. 
 Using Transition Group React Libary 
+Adding the Yelp API so users can check out the location map of the reaturatn they picked
 
 ## FEATURE LIST 
 
-a user can create an account, sign-in, post a new restaurant, post a comment on a specific restaurant, users can update and delete their specific restaurant or comment they created
-- 
+A user can create an account, sign-in, post a new restaurant, post a comment on a specific restaurant. Users can also update and delete their specific restaurant or comment they created
 
+### Entity Relationship Diagram
 
+#### API Endpoint Documentations
 
-username 
+##### Wireframes & Component Heirarchy
+
+###### List Dependencies
 
