@@ -9,5 +9,6 @@ export function Navigation() {
         <button>Log in</button>
         <button>Register</button>
       </div>
+    </div>
   )
 }
