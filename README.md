@@ -29,6 +29,8 @@ Restoraunt pages:
 https://i.imgur.com/VezBRQI.png
 Contact us page: 
 https://i.imgur.com/U6TFysh.png
+Alternate Login page: 
+https://i.imgur.com/LlbuOWI.png
 
 ###### List Dependencies
 
