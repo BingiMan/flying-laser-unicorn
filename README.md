@@ -21,20 +21,30 @@ A user can create an account, sign-in, post a new restaurant, post a comment on 
 #### API Endpoint Documentations
 
 ##### Wireframes & Component Heirarchy
-
-
+< Header >
+< Nav Bar>
+< Hero >
+< Intro >
+< Register From >
+< Log In From >
+< Eatery >
+< Comments >
+< Comment Form >
+< Contact Us >
+< Contact Form >
+< Footer >
 
 ###### List Dependencies
-express
-sequelize
-morgan
-nodemon
-pg
-body-parser
-bcrypt 
-jsonwebtoken
-cors
-axios
+express <br />
+sequelize <br />
+morgan <br />
+nodemon <br />
+pg <br />
+body-parser <br />
+bcrypt <br />
+jsonwebtoken <br />
+cors <br />
+axios <br />
 react: react-router-dom react-transition-group
 
 
