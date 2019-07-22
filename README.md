@@ -21,6 +21,14 @@ A user can create an account, sign-in, post a new restaurant, post a comment on 
 #### API Endpoint Documentations
 
 ##### Wireframes & Component Heirarchy
+Landing Page: 
+https://i.imgur.com/WCNaK7M.png
+or 
+https://i.imgur.com/Gf2drzJ.png
+Restoraunt pages: 
+https://i.imgur.com/VezBRQI.png
+Contact us page: 
+https://i.imgur.com/U6TFysh.png
 
 ###### List Dependencies
 
