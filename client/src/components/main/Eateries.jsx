@@ -21,7 +21,7 @@ class Eateries extends React.Component {
 
           <br />
 
-          <label htmlFor="address">Addess</label>
+          <label htmlFor="address">Address</label>
           <input
             type="text"
             name="address"
@@ -97,7 +97,7 @@ class Eateries extends React.Component {
             <option
               value="deli">Deli</option>
           </select>
-
+          <br />
           <button>Submit Eatery</button>
         </form>
       </div >
