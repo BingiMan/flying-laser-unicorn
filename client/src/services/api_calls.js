@@ -23,6 +23,7 @@ export const createEatery = async (eatery) => {
   return resp.data
 }
 export const createComment = async (newComment) => {
+  console.log('working yay')
   const resp = await axios.post(`${BASE_URL}/comments`, newComment)
   return resp.data;
 }

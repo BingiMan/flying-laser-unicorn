@@ -1,17 +1,17 @@
 const { Router } = require('express');
-const users = Router();
+const userRouter = Router();
 const { User } = require('../models');
 const { genToken } = require('../auth');
 const bcrypt = require('bcrypt');
 
 
-users.get('/', async (req, res) => {
+userRouter.get('/', async (req, res) => {
   const users = await User.findAll();
   res.json({ users });
 });
 
 
-users.post('/', async (req, res) => {
+userRouter.post('/', async (req, res) => {
   const { name, email, password } = req.body;
   const pwDigest = await bcrypt.hash(password, 7);
   const user = await User.create({
@@ -26,7 +26,7 @@ users.post('/', async (req, res) => {
 });
 
 
-users.post('/login', async (req, res) => {
+userRouter.post('/login', async (req, res) => {
   const user = await User.findOne({ where: { name: req.body.user } });
   const isValid = await bcrypt.compare(req.body.password);
 
@@ -36,4 +36,4 @@ users.post('/login', async (req, res) => {
 
 
 
-module.exports = users;
+module.exports = {userRouter};

@@ -1,14 +1,18 @@
 const { Router } = require('express');
-
-const comments = Router();
 const { Comment } = require('../models');
+const commentRouter = Router();
 
 
-comments.get('/', async (req, res) => {
+
+commentRouter.get('/', async (req, res) => {
   const comments = await Comment.findAll();
   res.json({ comments });
 });
 
+commentRouter.post('/', async (req, res)=>{
+  const comment = await Comment.create(req.body);
+  res.json({comment})
+})
 
 
 
@@ -16,4 +20,7 @@ comments.get('/', async (req, res) => {
 
 
 
-module.exports = comments
+
+module.exports = {
+  commentRouter,
+};

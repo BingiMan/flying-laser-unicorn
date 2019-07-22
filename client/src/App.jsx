@@ -55,14 +55,26 @@ class App extends React.Component {
             }
         }))
     }
-
+    handleCommentSubmit = async (ev) => {
+        ev.preventDefault();
+        console.log("clicked");
+        const newComment = await createComment(this.state.commentFormData);
+        this.setState(prevState =>({
+            commentsData: [...prevState.commentsData, newComment],
+            commentFormData:{
+                message:'',
+                yaynay:'',
+            }
+        }));
+        console.log(newComment)
+    };
     handleEaterySubmit = async (ev) => {
         ev.preventDefault();
         const eateries = await createEatery(this.state.eateryFormData)
         console.log(eateries)
         this.setState((prevState) => ({
             eateriesData: [...prevState.eateriesData, eateries],
-            eateryformDate: {
+            eateryformData: {
                 name: '',
                 address: '',
                 category: '',
@@ -149,18 +161,6 @@ class App extends React.Component {
     }
     //above is eatieryList and commentList function stuff//
 
-    handleCommentFormSubmit = async (ev) => {
-        ev.preventDefault();
-        console.log("clicked");
-        const newComment = await createComment(this.state.commentFormData);
-        this.setState({
-            commentFormData: {
-                message: '',
-                yaynay: '',
-            }
-        })
-        console.log(newComment)
-    }
     handleCommentFormChange = (ev) => {
         ev.preventDefault();
         const { name, value } = ev.target;
@@ -198,7 +198,7 @@ class App extends React.Component {
 
                     <Route exact path="/comments" render={() => <CommentsForm
                         handleChange={this.handleCommentFormChange}
-                        handleSubmit={this.handleCommentFormSubmit}
+                        handleSubmit={this.handleCommentSubmit}
                     />} />
 
 
