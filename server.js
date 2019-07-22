@@ -9,7 +9,7 @@ const bcrypt = require('bcrypt')
 
 const comments = require('./routes/commentRouter');
 const eateries = require('./routes/eateryRouter');
-const users = require('./routes/usersRouter')
+const users = require('./routes/userRouter')
 
 const app = express();
 app.use(cors());

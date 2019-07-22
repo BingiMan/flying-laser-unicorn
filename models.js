@@ -26,6 +26,7 @@ const Eatery = sequelize.define('eatery', {
 
 const Comment = sequelize.define('comment', {
   message: Sequelize.TEXT,
+  yaynay: Sequelize.BOOLEAN,
 
 });
 
@@ -35,6 +36,7 @@ const Comment = sequelize.define('comment', {
 
 User.hasMany(Comment, { onDelete: 'cascade' });
 Comment.belongsTo(User);
+Eatery.belongsTo(User);
 Eatery.hasMany(Comment, { onDelete: 'cascade' });
 Comment.belongsTo(Eatery);
 
