@@ -248,7 +248,6 @@ class App extends React.Component {
     }));
     console.log(ev.target.value)
   };
-<<<<<<< HEAD
 }
 handleRegisterChange = (e) => {
   const { target: { name, value } } = e;
@@ -485,70 +484,5 @@ render() {
     </div>
   );
 }
-=======
-    render() {
-        return (
-            <div className="App">
-                <header>
-                    <Link to="/"> Home </Link>
-                    <Link to="/introduction"> Introduction </Link>
-                    <Link to='/addEatery'> Add Eatery</Link>
-                    <Link to="/comments"> Comments </Link>
-                    <Link to="/comments-list"> Comments List </Link>
-                    <Link to="/eateries-list"> Eatery List </Link>
-                    <Link to="/login">Log In</Link>
-                    <Link to="/register">Register</Link>
-                    <Navigation />
-                </header>
-                <main>
-                    <Route exact path="/" render={() => <Home />} />
-                    <Route exact path="/introduction" render={() => <Introduction />} />
-                    <Route exact path='/addEatery' render={() => <Eateries
-                        handleEateryChange={this.handleEateryChange}
-                        handleEaterySubmit={this.handleEaterySubmit}
-                        eateryFormData={this.state.eateryFormData}
-                    />} />
-                    <Route exact path="/comments" render={() => <CommentsForm
-                        handleChange={this.handleCommentFormChange}
-                        handleSubmit={this.handleCommentFormSubmit}
-                    />} />
-                    <Route exact path="/comments-list" render={() => <CommentsList
-                        comments={this.state.comments}
-                        commentUpdateFormData={this.state.commentUpdateFormData}
-                        handleUpdate={this.handleCommentUpdate}
-                        handleChange={this.handleCommentUpdateChange}
-                        handleSubmit={this.handleCommentUpdateSubmit}
-                        handleCancel={this.handleCommentCancel}
-                    />} />
-                    <Route exact path="/eateries-list" render={() => <EateriesList
-                        eateries={this.state.eateries}
-                        eateryUpdateFormData={this.state.eateryUpdateFormData}
-                        handleDetail={this.handleDetail}
-                        handleUpdate={this.handleEateryUpdate}
-                        handleChange={this.handleEateryUpdateChange}
-                        handleSubmit={this.handleEateryUpdateSubmit}
-                        handleCancel={this.handleEateryCancel}
-                    />} />
-                    {this.state.currentEatery &&
-                    <SingleEatery
-                        currentEatery={this.state.currentEatery}
-                        comments={this.state.comments}
-                    />}
-                    <Route path="/login" exact render={() => <LoginUser
-                        handleChange={this.handleLoginChange}
-                        handleSubmit={this.handleLoginSubmit}
-                        formData={this.state.loginFormData} />} />
-                    <Route path="/register" exact render={() => <RegisterUser
-                        formData={this.state.registerFormData}
-                        handleChange={this.handleRegisterChange}
-                        handleSubmit={this.handleRegisterSubmit} />} />
-                </main>
-                <footer>
-                    <HireUs />
-                </footer>
-            </div>
-        );
-    }
->>>>>>> master
 }
 export default App;
