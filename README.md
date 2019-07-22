@@ -23,4 +23,16 @@ A user can create an account, sign-in, post a new restaurant, post a comment on 
 ##### Wireframes & Component Heirarchy
 
 ###### List Dependencies
+express
+sequelize
+morgan
+nodemon
+pg
+body-parser
+bcrypt 
+jsonwebtoken
+cors
+axios
+react: react-router-dom react-transition-group
+
 
