@@ -1,13 +1,11 @@
 const Sequelize = require('sequelize');
 
-
-
 const sequelize = new Sequelize({
   database: 'panda_eats',
   dialect: 'postgres',
   define: {
-    underscored: true
-  }
+    underscored: true,
+  },
 });
 
 const User = sequelize.define('user', {
@@ -15,7 +13,6 @@ const User = sequelize.define('user', {
   email: Sequelize.STRING,
   password_digest: Sequelize.STRING,
 });
-
 
 const Eatery = sequelize.define('eatery', {
   name: Sequelize.STRING,
@@ -30,21 +27,15 @@ const Comment = sequelize.define('comment', {
 
 });
 
-// const Like = sequelize.define('like', {
-
-// })
-
 User.hasMany(Comment, { onDelete: 'cascade' });
 Comment.belongsTo(User);
 Eatery.belongsTo(User);
 Eatery.hasMany(Comment, { onDelete: 'cascade' });
 Comment.belongsTo(Eatery);
 
-
-
 module.exports = {
   sequelize,
   User,
   Eatery,
-  Comment
-}
+  Comment,
+};
