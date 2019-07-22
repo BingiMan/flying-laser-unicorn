@@ -5,10 +5,31 @@ const api = axios.create({
   baseURL: URL,
 });
 
-export const getPing = async () => {
-  const ping = await axios.get(`${URL}/ping`);
-  return ping;
+
+export const fetchEateries = async () => {
+  await axios.get(`${URL}/eateries`);
 }
+export const fetchComments = async () => {
+  await axios.get(`${URL}/comments`);
+}
+export const updateEatery = async (data) => {
+  const { id, ...eateryData } = data;
+  await api.put(`/eateries/${id}`, eateryData)
+}
+export const updateComment = async (data) => {
+  const { id, ...commentData } = data;
+  await api.put(`eateries/${id}`, commentData)
+}
+export const createEatery = async (eatery) => {
+  console.log('doesthiswork')
+  const resp = await api.post(`/addEatery`, eatery);
+  return resp.data
+}
+export const createComment = async (newComment) => {
+  const resp = await api.post(`/comments`, newComment)
+  return resp.data;
+}
+
 
 export const storeToken = (token) => {
   localStorage.setItem('authToken', token);
@@ -22,5 +43,5 @@ export const createUser = async (userData) => {
 export const loginUser = async (name, password) => {
   const resp = await api.post(`/users/login`, { name, password });
   storeToken(resp.data.token);
-  return resp
+  return resp;
 }
