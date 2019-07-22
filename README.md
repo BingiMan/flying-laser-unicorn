@@ -31,6 +31,34 @@ Contact us page:
 https://i.imgur.com/U6TFysh.png
 Alternate Login page: 
 https://i.imgur.com/LlbuOWI.png
+First draft sketch: 
+https://i.imgur.com/IHwPrJ3.jpg
+
+
+< Header >
+< Nav Bar>
+< Hero >
+< Intro >
+< Register From >
+< Log In From >
+< Eatery >
+< Comments >
+< Comment Form >
+< Contact Us >
+< Contact Form >
+< Footer >
 
 ###### List Dependencies
+express <br />
+sequelize <br />
+morgan <br />
+nodemon <br />
+pg <br />
+body-parser <br />
+bcrypt <br />
+jsonwebtoken <br />
+cors <br />
+axios <br />
+react: react-router-dom react-transition-group
+
 
