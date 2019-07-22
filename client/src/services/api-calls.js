@@ -7,10 +7,15 @@ const api = axios.create({
 
 
 export const fetchEateries = async () => {
-  await axios.get(`${URL}/eateries`);
+
+  await api.get(`${URL}/eateries`);
 }
-export const fetchComments = async () => {
-  await axios.get(`${URL}/comments`);
+export const fetchComments = async (id) => {
+  await axios.api(`/eateries/${id}/comments`);
+}
+export const eateryInfo = async (id) => {
+  const resp = await api.get(`/eateries/${id}`);
+  return resp.data;
 }
 export const updateEatery = async (data) => {
   const { id, ...eateryData } = data;
@@ -34,12 +39,10 @@ export const eateryInfo = async (id) => {
   return resp.data;
 }
 
-
 export const storeToken = (token) => {
   localStorage.setItem('authToken', token);
   api.defaults.headers.common.authorization = `Bearer ${token}`;
 }
-
 export const createUser = async (userData) => {
   const resp = await axios.post(`${URL}/users`, userData);
   storeToken(resp.data.token)
