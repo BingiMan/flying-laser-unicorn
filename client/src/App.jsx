@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { createUser, loginUser, createEatery, createComment } from './services/api-calls'
+import { createUser, loginUser, createEatery, createComment, fetchComments, eateryInfo } from './services/api-calls'
 import { Route, Link } from 'react-router-dom'
 import Home from './components/main/Home';
 import Introduction from "./components/main/Introduction";
@@ -197,6 +197,16 @@ class App extends React.Component {
     })
     console.log(newComment)
   }
+
+  handleDetail = (ev) => {
+    this.setState(prevState => ({
+      currentEatery: {
+        ...prevState.currentEatery,
+        id: ev.target.name
+      }
+    }));
+  }
+
   handleCommentFormChange = (ev) => {
     ev.preventDefault();
     const { name, value } = ev.target;
@@ -208,6 +218,25 @@ class App extends React.Component {
     }));
     console.log(ev.target.value)
   };
+
+  async componentDidMount() {
+    if (this.state.currentEatery.id) {
+      const comments = await fetchComments(this.state.currentEatery.id);
+      const eatery = await eateryInfo(this.state.currentEatery.id);
+      const { name, address, category, priceRange } = eatery;
+      this.setState(prevState => ({
+        currentEatery: {
+          ...prevState.currentEatery,
+          name: name,
+          address: address,
+          category: category,
+          priceRange
+        },
+        comments: comments
+      }))
+    }
+  }
+
   render() {
     return (
       <div className="App">

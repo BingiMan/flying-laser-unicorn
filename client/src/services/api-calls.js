@@ -29,6 +29,10 @@ export const createComment = async (newComment) => {
   const resp = await api.post(`/comments`, newComment)
   return resp.data;
 }
+export const eateryInfo = async (id) => {
+  const resp = await api.get(`/eateries/${id}`);
+  return resp.data;
+}
 
 
 export const storeToken = (token) => {
