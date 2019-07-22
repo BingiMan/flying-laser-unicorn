@@ -6,7 +6,9 @@ import Introduction from "./components/main/Introduction";
 import CommentsList  from './components/main/CommentsList';
 import EateriesList  from './components/main/EateriesList';
 import HireUs from "./components/footer/HireUs";
-import { Navegation } from "./components/header/NavBar";
+import {Navigation} from "./components/header/NavBar";
+import {CommentsForm} from "./components/main/CommentsForm";
+import {createComment} from "./services/api_calls";
 import Eateries from './components/main/Eateries';
 import { createEatery } from './services/api_calls';
 
@@ -15,6 +17,10 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      commentFormData:{
+          message:'',
+          yaynay:'',
+      },
         user: '',
         comments: [],
         eateries: [],
@@ -36,6 +42,7 @@ class App extends React.Component {
             category: "",
             priceRange: ""
         }
+
     };
   }
 
@@ -142,6 +149,29 @@ class App extends React.Component {
       }
       //above is eatieryList and commentList function stuff//
 
+handleCommentFormSubmit = async (ev) =>{
+      ev.preventDefault();
+      console.log("clicked");
+      const newComment = await createComment(this.state.commentFormData);
+      this.setState({
+          commentFormData:{
+              message:'',
+              yaynay:'',
+          }
+      })
+    console.log(newComment)
+}
+handleCommentFormChange = (ev) =>{
+    ev.preventDefault();
+      const {name , value} = ev.target;
+      this.setState(prevState => ({
+          commentFormData: {
+              ...prevState.commentFormData,
+              [name]:value
+          }
+      }));
+      console.log(ev.target.value)
+};
 
       render()
       {
@@ -158,6 +188,15 @@ class App extends React.Component {
 
                   </header>
 
+
+  render() {
+  return (
+      <div className="App">
+        <header>
+            <Link to="/"> Home </Link>
+            <Link to="/introduction"> Introduction </Link>
+            <Navigation/>
+        </header>
                   <main>
                       <Route exact path="/" render={() => <Home/>}/>
                       <Route exact path="/introduction" render={() => <Introduction/>}/>
@@ -165,6 +204,10 @@ class App extends React.Component {
                           handleEateryChange={this.handleEateryChange}
                           handleEaterySubmit={this.handleEaterySubmit}
                           eateryFormData={this.state.eateryFormData}
+                      <Route exact path="/comments render={() => <CommentsForm
+                handleChange={this.handleCommentFormChange}
+                handleSubmit={this.handleCommentFormSubmit}
+            />"                                          
                       />}
                       />
 
