@@ -14,7 +14,7 @@ class Eateries extends React.Component {
           <input
             type="text"
             name="name"
-            value={this.props.EateryformData.name}
+            // value={this.props.EateryformData.name}
             onChange={this.props.handleEateryChange}
             id="name" />
           <br />
@@ -22,22 +22,22 @@ class Eateries extends React.Component {
           <input
             type="text"
             name="address"
-            value={this.props.EateryformData.address}
+            // value={this.props.EateryformData.address}
             onChange={this.props.handleEateryChange}
             id="address" />
           <br />
           <label htmlFor="priceRange">Price Range</label>
           <input
-            type="text"
+            type="radio"
             name="priceRange"
-            value={this.props.EateryformData.priceRange}
+            // value={this.props.EateryformData.priceRange}
             onChange={this.props.handleEateryChange}
             id="priceRange" />
           <br />
           <label htmlFor="category">Category</label>
           <select
             onChange={this.props.handleEateryChange}
-            value={this.props.EateryformData.category}
+            // value={this.props.EateryformData.category}
             name="category">
             <option
               value="Ramen">Ramen</option>
@@ -50,7 +50,7 @@ class Eateries extends React.Component {
             <option
               value="Sandwich_shop">Sandwiches</option>
             <option
-              value="Healthy cafe">Healty cafe</option>
+              value="Healthy_cafe">Healty cafe</option>
             <option
               value="cafeteria">cafeteria</option>
             <option

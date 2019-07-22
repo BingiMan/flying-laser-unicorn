@@ -1,11 +1,15 @@
 import React from 'react'
 
-export function Navegation(){
-    return(
-        <div>
-            <h1>
-                this will display all the sections
+export function Navegation() {
+  return (
+    <div>
+      <h1>
+        this will display all the sections
             </h1>
-        </div>
-    )
+      <div className='action_buttons'>
+        <button>Log in</button>
+        <button>Register</button>
+      </div>
+    </div>
+  )
 }
