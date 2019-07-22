@@ -17,10 +17,40 @@ Adding the Yelp API so users can check out the location map of the reaturatn the
 A user can create an account, sign-in, post a new restaurant, post a comment on a specific restaurant. Users can also update and delete their specific restaurant or comment they created
 
 ### Entity Relationship Diagram
-
+[ERD](doc:flying_laser_unicorn_ERD.pdf) 
 #### API Endpoint Documentations
 
+The user will be able to get eateries. (FindAll Eateries)
+
+
+
 ##### Wireframes & Component Heirarchy
+Landing Page: 
+https://i.imgur.com/WCNaK7M.png
+or 
+https://i.imgur.com/Gf2drzJ.png
+Restoraunt pages: 
+https://i.imgur.com/VezBRQI.png
+Contact us page: 
+https://i.imgur.com/U6TFysh.png
+Alternate Login page: 
+https://i.imgur.com/LlbuOWI.png
+First draft sketch: 
+https://i.imgur.com/IHwPrJ3.jpg
+
+
+< Header >
+< Nav Bar>
+< Hero >
+< Intro >
+< Register From >
+< Log In From >
+< Eatery >
+< Comments >
+< Comment Form >
+< Contact Us >
+< Contact Form >
+< Footer >
 < Header > <br />
 < Nav Bar> <br />
 < Hero > <br />
