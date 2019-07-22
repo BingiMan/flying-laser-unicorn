@@ -9,5 +9,4 @@ comments.get('/', async (req, res) => {
   res.json({ comments });
 });
 
-
 module.exports = comments
