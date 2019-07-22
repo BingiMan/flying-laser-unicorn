@@ -4,7 +4,7 @@ import { createUser, loginUser, createEatery, createComment } from './services/a
 import { Route, Link } from 'react-router-dom'
 import Home from './components/main/Home';
 import Introduction from "./components/main/Introduction";
-import CommentsList from './components/main/CommentsList';
+import SingleEatery from './components/main/SingleEatery';
 import EateriesList from './components/main/EateriesList';
 import HireUs from "./components/footer/HireUs";
 import { Navigation } from "./components/header/NavBar";
@@ -12,15 +12,16 @@ import RegisterUser from "./components/main/RegisterUser";
 import LoginUser from "./components/main/LoginUser"
 import { CommentsForm } from "./components/main/CommentsForm";
 import Eateries from './components/main/Eateries';
+
+
 class App extends React.Component {
   constructor(props) {
-    super(props);
-    this.state = {
-      commentFormData: {
-        message: '',
-        yaynay: '',
-      },
-      user: '',
+      super(props);
+      this.state = {
+          commentFormData: {
+              message: '',
+              yaynay: '',
+          },
       loginFormData: {
         name: '',
         password: '',
@@ -31,29 +32,50 @@ class App extends React.Component {
         email: '',
       },
       currentUser: null,
-      comments: [],
-      eateries: [],
-      eateryFormData: {
-        name: '',
-        address: '',
-        category: '',
-        priceRange: null,
-      },
-      commentUpdateFormData: {
-        id: "",
-        messsage: "",
-        yaynay: ""
-      },
-      eateryUpdateFormData: {
-        id: "",
-        name: "",
-        address: "",
-        category: "",
-        priceRange: ""
-      }
-    };
+          user: '',
+          currentUser:"",
+          comments: [],
+          eateries: [],
+          currentEatery: "",
+          loginFormData: {
+          name: '',
+          password: '',
+        },
+        eateryFormData: {
+              name: '',
+              address: '',
+              category: '',
+              priceRange: null,
+          },
+        commentUpdateFormData: {
+              id: "",
+              messsage: "",
+              yaynay: ""
+          },
+        eateryUpdateFormData: {
+              id: "",
+              name: "",
+              address: "",
+              website: "",
+              category: "",
+              priceRange: ""
+        },
+        currentEatery: {
+          id: "",
+          name: "",
+          address: "",
+          category: "",
+          priceRange: ""
+        },
+        registerFormData: {
+          name: '',
+          password: '',
+          email: '',
+        }
+
+      };
   }
-  handleRegisterChange = (e) => {
+    handleRegisterChange = (e) => {
     const { target: { name, value } } = e;
     this.setState(prevState => ({
       registerFormData: {
@@ -67,7 +89,7 @@ class App extends React.Component {
     console.log(this.state.registerFormData)
     const newUser = await createUser(this.state.registerFormData)
   }
-  handleLoginChange = (e) => {
+   handleLoginChange = (e) => {
     const { target: { name, value } } = e;
     this.setState(prevState => ({
       loginFormData: {
@@ -76,7 +98,7 @@ class App extends React.Component {
       }
     }));
   }
-  handleLoginSubmit = async (e) => {
+   handleLoginSubmit = async (e) => {
     e.preventDefault()
     const resp = await loginUser(this.state.loginFormData.name, this.state.loginFormData.password)
     this.setState({
@@ -85,33 +107,62 @@ class App extends React.Component {
     console.log(this.state.currentUser)
   }
   handleEateryChange = (e) => {
-    const { name, value } = e.target;
-    this.setState(prevState => ({
-      eateryformData: {
-        ...prevState.eateryformData,
-        [name]: value
-      }
-    }))
+        const { name, value } = e.target;
+        this.setState(prevState => ({
+            eateryformData: {
+                ...prevState.eateryformData,
+                [name]: value
+            }
+        }))
+    }
+      handleCommentUpdate = (ev) => {
+        this.setState(prevState => ({
+            commentUpdateFormData: {
+                ...prevState.commentUpdateFormData,
+                id: ev.target.name
+            }
+        }));
+    }
+  
+handleEaterySubmit = async (ev) => {
+        ev.preventDefault();
+        const eateries = await createEatery(this.state.eateryFormData)
+        console.log(eateries)
+        this.setState((prevState) => ({
+            eateriesData: [...prevState.eateriesData, eateries],
+            eateryformDate: {
+                name: '',
+                address: '',
+                category: '',
+                priceRange: '',
+            }
+        }))
+    }
+
+
+  async componentDidMount() { 
+    if (this.state.currentEatery.id) {
+      const comments = await fetchComments(this.state.currentEatery.id);
+      const eatery = await eatery(this.state.currentEatery.id);
+      const { name, address, category, priceRange } = eatery;
+      this.setState(prevState => ({
+        currentEatery: {
+          ...prevState.currentEatery,
+          name: name,
+          address: address,
+          category: category,
+          priceRange
+        },
+        comments: comments
+      }))
+    }
   }
-  handleEaterySubmit = async (ev) => {
-    ev.preventDefault();
-    const eateries = await createEatery(this.state.eateryFormData)
-    console.log(eateries)
-    this.setState((prevState) => ({
-      eateriesData: [...prevState.eateriesData, eateries],
-      eateryformDate: {
-        name: '',
-        address: '',
-        category: '',
-        priceRange: '',
-      }
-    }))
-  }
-  //below is eatieryList and commentList function stuff//
-  handleCommentUpdate = (ev) => {
-    this.setState(prevState => ({
-      commentUpdateFormData: {
-        ...prevState.commentUpdateFormData,
+   
+  
+  handleDetail = (ev) => {
+    this.setState(prevState=> ({
+      currentEatery: {
+        ...prevState.currentEatery,
         id: ev.target.name
       }
     }));
@@ -242,14 +293,21 @@ class App extends React.Component {
             handleSubmit={this.handleCommentUpdateSubmit}
             handleCancel={this.handleCommentCancel}
           />} />
-          <Route exact path="/eateries-list" render={() => <EateriesList
-            eateries={this.state.eateries}
-            eateryUpdateFormData={this.state.eateryUpdateFormData}
-            handleUpdate={this.handleEateryUpdate}
-            handleChange={this.handleEateryUpdateChange}
-            handleSubmit={this.handleEateryUpdateSubmit}
-            handleCancel={this.handleEateryCancel}
-          />} />
+                    <Route exact path="/eateries-list" render={() => <EateriesList
+                        eateries={this.state.eateries}
+                        eateryUpdateFormData={this.state.eateryUpdateFormData}
+                        handleDetail={this.handleDetail}
+                        handleUpdate={this.handleEateryUpdate}
+                        handleChange={this.handleEateryUpdateChange}
+                        handleSubmit={this.handleEateryUpdateSubmit}
+                        handleCancel={this.handleEateryCancel}
+              />} />
+              
+              {this.state.currentEatery &&
+                <SingleEatery
+                currentEatery={this.state.currentEatery}
+                comments={this.state.comments}
+                />}
           <Route path="/login" exact render={() => <LoginUser handleChange={this.handleLoginChange} handleSubmit={this.handleLoginSubmit} formData={this.state.loginFormData} />} />
           <Route path="/register" exact render={() => <RegisterUser formData={this.state.registerFormData} handleChange={this.handleRegisterChange} handleSubmit={this.handleRegisterSubmit} />} />
         </main>

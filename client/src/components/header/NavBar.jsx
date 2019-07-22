@@ -1,5 +1,4 @@
 import React from 'react'
-
 export function Navigation() {
   return (
     <div>
@@ -10,6 +9,5 @@ export function Navigation() {
         <button>Log in</button>
         <button>Register</button>
       </div>
-    </div>
   )
 }
