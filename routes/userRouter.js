@@ -1,7 +1,7 @@
 const { Router } = require('express');
 const userRouter = Router();
 const { User } = require('../models');
-const { genToken } = require('../auth');
+const { genToken, restrict } = require('../auth');
 const bcrypt = require('bcrypt');
 
 
@@ -26,9 +26,22 @@ userRouter.post('/', async (req, res) => {
 });
 
 
+<<<<<<< HEAD
 userRouter.post('/login', async (req, res) => {
   const user = await User.findOne({ where: { name: req.body.user } });
   const isValid = await bcrypt.compare(req.body.password);
+=======
+users.post('/login', async (req, res) => {
+  const { name } = req.body;
+  const user = await User.findOne({ where: { name } });
+  const isValid = await bcrypt.compare(req.body.password, user.password_digest);
+  if (isValid === true) {
+    const token = genToken({ name: user.name, email: user.email, id: user.id })
+    res.json({ user, token })
+  } else {
+    console.log(e.message)
+  }
+>>>>>>> master
 
 })
 
