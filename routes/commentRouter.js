@@ -1,4 +1,5 @@
 const { Router } = require('express');
+
 const comments = Router();
 const { Comment } = require('../models');
 

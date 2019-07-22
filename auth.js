@@ -4,11 +4,7 @@ const SECRET = "WHOYOUCALLINPINHEAD?";
 
 const genToken = (payload) => {
   return jwt.sign(payload, SECRET);
-
-
 }
-
-
 
 const restrict = (req, res, next) => {
   try {
@@ -16,12 +12,10 @@ const restrict = (req, res, next) => {
     const user = jwt.verify(token, SECRET);
     res.locals.user = user;
     next();
-
   } catch (e) {
     console.log(e.message)
     res.status(401).send('Not Authorized');
   }
-
 }
 
 module.exports = { genToken, restrict };
