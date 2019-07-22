@@ -21,18 +21,18 @@ A user can create an account, sign-in, post a new restaurant, post a comment on 
 #### API Endpoint Documentations
 
 ##### Wireframes & Component Heirarchy
-< Header >
-< Nav Bar>
-< Hero >
-< Intro >
-< Register From >
-< Log In From >
-< Eatery >
-< Comments >
-< Comment Form >
-< Contact Us >
-< Contact Form >
-< Footer >
+< Header > <br />
+< Nav Bar> <br />
+< Hero > <br />
+< Intro > <br />
+< Register From > <br />
+< Log In From > <br />
+< Eatery > <br />
+< Comments > <br />
+< Comment Form > <br />
+< Contact Us > <br />
+< Contact Form > <br />
+< Footer > <br />
 
 ###### List Dependencies
 express <br />
