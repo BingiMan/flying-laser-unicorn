@@ -26,13 +26,43 @@ class Eateries extends React.Component {
             onChange={this.props.handleEateryChange}
             id="address" />
           <br />
-          <label htmlFor="priceRange">Price Range</label>
+          <label htmlFor="price_range">Price Range</label>
           <input
             type="radio"
-            name="priceRange"
+            name="price_range"
             // value={this.props.EateryformData.priceRange}
             onChange={this.props.handleEateryChange}
-            id="priceRange" />
+            id="price_range" />
+          <input
+            type="radio"
+            name="price_range"
+            // value={this.props.EateryformData.priceRange}
+            onChange={this.props.handleEateryChange}
+            id="price_range" />
+          <input
+            type="radio"
+            name="price_range"
+            // value={this.props.EateryformData.priceRange}
+            onChange={this.props.handleEateryChange}
+            id="price_range" />
+          <input
+            type="radio"
+            name="price_range"
+            // value={this.props.EateryformData.priceRange}
+            onChange={this.props.handleEateryChange}
+            id="price_range" />
+          <input
+            type="radio"
+            name="price_range"
+            // value={this.props.EateryformData.priceRange}
+            onChange={this.props.handleEateryChange}
+            id="price_range" />
+          <input
+            type="radio"
+            name="price_range"
+            // value={this.props.EateryformData.priceRange}
+            onChange={this.props.handleEateryChange}
+            id="price_range" />
           <br />
           <label htmlFor="category">Category</label>
           <select
@@ -56,8 +86,6 @@ class Eateries extends React.Component {
             <option
               value="deli">Deli</option>
           </select>
-
-
 
           <button>Submit Eatery</button>
         </form>

@@ -1,6 +1,6 @@
 import React from 'react'
 
-export function Navegation() {
+export function Navigation() {
   return (
     <div>
       <h1>
