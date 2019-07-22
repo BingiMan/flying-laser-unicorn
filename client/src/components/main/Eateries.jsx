@@ -10,6 +10,7 @@ class Eateries extends React.Component {
           this.props.handleEaterySubmit(e);
           this.props.handleEateryChange(e);
         }}>
+
           <label htmlFor="name">Name</label>
           <input
             type="text"
@@ -17,7 +18,9 @@ class Eateries extends React.Component {
             // value={this.props.EateryformData.name}
             onChange={this.props.handleEateryChange}
             id="name" />
+
           <br />
+
           <label htmlFor="address">Addess</label>
           <input
             type="text"
@@ -25,45 +28,53 @@ class Eateries extends React.Component {
             // value={this.props.EateryformData.address}
             onChange={this.props.handleEateryChange}
             id="address" />
+
           <br />
+
+          <label htmlFor="website">Website</label>
+          <input
+            type="url"
+            name="website"
+            // value={this.props.EateryformData.address}
+            onChange={this.props.handleEateryChange}
+            id="website" />
+
+          <br />
+
           <label htmlFor="price_range">Price Range</label>
           <input
             type="radio"
             name="price_range"
-            // value={this.props.EateryformData.priceRange}
+            value="1"
             onChange={this.props.handleEateryChange}
-            id="price_range" />
+            id="price_range" /> <span>1</span>
           <input
             type="radio"
             name="price_range"
-            // value={this.props.EateryformData.priceRange}
+            value="2"
             onChange={this.props.handleEateryChange}
-            id="price_range" />
+            id="price_range" /> <span>2</span>
           <input
             type="radio"
             name="price_range"
-            // value={this.props.EateryformData.priceRange}
+            value="3"
             onChange={this.props.handleEateryChange}
-            id="price_range" />
+            id="price_range" /> <span>3</span>
           <input
             type="radio"
             name="price_range"
-            // value={this.props.EateryformData.priceRange}
+            value="4"
             onChange={this.props.handleEateryChange}
-            id="price_range" />
+            id="price_range" /> <span>4</span>
           <input
             type="radio"
             name="price_range"
-            // value={this.props.EateryformData.priceRange}
+            value="5"
             onChange={this.props.handleEateryChange}
-            id="price_range" />
-          <input
-            type="radio"
-            name="price_range"
-            // value={this.props.EateryformData.priceRange}
-            onChange={this.props.handleEateryChange}
-            id="price_range" />
+            id="price_range" /> <span>5</span>
+
           <br />
+
           <label htmlFor="category">Category</label>
           <select
             onChange={this.props.handleEateryChange}
