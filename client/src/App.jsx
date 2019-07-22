@@ -25,24 +25,30 @@ class App extends React.Component {
               yaynay: '',
           },
           user: '',
+          currentUser:"",
           comments: [],
           eateries: [],
           currentEatery: "",
-          eateryFormData: {
+          loginFormData: {
+          name: '',
+          password: '',
+        },
+        eateryFormData: {
               name: '',
               address: '',
               category: '',
               priceRange: null,
           },
-          commentUpdateFormData: {
+        commentUpdateFormData: {
               id: "",
               messsage: "",
               yaynay: ""
           },
-          eateryUpdateFormData: {
+        eateryUpdateFormData: {
               id: "",
               name: "",
               address: "",
+              website: "",
               category: "",
               priceRange: ""
         },
@@ -52,7 +58,12 @@ class App extends React.Component {
           address: "",
           category: "",
           priceRange: ""
-      }
+        },
+        registerFormData: {
+          name: '',
+          password: '',
+          email: '',
+        }
 
       };
   }
