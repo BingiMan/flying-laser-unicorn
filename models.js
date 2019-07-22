@@ -18,6 +18,7 @@ const Eatery = sequelize.define('eatery', {
   name: Sequelize.STRING,
   address: Sequelize.STRING,
   category: Sequelize.STRING,
+  website: Sequelize.STRING,
   price_range: Sequelize.STRING,
 });
 

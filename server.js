@@ -21,7 +21,7 @@ app.use(bodyParser.json());
 
 app.use('/users', users);
 app.use('/comments', comments);
-app.use('eateries', eateries)
+app.use('/eateries', eateries)
 
 app.listen(PORT, () => {
   console.log(`WeedleyDee this server's for me ${PORT}`);
