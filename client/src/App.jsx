@@ -3,14 +3,15 @@ import './App.css';
 import { Route, Link } from 'react-router-dom'
 import Home from './components/main/Home';
 import Introduction from "./components/main/Introduction";
-import CommentsList from './components/main/CommentsList';
+import SingleEatery from './components/main/SingleEatery';
 import EateriesList from './components/main/EateriesList';
 import HireUs from "./components/footer/HireUs";
 import { Navigation } from "./components/header/NavBar";
 import { CommentsForm } from "./components/main/CommentsForm";
-import { createComment } from "./services/api_calls";
 import Eateries from './components/main/Eateries';
-import { createEatery } from './services/api_calls';
+import { createComment, fetchComments, createEatery } from "./services/api_calls";
+
+
 
 
 class App extends React.Component {
@@ -24,6 +25,7 @@ class App extends React.Component {
             user: '',
             comments: [],
             eateries: [],
+            currentEatery: "",
             eateryFormData: {
                 name: '',
                 address: '',
@@ -41,10 +43,35 @@ class App extends React.Component {
                 address: "",
                 category: "",
                 priceRange: ""
-            }
+          },
+          currentEatery: {
+            id: "",
+            name: "",
+            address: "",
+            category: "",
+            priceRange: ""
+        }
 
         };
     }
+  
+  async componentDidMount() { 
+    if (this.state.currentEatery.id) {
+      const comments = await fetchComments(this.state.currentEatery.id);
+      const eatery = await eatery(this.state.currentEatery.id);
+      const { name, address, category, priceRange } = eatery;
+      this.setState(prevState => ({
+        currentEatery: {
+          ...prevState.currentEatery,
+          name: name,
+          address: address,
+          category: category,
+          priceRange
+        },
+        comments: comments
+      }))
+    }
+  }
 
     handleEateryChange = (e) => {
         const { name, value } = e.target;
@@ -172,6 +199,15 @@ class App extends React.Component {
         }));
         console.log(ev.target.value)
     };
+  
+  handleDetail = (ev) => {
+    this.setState(prevState=> ({
+      currentEatery: {
+        ...prevState.currentEatery,
+        id: ev.target.name
+      }
+    }));
+  }
 
     render() {
         return (
@@ -181,7 +217,6 @@ class App extends React.Component {
                     <Link to="/introduction"> Introduction </Link>
                     <Link to='/addEatery'> Add Eatery</Link>
                     <Link to="/comments"> Comments </Link>
-                    <Link to="/comments-list"> Comments List </Link>
                     <Link to="/eateries-list"> Eatery List </Link>
                     <Navigation />
                 </header>
@@ -195,29 +230,27 @@ class App extends React.Component {
                         eateryFormData={this.state.eateryFormData}
                     />} />
 
-
                     <Route exact path="/comments" render={() => <CommentsForm
                         handleChange={this.handleCommentFormChange}
                         handleSubmit={this.handleCommentFormSubmit}
                     />} />
 
-
-                    <Route exact path="/comments-list" render={() => <CommentsList
-                        comments={this.state.comments}
-                        commentUpdateFormData={this.state.commentUpdateFormData}
-                        handleUpdate={this.handleCommentUpdate}
-                        handleChange={this.handleCommentUpdateChange}
-                        handleSubmit={this.handleCommentUpdateSubmit}
-                        handleCancel={this.handleCommentCancel}
-                    />} />
                     <Route exact path="/eateries-list" render={() => <EateriesList
                         eateries={this.state.eateries}
                         eateryUpdateFormData={this.state.eateryUpdateFormData}
+                        handleDetail={this.handleDetail}
                         handleUpdate={this.handleEateryUpdate}
                         handleChange={this.handleEateryUpdateChange}
                         handleSubmit={this.handleEateryUpdateSubmit}
                         handleCancel={this.handleEateryCancel}
-                    />} />
+              />} />
+              
+              {this.state.currentEatery &&
+                <SingleEatery
+                currentEatery={this.state.currentEatery}
+                comments={this.state.comments}
+                />}
+              
                 </main>
 
                 <footer>

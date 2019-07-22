@@ -10,10 +10,4 @@ comments.get('/', async (req, res) => {
 });
 
 
-
-
-
-
-
-
 module.exports = comments
