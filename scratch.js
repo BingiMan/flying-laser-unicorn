@@ -1,6 +1,5 @@
 const { Restaurant, Comment } = require('./models');
 
-
 const main = async () => {
   await Restaurant.destroy({
     where: {},

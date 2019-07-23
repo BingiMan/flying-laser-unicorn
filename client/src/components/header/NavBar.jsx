@@ -19,6 +19,10 @@ export default class NavigationBar extends React.Component {
         label: 'Eatery',
       },
       {
+        link: '/eateries-list',
+        label: 'Eatery List',
+      },
+      {
         link: '/login',
         label: 'Login',
       },
@@ -27,12 +31,12 @@ export default class NavigationBar extends React.Component {
         label: 'Register',
       },
       {
-       link: '/comments',
-       label: 'Comments'
+        link: '/comments',
+        label: 'Comments'
       },
       {
-        link:'/comments-list',
-        label:'Comment list',
+        link: '/comments-list',
+        label: 'Comment list',
       }
     ]
   }
