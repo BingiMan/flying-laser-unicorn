@@ -65,7 +65,6 @@ class App extends React.Component {
       eateriesData: [],
     }
   }
-
   async componentDidMount() {
     if (this.state.currentEatery.id) {
       const comments = await fetchComments(this.state.currentEatery.id);
@@ -121,7 +120,7 @@ class App extends React.Component {
     });
     console.log(this.state.currentUser)
   }
- 
+
   handleEateryChange = (e) => {
     const { name, value } = e.target;
     this.setState(prevState => ({
