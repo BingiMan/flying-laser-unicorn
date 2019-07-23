@@ -27,6 +27,14 @@ export default class NavigationBar extends React.Component {
         link: '/register',
         label: 'Register',
       },
+      {
+       link: '/comments',
+       label: 'Comments'
+      },
+      {
+        link:'/comments-list',
+        label:'Comment list',
+      }
     ]
   }
 
