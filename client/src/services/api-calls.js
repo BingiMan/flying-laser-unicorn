@@ -1,13 +1,9 @@
 const axios = require('axios');
 const URL = 'http://localhost:3000'
-
 const api = axios.create({
   baseURL: URL,
 });
-
-
 export const fetchEateries = async () => {
-
   await api.get(`${URL}/eateries`);
 }
 export const fetchComments = async (id) => {
@@ -34,7 +30,6 @@ export const createComment = async (newComment) => {
   const resp = await api.post(`/comments`, newComment)
   return resp.data;
 }
-
 export const storeToken = (token) => {
   localStorage.setItem('authToken', token);
   api.defaults.headers.common.authorization = `Bearer ${token}`;
@@ -48,3 +43,7 @@ export const loginUser = async (name, password) => {
   storeToken(resp.data.token);
   return resp;
 }
+
+
+
+
