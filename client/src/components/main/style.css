@@ -1,3 +1,58 @@
 .home{
  text-align: center;
 }
+/*Home Section*/
+
+.intro-image {
+width: 100%;
+margin-left:auto;
+margin-right:auto;
+}
+
+/*Intro Section*/
+
+.intro-h1 {
+  text-align: center;
+  opacity: 1;
+  font-size: 0.75em;
+  color: #b2b3b4;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.intro-about {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.about-team-intro {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.single-team-img {
+  height: 250px;
+  width: 250px;
+}
+
+.team-button {
+  width: 80px;
+  height: 30px;
+  text-align: center;
+  background-color: transparent;
+  border: 2px solid black;
+  border-radius: 10px;
+  text-transform:lowercase;
+  font-weight: bolder;
+}
+
+.team-button a:hover:before {
+background-color:rgb(206, 175, 147);
+color: black;
+cursor: pointer;
+}
+

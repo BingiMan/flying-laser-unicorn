@@ -1,6 +1,5 @@
-import React from 'react';
 import { Link } from "react-router-dom";
-
+import React from 'react';
 
 export default class NavigationBar extends React.Component {
   constructor(props) {

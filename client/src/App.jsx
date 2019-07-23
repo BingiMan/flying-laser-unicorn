@@ -287,7 +287,6 @@ class App extends React.Component {
     console.log(ev.target.value);
   };
 
-
   render() {
     return (
       <div className="App">
