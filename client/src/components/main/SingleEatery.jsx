@@ -1,5 +1,6 @@
 import React from 'react';
 import CommentsList from './CommentsList';
+import { CommentsForm } from './CommentsForm';
 
 
 export default function SingleEatery(props) {
@@ -13,7 +14,7 @@ export default function SingleEatery(props) {
           <p>Category: {props.currentEatery.category}</p>
           <p>Price Range: {props.currentEatery.PriceRange}</p>
         </div>)}
-      <CommentForm />
+      <CommentsForm />
       <CommentsList
         comments={props.comments}
         commentUpdateFormData={props.commentUpdateFormData}
