@@ -3,6 +3,8 @@ const URL = 'http://localhost:3000'
 const api = axios.create({
   baseURL: URL,
 });
+
+
 export const fetchEateries = async () => {
   await api.get(`${URL}/eateries`);
 }
