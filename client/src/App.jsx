@@ -292,7 +292,7 @@ class App extends React.Component {
                         handleSubmit={this.handleEateryUpdateSubmit}
                         handleCancel={this.handleEateryCancel}
                     />} />
-                    // TODO: Ask why this was  here?
+                     {/*TODO: Ask why this was  here?*/}
                     {/*{this.state.currentEatery &&*/}
                     {/*<SingleEatery*/}
                     {/*    currentEatery={this.state.currentEatery}*/}
