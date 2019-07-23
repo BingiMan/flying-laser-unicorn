@@ -6,10 +6,12 @@ const api = axios.create({
 
 
 export const fetchEateries = async () => {
-  await axios.get(`${URL}/restaurants`);
+  const resp = await axios.get(`${URL}/restaurants`);
+  return resp.data;
 }
 export const fetchComments = async (id) => {
-  await api.get(`/restaurants/${id}/comments`);
+  const resp = await api.get(`/restaurants/${id}/comments`);
+  return resp.data;
 }
 export const eateryInfo = async (id) => {
   const resp = await api.get(`/restaurants/${id}`);
