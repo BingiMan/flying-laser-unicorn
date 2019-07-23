@@ -34,22 +34,38 @@ margin-right:auto;
   margin-right: auto;
 }
 
-/
+.team-intro {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-column-gap: 10px;
+  grid-row-gap: 5px;
+  justify-items: center;
+  padding: 30px;
+  margin: 80px;
+  margin-top: 10px;
+  margin-bottom: 25px;
+}
 
 .single-team-img {
-  height: 250px;
-  width: 250px;
+  object-fit: cover;
+  width: 230px; 
+  height: 230px;
+  display: flex;
 }
 
 .team-button {
-  width: 80px;
-  height: 30px;
+  width: 100px;
+  height: 40px;
   text-align: center;
   background-color: transparent;
   border: 2px solid black;
   border-radius: 10px;
+  font-size: 20px;
   text-transform:lowercase;
   font-weight: bolder;
+  align-content: center;
+  margin-top: 10px;
+margin-left: 50px;
 }
 
 .team-button:hover {
