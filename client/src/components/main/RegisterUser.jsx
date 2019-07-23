@@ -1,8 +1,6 @@
-import React from 'react'
+import React from 'react';
 
 export default function RegisterUser(props) {
-
-
   return (
     <div>
       <form>
@@ -11,9 +9,6 @@ export default function RegisterUser(props) {
         <input onChange={props.handleChange} type="text" name="email" value={props.formData.email} />
         <button onClick={props.handleSubmit}>Register</button>
       </form>
-
     </div>
-
-
   )
 }

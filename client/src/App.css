@@ -3,3 +3,11 @@ a {
   text-decoration: none;
   color:black;
 }
+
+.container-popup {
+  background-color:rgba(0,0,0,0.1);
+  color:white;
+  z-index:2;
+  width: 80vw;
+  height: 80vh;
+}

@@ -13,7 +13,8 @@ import RegisterUser from "./components/main/RegisterUser";
 import LoginUser from "./components/main/LoginUser"
 import { CommentsForm } from "./components/main/CommentsForm";
 import Eateries from './components/main/Eateries';
-
+import RegisterContainer from './components/main/RegisterContainer';
+import LoginContainer from './components/main/LoginContainer';
 
 class App extends React.Component {
     constructor(props) {
@@ -74,9 +75,9 @@ class App extends React.Component {
         }));
     }
     handleRegisterSubmit = async (e) => {
-        e.preventDefault();
-        console.log(this.state.registerFormData)
-        const newUser = await createUser(this.state.registerFormData)
+      e.preventDefault();
+      console.log(this.state.registerFormData);
+      const newUser = await createUser(this.state.registerFormData);
     }
     handleLoginChange = (e) => {
         const { target: { name, value } } = e;
@@ -261,7 +262,20 @@ class App extends React.Component {
                     <Link to="/login">Log In</Link>
                     <Link to="/register">Register</Link>
                     <Navigation />
-                </header>
+            </header>
+            
+            /// below is to test login/ register button
+            <section><RegisterContainer
+              formData={this.state.registerFormData}
+              handleChange={this.handleRegisterChange}
+              handleSubmit={this.handleRegisterSubmit} />
+            </section>
+            <section><LoginContainer
+              formData={this.state.loginFormData}
+              handleChange={this.handleLoginChange}
+              handleSubmit={this.handleLoginSubmit} />
+            </section>
+            /// below is to test login/ register button
                 <main>
                     <Route exact path="/" render={() => <Home />} />
                     <Route exact path="/introduction" render={() => <Introduction />} />
