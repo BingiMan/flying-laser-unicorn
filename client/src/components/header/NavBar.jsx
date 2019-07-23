@@ -5,10 +5,6 @@ export function Navigation() {
       <h1>
         this will display all the sections
             </h1>
-      <div className='action_buttons'>
-        <button>Log in</button>
-        <button>Register</button>
-      </div>
     </div>
   )
 }

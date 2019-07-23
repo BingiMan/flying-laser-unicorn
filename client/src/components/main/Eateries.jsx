@@ -4,7 +4,7 @@ class Eateries extends React.Component {
   render() {
     return (
       <div>
-        <h3>Submit Eatery</h3>
+        <h3>Submit a place to eat</h3>
         <form onSubmit={(e) => {
           e.preventDefault();
           this.props.handleEaterySubmit(e);
