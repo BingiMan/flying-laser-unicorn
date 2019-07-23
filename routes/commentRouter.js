@@ -39,4 +39,4 @@ comments.post('/', restrict, async (req, res) => {
   res.json({ comment })
 })
 
-module.exports = comments
+module.exports = comments;

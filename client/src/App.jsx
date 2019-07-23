@@ -62,7 +62,8 @@ class App extends React.Component {
         category: "",
         priceRange: ""
       },
-        eateriesData: [],
+      eateriesData: [],
+    }
   }
 
   async componentDidMount() {
