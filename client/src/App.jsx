@@ -41,6 +41,7 @@ class App extends React.Component {
         name: '',
         address: '',
         category: '',
+        website: '',
         priceRange: null,
       },
       commentUpdateFormData: {
@@ -63,6 +64,7 @@ class App extends React.Component {
         category: "",
         priceRange: ""
       },
+        eateriesData: [],
     };
   }
   handleRegisterChange = (e) => {
@@ -93,18 +95,23 @@ class App extends React.Component {
     const resp = await loginUser(this.state.loginFormData.name, this.state.loginFormData.password)
     this.setState({
       currentUser: resp.data.user.name,
+
+      user: resp.data.user.id,
     });
     console.log(this.state.currentUser)
-  }
+    console.log(this.state.user)
+ }
+  
   handleEateryChange = (e) => {
     const { name, value } = e.target;
     this.setState(prevState => ({
-      eateryformData: {
-        ...prevState.eateryformData,
+      eateryFormData: {
+        ...prevState.eateryFormData,
         [name]: value
       }
     }))
   }
+
   handleCommentUpdate = (ev) => {
     this.setState(prevState => ({
       commentUpdateFormData: {
@@ -120,13 +127,15 @@ class App extends React.Component {
     console.log(eateries)
     this.setState((prevState) => ({
       eateriesData: [...prevState.eateriesData, eateries],
-      eateryformDate: {
+
+      eateryFormData: {
         name: '',
         address: '',
         category: '',
+        website: '',
         priceRange: '',
-      }
-    }))
+      },
+    }));
   }
 
 
@@ -249,7 +258,8 @@ class App extends React.Component {
     }));
     console.log(ev.target.value)
   };
-  
+
+
   render() {
     return (
       <div className="App">
@@ -305,7 +315,9 @@ class App extends React.Component {
           <HireUs />
         </footer>
       </div>
+
     ); 
+
   }
 }
 export default App;
