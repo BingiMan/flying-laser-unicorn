@@ -3,27 +3,29 @@ const URL = 'http://localhost:3000'
 const api = axios.create({
   baseURL: URL,
 });
+
+
 export const fetchEateries = async () => {
-  await api.get(`${URL}/eateries`);
+  await axios.get(`${URL}/restaurants`);
 }
 export const fetchComments = async (id) => {
-  await axios.api(`/eateries/${id}/comments`);
+  await api.get(`/restaurants/${id}/comments`);
 }
 export const eateryInfo = async (id) => {
-  const resp = await api.get(`/eateries/${id}`);
+  const resp = await api.get(`/restaurants/${id}`);
   return resp.data;
 }
 export const updateEatery = async (data) => {
   const { id, ...eateryData } = data;
-  await api.put(`/eateries/${id}`, eateryData)
+  await api.put(`/restaurants/${id}`, eateryData)
 }
 export const updateComment = async (data) => {
   const { id, ...commentData } = data;
-  await api.put(`eateries/${id}`, commentData)
+  await api.put(`comments/${id}`, commentData)
 }
 export const createEatery = async (eatery) => {
   console.log('doesthiswork')
-  const resp = await api.post(`/addEatery`, eatery);
+  const resp = await api.post(`/restaurants`, eatery);
   return resp.data
 }
 export const createComment = async (newComment) => {

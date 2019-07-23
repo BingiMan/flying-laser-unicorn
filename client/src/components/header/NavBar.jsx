@@ -20,12 +20,20 @@ export default class NavigationBar extends React.Component {
       },
       {
         link: '/login',
-        label: 'Loggin',
+        label: 'Login',
       },
       {
         link: '/register',
         label: 'Register',
       },
+      {
+       link: '/comments',
+       label: 'Comments'
+      },
+      {
+        link:'/comments-list',
+        label:'Comment list',
+      }
     ]
   }
 

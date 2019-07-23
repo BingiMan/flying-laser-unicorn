@@ -1,10 +1,10 @@
-const { User, Eatery, Comment } = require('./models');
+const { User, Restaurant, Comment } = require('./models');
 
 const main = async () => {
   await User.destroy({
     where: {}
   });
-  await Eatery.destroy({
+  await Restaurant.destroy({
     where: {}
   });
   await Comment.destroy({

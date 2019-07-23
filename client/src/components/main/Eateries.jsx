@@ -1,7 +1,7 @@
 import React from 'react';
 
 class Eateries extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
   }
 
@@ -48,34 +48,34 @@ class Eateries extends React.Component {
           <label htmlFor="price_range">Price Range</label>
           <input
             type="radio"
-            name="price_range"
+            name="priceRange"
             value="1"
             onChange={this.props.handleEateryChange}
-            id="price_range" /> <span>1</span>
+            id="priceRange" /> <span>1</span>
           <input
             type="radio"
-            name="price_range"
+            name="priceRange"
             value="2"
             onChange={this.props.handleEateryChange}
-            id="price_range" /> <span>2</span>
+            id="priceRange" /> <span>2</span>
           <input
             type="radio"
-            name="price_range"
+            name="priceRange"
             value="3"
             onChange={this.props.handleEateryChange}
-            id="price_range" /> <span>3</span>
+            id="priceRange" /> <span>3</span>
           <input
             type="radio"
-            name="price_range"
+            name="priceRange"
             value="4"
             onChange={this.props.handleEateryChange}
-            id="price_range" /> <span>4</span>
+            id="priceRange" /> <span>4</span>
           <input
             type="radio"
-            name="price_range"
+            name="priceRange"
             value="5"
             onChange={this.props.handleEateryChange}
-            id="price_range" /> <span>5</span>
+            id="priceRange" /> <span>5</span>
 
           <br />
 

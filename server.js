@@ -8,7 +8,7 @@ const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')
 
 const comments = require('./routes/commentRouter');
-const eateries = require('./routes/eateryRouter');
+const restaurants = require('./routes/eateryRouter');
 const users = require('./routes/userRouter')
 
 const app = express();
@@ -21,7 +21,7 @@ app.use(bodyParser.json());
 
 app.use('/users', users);
 app.use('/comments', comments);
-app.use('/eateries', eateries)
+app.use('/restaurants', restaurants);
 
 app.listen(PORT, () => {
   console.log(`WeedleyDee this server's for me ${PORT}`);
