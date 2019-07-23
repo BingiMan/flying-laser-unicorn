@@ -292,11 +292,12 @@ class App extends React.Component {
                         handleSubmit={this.handleEateryUpdateSubmit}
                         handleCancel={this.handleEateryCancel}
                     />} />
-                    {this.state.currentEatery &&
-                    <SingleEatery
-                        currentEatery={this.state.currentEatery}
-                        comments={this.state.comments}
-                    />}
+                    // TODO: Ask why this was  here?
+                    {/*{this.state.currentEatery &&*/}
+                    {/*<SingleEatery*/}
+                    {/*    currentEatery={this.state.currentEatery}*/}
+                    {/*    comments={this.state.comments}*/}
+                    {/*/>}*/}
                     <Route path="/login" exact render={() => <LoginUser
                         handleChange={this.handleLoginChange}
                         handleSubmit={this.handleLoginSubmit}

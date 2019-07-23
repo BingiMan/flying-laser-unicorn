@@ -15,15 +15,15 @@ export default class NavigationBar extends React.Component {
                 label: 'Introduction'
             },
             {
-                link: '/eateries',
-                label: 'Eatery List',
+                link: '/addEatery',
+                label: 'Eatery',
             },
             {
-                link: '',
+                link: '/login',
                 label: 'Loggin',
             },
             {
-                link: '',
+                link: '/register',
                 label: 'Register',
             },
         ]
