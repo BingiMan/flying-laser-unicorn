@@ -39,6 +39,7 @@ class App extends React.Component {
         name: '',
         address: '',
         category: '',
+        website: '',
         priceRange: null,
       },
       commentUpdateFormData: {
@@ -60,8 +61,8 @@ class App extends React.Component {
         address: "",
         category: "",
         priceRange: ""
-      }
-    };
+      },
+        eateriesData: [],
   }
 
   async componentDidMount() {
@@ -114,20 +115,29 @@ class App extends React.Component {
     const resp = await loginUser(this.state.loginFormData.name, this.state.loginFormData.password)
     this.setState({
       currentUser: resp.data.user.name,
+
+      user: resp.data.user.id,
     });
     console.log(this.state.currentUser)
   }
-  // Above is Login From 
-
-  //// Above is Update Eatery
+ 
   handleEateryChange = (e) => {
     const { name, value } = e.target;
     this.setState(prevState => ({
-      eateryformData: {
-        ...prevState.eateryformData,
+      eateryFormData: {
+        ...prevState.eateryFormData,
         [name]: value
       }
     }))
+  }
+
+  handleCommentUpdate = (ev) => {
+    this.setState(prevState => ({
+      commentUpdateFormData: {
+        ...prevState.commentUpdateFormData,
+        id: ev.target.name
+      }
+    }));
   }
 
   handleEaterySubmit = async (ev) => {
@@ -136,13 +146,15 @@ class App extends React.Component {
     console.log(eateries)
     this.setState((prevState) => ({
       eateriesData: [...prevState.eateriesData, eateries],
-      eateryformDate: {
+
+      eateryFormData: {
         name: '',
         address: '',
         category: '',
+        website: '',
         priceRange: '',
-      }
-    }))
+      },
+    }));
   }
 
   handleCommentUpdate = (ev) => {
@@ -275,7 +287,6 @@ class App extends React.Component {
   };
 
 
-
   render() {
     return (
       <div className="App">
@@ -325,6 +336,7 @@ class App extends React.Component {
           <HireUs />
         </footer>
       </div>
+
     );
   }
 }

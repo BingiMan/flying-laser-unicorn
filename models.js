@@ -12,9 +12,10 @@ const User = sequelize.define('user', {
   name: Sequelize.STRING,
   email: Sequelize.STRING,
   password_digest: Sequelize.STRING,
+
 });
 
-const Eatery = sequelize.define('eatery', {
+const Restaurant = sequelize.define('restaurant', {
   name: Sequelize.STRING,
   address: Sequelize.STRING,
   category: Sequelize.STRING,
@@ -29,14 +30,15 @@ const Comment = sequelize.define('comment', {
 });
 
 User.hasMany(Comment, { onDelete: 'cascade' });
+User.hasMany(Restaurant)
 Comment.belongsTo(User);
-Eatery.belongsTo(User);
-Eatery.hasMany(Comment, { onDelete: 'cascade' });
-Comment.belongsTo(Eatery);
+Restaurant.belongsTo(User);
+Restaurant.hasMany(Comment, { onDelete: 'cascade' });
+Comment.belongsTo(Restaurant);
 
 module.exports = {
   sequelize,
   User,
-  Eatery,
+  Restaurant,
   Comment,
 };
