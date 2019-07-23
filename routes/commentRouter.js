@@ -2,7 +2,7 @@ const { Router } = require('express');
 const { restrict, genToken } = require('../auth')
 
 const comments = Router();
-const { Comment } = require('../models');
+const { Comment, Restaurant } = require('../models');
 
 
 comments.get('/', async (req, res) => {
@@ -30,13 +30,16 @@ comments.put('/:id', restrict, async (req, res) => {
 });
 
 
-comments.post('/', restrict, async (req, res) => {
-  const { message, yeanay } = req.body
-  const comment = await Comment.create({
-    message: 'meepbeep',
-    yaynay: false,
-  });
-  res.json({ comment })
-})
+// comments.post('/', restrict, async (req, res) => { COMMENT POST MOVED TO RESTAURANTS!!!!!!
+//   const { message, yaynay } = req.body
+//   const restaurant = await Restaurant.findByPk(2)
+//   const comment = await Comment.create({
+//     message: 'meepbeep',
+//     yaynay: false,
+//   });
+//   await restaurant.setRestaurant(comment)
+//   await restaurant.setUser(res.locals.user.id)
+//   res.json({ comment })
+// })
 
 module.exports = comments;

@@ -24,8 +24,7 @@ const Restaurant = sequelize.define('restaurant', {
 
 const Comment = sequelize.define('comment', {
   message: Sequelize.TEXT,
-  yaynay: Sequelize.BOOLEAN,
-  //creatorUserid: Sequelize.INTEGER
+  yaynay: Sequelize.STRING,
 });
 
 User.hasMany(Comment, { onDelete: 'cascade' });

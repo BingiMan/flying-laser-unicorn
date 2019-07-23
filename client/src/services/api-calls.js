@@ -28,8 +28,9 @@ export const createEatery = async (eatery) => {
   const resp = await api.post(`/restaurants`, eatery);
   return resp.data
 }
-export const createComment = async (newComment) => {
-  const resp = await api.post(`/comments`, newComment)
+export const createComment = async (data) => {
+  const { id, ...newComment } = data;
+  const resp = await api.post(`/restaurants/${id}/comments`, newComment)
   return resp.data;
 }
 export const storeToken = (token) => {
