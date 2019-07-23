@@ -85,6 +85,8 @@ class Eateries extends React.Component {
             // value={this.props.EateryformData.category}
             name="category">
             <option
+              value="start">Please select one</option>
+            <option
               value="Ramen">Ramen</option>
             <option
               value="Vegan">Vegan</option>
