@@ -13,8 +13,7 @@ import RegisterUser from "./components/main/RegisterUser";
 import LoginUser from "./components/main/LoginUser"
 import { CommentsForm } from "./components/main/CommentsForm";
 import Eateries from './components/main/Eateries';
-import RegisterContainer from './components/main/RegisterContainer';
-import LoginContainer from './components/main/LoginContainer';
+
 
 class App extends React.Component {
   constructor(props) {
@@ -33,8 +32,7 @@ class App extends React.Component {
         password: '',
         email: ''
       },
-      user: '',
-      currentUser: "",
+      currentUser: null,
       comments: [],
       eateries: [],
       eateryFormData: {
@@ -65,8 +63,27 @@ class App extends React.Component {
         priceRange: ""
       },
         eateriesData: [],
-    };
   }
+
+  async componentDidMount() {
+    if (this.state.currentEatery.id) {
+      const comments = await fetchComments(this.state.currentEatery.id);
+      const eatery = await eatery(this.state.currentEatery.id);
+      const { name, address, category, priceRange } = eatery;
+      this.setState(prevState => ({
+        currentEatery: {
+          ...prevState.currentEatery,
+          name: name,
+          address: address,
+          category: category,
+          priceRange
+        },
+        comments: comments
+      }))
+    }
+  }
+
+  // Below is Reigister From 
   handleRegisterChange = (e) => {
     const { target: { name, value } } = e;
     this.setState(prevState => ({
@@ -81,6 +98,8 @@ class App extends React.Component {
     console.log(this.state.registerFormData);
     const newUser = await createUser(this.state.registerFormData);
   }
+
+  // Above is Login From 
   handleLoginChange = (e) => {
     const { target: { name, value } } = e;
     this.setState(prevState => ({
@@ -90,6 +109,7 @@ class App extends React.Component {
       }
     }));
   }
+
   handleLoginSubmit = async (e) => {
     e.preventDefault()
     const resp = await loginUser(this.state.loginFormData.name, this.state.loginFormData.password)
@@ -99,9 +119,8 @@ class App extends React.Component {
       user: resp.data.user.id,
     });
     console.log(this.state.currentUser)
-    console.log(this.state.user)
- }
-  
+  }
+ 
   handleEateryChange = (e) => {
     const { name, value } = e.target;
     this.setState(prevState => ({
@@ -138,7 +157,14 @@ class App extends React.Component {
     }));
   }
 
-
+  handleCommentUpdate = (ev) => {
+    this.setState(prevState => ({
+      commentUpdateFormData: {
+        ...prevState.commentUpdateFormData,
+        id: ev.target.name
+      }
+    }));
+  }
   async componentDidMount() {
     if (this.state.currentEatery.id) {
       const comments = await fetchComments(this.state.currentEatery.id);
@@ -234,7 +260,7 @@ class App extends React.Component {
       }
     }))
   }
-  //above is eatieryList and commentList function stuff//
+
   handleCommentFormSubmit = async (ev) => {
     ev.preventDefault();
     console.log("clicked");
@@ -245,8 +271,9 @@ class App extends React.Component {
         yaynay: '',
       }
     })
-    console.log(newComment)
+    console.log(newComment);
   }
+
   handleCommentFormChange = (ev) => {
     ev.preventDefault();
     const { name, value } = ev.target;
@@ -256,7 +283,7 @@ class App extends React.Component {
         [name]: value
       }
     }));
-    console.log(ev.target.value)
+    console.log(ev.target.value);
   };
 
 
@@ -296,12 +323,6 @@ class App extends React.Component {
             handleSubmit={this.handleEateryUpdateSubmit}
             handleCancel={this.handleEateryCancel}
           />} />
-          {/*TODO: Ask why this was  here?*/}
-          {/*{this.state.currentEatery &&*/}
-          {/*<SingleEatery*/}
-          {/*    currentEatery={this.state.currentEatery}*/}
-          {/*    comments={this.state.comments}*/}
-          {/*/>}*/}
           <Route path="/login" exact render={() => <LoginUser
             handleChange={this.handleLoginChange}
             handleSubmit={this.handleLoginSubmit}
@@ -316,8 +337,7 @@ class App extends React.Component {
         </footer>
       </div>
 
-    ); 
-
+    );
   }
 }
 export default App;

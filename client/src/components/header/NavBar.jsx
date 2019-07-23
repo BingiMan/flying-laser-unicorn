@@ -1,6 +1,5 @@
-
 import React from 'react';
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 export default class NavigationBar extends React.Component {
@@ -22,7 +21,7 @@ export default class NavigationBar extends React.Component {
       },
       {
         link: '/login',
-        label: 'Loggin',
+        label: 'Login',
       },
       {
         link: '/register',
