@@ -11,6 +11,7 @@ const main = async () => {
     where: {}
   });
 
+
   const userOne = await User.create({
     name: 'Misty',
     email: 'pokemans@ketchum.meh',

@@ -1,6 +1,6 @@
 const { Router } = require('express');
 const restaurants = Router();
-const { Restaurant } = require('../models');
+const { Restaurant, Comment } = require('../models');
 const { restrict, genToken } = require('../auth')
 
 restaurants.get('/', async (req, res) => {
@@ -40,8 +40,8 @@ restaurants.post('/', restrict, async (req, res) => {
     price_range: priceRange,
     website: website,
     category: category,
-    userId: res.locals.user.id,
   })
+  await restaurant.setUser(res.locals.user.id)
   res.json({ restaurant })
 })
 
@@ -61,6 +61,17 @@ restaurants.delete('/:id', restrict, async (req, res) => {
   }
 });
 
+restaurants.post('/:restaurant_id/comments', restrict, async (req, res) => {
+  const { message, yaynay } = req.body
+  const restaurant = await Restaurant.findByPk(req.params.restaurant_id)
+  const comment = await Comment.create({
+    message: message,
+    yaynay: yaynay,
+  });
+  await comment.setRestaurant(restaurant)
+  await comment.setUser(res.locals.user.id)
+  res.json({ comment })
+})
 
 
 
