@@ -13,7 +13,8 @@ import RegisterUser from "./components/main/RegisterUser";
 import LoginUser from "./components/main/LoginUser"
 import { CommentsForm } from "./components/main/CommentsForm";
 import Eateries from './components/main/Eateries';
-
+import RegisterContainer from './components/main/RegisterContainer';
+import LoginContainer from './components/main/LoginContainer';
 
 class App extends React.Component {
     constructor(props) {
@@ -74,9 +75,9 @@ class App extends React.Component {
         }));
     }
     handleRegisterSubmit = async (e) => {
-        e.preventDefault();
-        console.log(this.state.registerFormData)
-        const newUser = await createUser(this.state.registerFormData)
+      e.preventDefault();
+      console.log(this.state.registerFormData);
+      const newUser = await createUser(this.state.registerFormData);
     }
     handleLoginChange = (e) => {
         const { target: { name, value } } = e;
@@ -252,17 +253,9 @@ class App extends React.Component {
         return (
             <div className="App">
                 <header>
-                    {/*<Link to="/"> Home </Link>*/}
-                    {/*<Link to="/introduction"> Introduction </Link>*/}
-                    {/*<Link to='/addEatery'> Add Eatery</Link>*/}
-                    {/*<Link to="/comments"> Comments </Link>*/}
-                    {/*<Link to="/comments-list"> Comments List </Link>*/}
-                    {/*<Link to="/eateries-list"> Eatery List </Link>*/}
-                    {/*<Link to="/login">Log In</Link>*/}
-                    {/*<Link to="/register">Register</Link>*/}
-
                     <NavigationBar />
                 </header>
+
                 <main>
                     <Route exact path="/" render={() => <Home />} />
                     <Route exact path="/introduction" render={() => <Introduction />} />
