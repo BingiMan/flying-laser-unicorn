@@ -13,6 +13,7 @@ export default function SingleEatery(props) {
           <p>Category: {props.currentEatery.category}</p>
           <p>Price Range: {props.currentEatery.PriceRange}</p>
         </div>)}
+      <CommentForm />
       <CommentsList
         comments={props.comments}
         commentUpdateFormData={props.commentUpdateFormData}
