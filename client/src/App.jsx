@@ -190,11 +190,11 @@ class App extends React.Component {
   }
 
 
-  handleDetail = (ev) => {
+  handleDetail = (id) => {
     this.setState(prevState => ({
       currentEatery: {
         ...prevState.currentEatery,
-        id: ev.target.name
+        id: id
       }
     }));
   }
@@ -323,19 +323,26 @@ class App extends React.Component {
             eateries={this.state.eateries}
             eateryUpdateFormData={this.state.eateryUpdateFormData}
             handleDetail={this.handleDetail}
-            handleUpdate={this.handleEateryUpdate}
-            handleChange={this.handleEateryUpdateChange}
-            handleSubmit={this.handleEateryUpdateSubmit}
-            handleCancel={this.handleEateryCancel}
           />} />
+
+          <Route exact path='/addEatery' render={() => <Eateries
+            handleEateryChange={this.handleEateryChange}
+            handleEaterySubmit={this.handleEaterySubmit}
+            eateryFormData={this.state.eateryFormData}
+          />} />)}
           <Route path="/login" exact render={() => <LoginUser
             handleChange={this.handleLoginChange}
             handleSubmit={this.handleLoginSubmit}
             formData={this.state.loginFormData} />} />
-          <Route path="/register" exact render={() => <RegisterUser
-            formData={this.state.registerFormData}
-            handleChange={this.handleRegisterChange}
-            handleSubmit={this.handleRegisterSubmit} />} />
+        
+          <Route path="/single-eatery/:id" exact render={(props) => <SingleEatery
+            {...props}
+            currentEatery={this.state.currentEatery}
+            comments={this.state.comments}
+            handleChange={this.handleEateryUpdateChange}
+            handleSubmit={this.handleEateryUpdateSubmit}
+            handleCancel={this.handleEateryCancel}
+            />} />
         </main>
         <footer>
           <HireUs />
