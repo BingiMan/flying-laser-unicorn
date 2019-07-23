@@ -19,13 +19,13 @@ const Eatery = sequelize.define('eatery', {
   address: Sequelize.STRING,
   category: Sequelize.STRING,
   website: Sequelize.STRING,
-  price_range: Sequelize.STRING,
+  price_range: Sequelize.STRING
 });
 
 const Comment = sequelize.define('comment', {
   message: Sequelize.TEXT,
   yaynay: Sequelize.BOOLEAN,
-
+  //creatorUserid: Sequelize.INTEGER
 });
 
 User.hasMany(Comment, { onDelete: 'cascade' });

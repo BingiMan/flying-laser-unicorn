@@ -1,16 +1,49 @@
 import React from 'react'
+import {Link} from "react-router-dom";
 
+export default class NavigationBar extends React.Component {
+    constructor(props) {
+        super(props);
 
-export function Navigation() {
-  return (
-    <div>
-      <h1>
-        this will display all the sections
-            </h1>
-      <div className='action_buttons'>
-        <button>Log in</button>
-        <button>Register</button>
-      </div>
-    </div>
-  )
+        this.tabs = [
+            {
+                link: '/',
+                label: 'Home',
+            },
+            {
+                link: '/introduction',
+                label: 'Introduction'
+            },
+            {
+                link: '/addEatery',
+                label: 'Eatery',
+            },
+            {
+                link: '/login',
+                label: 'Loggin',
+            },
+            {
+                link: '/register',
+                label: 'Register',
+            },
+        ]
+    }
+
+    linkOrButton(tab) {
+        if (tab.link) {
+            return <Link to={tab.link}>{tab.label}</Link>
+        } else {
+            return <button>{tab.label}</button>
+        }
+    }
+
+    render() {
+        return (
+            <nav>
+                {
+                    this.tabs.map(tab => this.linkOrButton(tab))
+                }
+            </nav>
+        );
+    }
 }
