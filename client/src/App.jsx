@@ -266,7 +266,7 @@ class App extends React.Component {
   handleCommentFormSubmit = async (ev) => {
     ev.preventDefault();
     console.log("clicked");
-    const newComment = await createComment({...this.state.commentFormData, id: this.state.currentEatery.id);
+    const newComment = await createComment({ ...this.state.commentFormData, id: this.state.currentEatery.id });
     this.setState({
       commentFormData: {
         message: '',
