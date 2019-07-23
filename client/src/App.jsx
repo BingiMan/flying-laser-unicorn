@@ -8,7 +8,7 @@ import Introduction from "./components/main/Introduction";
 import SingleEatery from './components/main/SingleEatery';
 import EateriesList from './components/main/EateriesList';
 import HireUs from "./components/footer/HireUs";
-import { Navigation } from "./components/header/NavBar";
+import NavigationBar from "./components/header/NavBar";
 import RegisterUser from "./components/main/RegisterUser";
 import LoginUser from "./components/main/LoginUser"
 import { CommentsForm } from "./components/main/CommentsForm";
@@ -253,29 +253,9 @@ class App extends React.Component {
         return (
             <div className="App">
                 <header>
-                    <Link to="/"> Home </Link>
-                    <Link to="/introduction"> Introduction </Link>
-                    <Link to='/addEatery'> Add Eatery</Link>
-                    <Link to="/comments"> Comments </Link>
-                    <Link to="/comments-list"> Comments List </Link>
-                    <Link to="/eateries-list"> Eatery List </Link>
-                    <Link to="/login">Log In</Link>
-                    <Link to="/register">Register</Link>
-                    <Navigation />
-            </header>
-            
-            /// below is to test login/ register button
-            <section><RegisterContainer
-              formData={this.state.registerFormData}
-              handleChange={this.handleRegisterChange}
-              handleSubmit={this.handleRegisterSubmit} />
-            </section>
-            <section><LoginContainer
-              formData={this.state.loginFormData}
-              handleChange={this.handleLoginChange}
-              handleSubmit={this.handleLoginSubmit} />
-            </section>
-            /// below is to test login/ register button
+                    <NavigationBar />
+                </header>
+
                 <main>
                     <Route exact path="/" render={() => <Home />} />
                     <Route exact path="/introduction" render={() => <Introduction />} />
@@ -305,11 +285,12 @@ class App extends React.Component {
                         handleSubmit={this.handleEateryUpdateSubmit}
                         handleCancel={this.handleEateryCancel}
                     />} />
-                    {this.state.currentEatery &&
-                    <SingleEatery
-                        currentEatery={this.state.currentEatery}
-                        comments={this.state.comments}
-                    />}
+                     {/*TODO: Ask why this was  here?*/}
+                    {/*{this.state.currentEatery &&*/}
+                    {/*<SingleEatery*/}
+                    {/*    currentEatery={this.state.currentEatery}*/}
+                    {/*    comments={this.state.comments}*/}
+                    {/*/>}*/}
                     <Route path="/login" exact render={() => <LoginUser
                         handleChange={this.handleLoginChange}
                         handleSubmit={this.handleLoginSubmit}
