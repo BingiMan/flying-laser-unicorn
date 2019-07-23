@@ -62,17 +62,21 @@ class App extends React.Component {
         category: "",
         priceRange: ""
       },
-      eateriesData: [],
+      eateriesData: []
     }
   }
-  async componentDidMount() {
-    const eateries = await fetchEateries();
+
+  componentDidMount = async () => {
+    const resp = await fetchEateries();
+    const eateries = resp.restaurants;
+    this.setState({
+      eateries: eateries
+    })
     if (this.state.currentEatery.id) {
       const comments = await fetchComments(this.state.currentEatery.id);
       const eatery = await eatery(this.state.currentEatery.id);
       const { name, address, category, priceRange } = eatery;
       this.setState(prevState => ({
-        eateries: eateries,
         currentEatery: {
           ...prevState.currentEatery,
           name: name,
