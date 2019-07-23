@@ -33,6 +33,10 @@ export default class NavigationBar extends React.Component {
       {
         link:'/comments-list',
         label:'Comment list',
+      },
+      {
+        link: '/eateries-list',
+        label:'Eatery List'
       }
     ]
   }
