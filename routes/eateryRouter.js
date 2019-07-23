@@ -8,8 +8,8 @@ restaurants.get('/', async (req, res) => {
   res.json({ restaurants });
 });
 
-restaurants.get('/', async (req, res) => {
-  const restaurant = await Restaurant.findByPk();
+restaurants.get('/:id', async (req, res) => {
+  const restaurant = await Restaurant.findByPk(req.params.id);
   res.json({ restaurant })
 });
 
@@ -45,7 +45,21 @@ restaurants.post('/', restrict, async (req, res) => {
   res.json({ restaurant })
 })
 
-
+restaurants.delete('/:id', restrict, async (req, res) => {
+  try {
+    const id = req.params.id;
+    const restaurant = await Restaurant.destroy(
+      {
+        where: {
+          id,
+        },
+      });
+    res.json(restaurant);
+  } catch (e) {
+    console.log(e.message);
+    res.status(500).send(e.message);
+  }
+});
 
 
 

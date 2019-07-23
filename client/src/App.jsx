@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { createUser, loginUser, createEatery, createComment, fetchComments } from './services/api-calls'
+import { createUser, loginUser, createEatery, createComment, fetchComments, fetchEateries } from './services/api-calls'
 import { Route, Link } from 'react-router-dom'
 import Home from './components/main/Home';
 import CommentsList from './components/main/CommentsList'
@@ -66,11 +66,13 @@ class App extends React.Component {
     }
   }
   async componentDidMount() {
+    const eateries = await fetchEateries();
     if (this.state.currentEatery.id) {
       const comments = await fetchComments(this.state.currentEatery.id);
       const eatery = await eatery(this.state.currentEatery.id);
       const { name, address, category, priceRange } = eatery;
       this.setState(prevState => ({
+        eateries: eateries,
         currentEatery: {
           ...prevState.currentEatery,
           name: name,
