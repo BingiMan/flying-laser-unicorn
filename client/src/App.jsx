@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { createUser, loginUser, createEatery, fetchEateries, storeToken } from './services/api-calls'
+import { createUser, loginUser, createEatery, fetchEateries, storeToken, logoutUser } from './services/api-calls'
 import { Route, Link } from 'react-router-dom'
 import Home from './components/main/Home';
 import CommentsList from './components/main/CommentsList'
@@ -10,7 +10,7 @@ import EateriesList from './components/main/EateriesList';
 import HireUs from "./components/footer/HireUs";
 import NavigationBar from "./components/header/NavBar";
 import NavBarSide from "./components/header/NavBarSide";
-import  getTokenFromStorage  from './auth';
+import getTokenFromStorage from './auth';
 import RegisterUser from "./components/main/RegisterUser";
 import LoginUser from "./components/main/LoginUser"
 import { CommentsForm } from "./components/main/CommentsForm";
@@ -152,7 +152,14 @@ class App extends React.Component {
     }));
   }
 
-
+  // below is added for log out. wed night ////////////////////////////////////////
+  handleLogOut = () => {
+    this.setState({
+      currentUser: null
+    })
+    logoutUser();
+  }
+  // above is added for log out. wed night ////////////////////////////////////////
 
 
 
@@ -162,7 +169,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <header>
-          <NavigationBar />
+          <NavigationBar currentUser={this.state.currentUser} handleLogOut={this.handleLogOut} />
         </header>
 
         <main>

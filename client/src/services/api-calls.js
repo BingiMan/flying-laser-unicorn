@@ -38,6 +38,7 @@ export const storeToken = (token) => {
   localStorage.setItem('authToken', token);
   api.defaults.headers.common.authorization = `Bearer ${token}`;
 }
+
 export const createUser = async (userData) => {
   const resp = await axios.post(`${URL}/users`, userData);
   storeToken(resp.data.token)
@@ -58,6 +59,11 @@ export const deleteComment = async (id) => {
   return resp.data;
 }
 //above is added Tuesday night by Tibby
+
+export const logoutUser = () => {
+  localStorage.setItem('authToken', '');
+  api.defaults.headers.common.authorization = ``;
+}
 
 
 

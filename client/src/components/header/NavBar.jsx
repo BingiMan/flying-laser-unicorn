@@ -49,17 +49,25 @@ export default class NavigationBar extends React.Component {
       <nav>
         <NavBarSide />
         <div className="nav-wrapper">
-            <div className="nav-wrapper-left">
+          <div className="nav-wrapper-left">
             <Link to="/"> Home </Link>
             <Link to="/introduction"> Introduction </Link>
             <Link to="/addEatery"> Add Eatery </Link>
             <Link to="/eateries-list"> Eateries </Link>
-            </div>
-            <div className="nav-wrapper-right">
-            <Link to="/Login"> Login </Link>
-            <Link to="/Register"> Register </Link>
-            </div>
           </div>
+          {this.props.currentUser === null &&
+            (<div className="nav-wrapper-right">
+              <Link to="/Login"> Login </Link>
+              <Link to="/Register"> Register </Link>
+            </div>)}
+          {this.props.currentUser !== null &&
+            <div>Hi, {this.props.currentUser.charAt(0).toUpperCase() + this.props.currentUser.slice(1)} ❤ </div>
+          }
+          {this.props.currentUser !== null &&
+            <div onClick={this.props.handleLogOut}>Log Out</div>
+          }
+
+        </div>
 
       </nav>
     );
