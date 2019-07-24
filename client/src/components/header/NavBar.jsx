@@ -34,10 +34,10 @@ export default class NavigationBar extends React.Component {
         link: '/comments',
         label: 'Comments'
       },
-      {
-        link: '/comments-list',
-        label: 'Comment list',
-      }
+      // {
+      //   link: '/comments-list',
+      //   label: 'Comment list',
+      // }
     ]
   }
 

@@ -55,7 +55,6 @@ class App extends React.Component {
     this.setState({
       eateries: eateries
     })
-    }
     console.log(`Auth Token: ${getTokenFromStorage()}`)
   }
 
@@ -181,6 +180,10 @@ class App extends React.Component {
             handleChange={this.handleLoginChange}
             handleSubmit={this.handleLoginSubmit}
             formData={this.state.loginFormData} />} />
+          <Route path="/register" exact render={() => <RegisterUser
+              formData={this.state.registerFormData}
+              handleChange={this.handleRegisterChange}
+              handleSubmit={this.handleRegisterSubmit} />} />
         
           <Route path="/single-eatery/:id" exact render={(props) => <SingleEatery
             {...props}

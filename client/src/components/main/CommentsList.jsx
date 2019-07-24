@@ -7,7 +7,7 @@ export default function CommentsList(props) {
       {props.comments.map(comment =>
         <div className="comment" key={comment.id}>
           <h3>{comment.yaynay.toString()}</h3>
-          <p1> {comment.message} </p1>
+          <h1> {comment.message} </h1>
           {props.editingId === null &&
             <button name={comment.id} onClick={props.handleDelete}> Delete </button>}
           {props.editingId === null &&

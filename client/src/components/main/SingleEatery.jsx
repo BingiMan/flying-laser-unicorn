@@ -19,7 +19,7 @@ class SingleEatery extends React.Component {
     this.state = {
       updating: false,
       commenting: false,
-      updatingcommentId: null,
+      updatingcommentId: '',
       eateryData: {
         name: "",
         address: "",
