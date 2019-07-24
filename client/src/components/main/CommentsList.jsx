@@ -8,9 +8,9 @@ export default function CommentsList(props) {
         <div className="comment" key={comment.id}>
           <h3>{comment.yaynay.toString()}</h3>
           <h1> {comment.message} </h1>
-          {props.editingId === null &&
+          {props.editingId === '' &&
             <button name={comment.id} onClick={props.handleDelete}> Delete </button>}
-          {props.editingId === null &&
+          {props.editingId === '' &&
             <button onClick={() => props.handleUpdate(comment.id)}> Update </button>}
           {props.updatingId === comment.id &&
             (<form>
