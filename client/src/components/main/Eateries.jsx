@@ -4,9 +4,13 @@ class Eateries extends React.Component {
   constructor(props) {
     super(props);
   }
-  routeChange() {
-    let path = `/eateries-list`;
-    // this.props.history.push(path);
+
+  handleRedirect = async (e) => {
+    e.preventDefault()
+    await this.props.handleEaterySubmit(e)
+
+
+    this.props.history.push('/eateries-list')
   }
 
   render() {
@@ -18,8 +22,8 @@ class Eateries extends React.Component {
         </div>
         <form onSubmit={(e) => {
           e.preventDefault();
-          this.props.handleEaterySubmit(e);
-        }}>
+          this.handleRedirect(e);
+        }} onSubmit={this.handleRedirect}>
 
 
           <label htmlFor="name">Name</label>
@@ -111,7 +115,7 @@ class Eateries extends React.Component {
               value="deli">Deli</option>
           </select>
           <br />
-          <button onClick={this.routeChange} className='submit-resto'>Submit Eatery</button>
+          <button className='submit-resto'>Submit Eatery</button>
         </form>
       </div >
     );
