@@ -23,10 +23,9 @@ export const updateEatery = async (data) => {
 }
 export const updateComment = async (data) => {
   const { id, ...commentData } = data;
-  await api.put(`comments/${id}`, commentData)
+  await api.put(`/comments/${id}`, commentData)
 }
 export const createEatery = async (eatery) => {
-  console.log('doesthiswork')
   const resp = await api.post(`/restaurants`, eatery);
   return resp.data
 }
@@ -52,6 +51,10 @@ export const loginUser = async (name, password) => {
 //below is added Tuesday night by Tibby
 export const deleteEatery = async (id) => {
   const resp = await api.delete(`/restaurants/${id}`);
+  return resp.data;
+}
+export const deleteComment = async (id) => {
+  const resp = await api.delete(`/comments/${id}`);
   return resp.data;
 }
 //above is added Tuesday night by Tibby

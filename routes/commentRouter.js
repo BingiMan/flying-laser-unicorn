@@ -10,12 +10,11 @@ comments.get('/', async (req, res) => {
   res.json({ comments });
 });
 
-comments.put('/:id', restrict, async (req, res) => {
+comments.put('/:id', async (req, res) => {
   try {
     const id = req.params.id;
     console.log(id);
     const data = req.body;
-
     await Comment.update(
       data,
       {
@@ -48,6 +47,14 @@ comments.get('/:id', async (req, res) => {
   const comments = await Comment.findAll({
     where: {
       restaurant_id: req.params.id,
+    },
+  });
+  res.json({ comments });
+});
+comments.delete('/:id', async (req, res) => {
+  const comments = await Comment.destroy({
+    where: {
+      id: req.params.id,
     },
   });
   res.json({ comments });
