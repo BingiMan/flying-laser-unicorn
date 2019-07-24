@@ -23,6 +23,7 @@ class Eateries extends React.Component {
           <input
             type="text"
             name="name"
+            placeholder="enter the name of the restaurant"
             // value={this.props.EateryformData.name}
             onChange={this.props.handleEateryChange}
             id="name" />
@@ -33,6 +34,7 @@ class Eateries extends React.Component {
           <input
             type="text"
             name="address"
+            placeholder='enter the address of the restaurant'
             // value={this.props.EateryformData.address}
             onChange={this.props.handleEateryChange}
             id="address" />
@@ -43,6 +45,7 @@ class Eateries extends React.Component {
           <input
             type="url"
             name="website"
+            placeholder='enter the website of the restaurant'
             // value={this.props.EateryformData.address}
             onChange={this.props.handleEateryChange}
             id="website" />
@@ -56,36 +59,29 @@ class Eateries extends React.Component {
             name="priceRange"
             value="1"
             onChange={this.props.handleEateryChange}
-            id="priceRange" /> <span>1</span>
+            id="priceRange" /> <span>Basically free</span>
           <input
             type="radio"
             name="priceRange"
             value="2"
             onChange={this.props.handleEateryChange}
-            id="priceRange" /> <span>2</span>
+            id="priceRange" /> <span>Cheap as chips</span>
           <input
             type="radio"
             name="priceRange"
             value="3"
             onChange={this.props.handleEateryChange}
-            id="priceRange" /> <span>3</span>
+            id="priceRange" /> <span>Won't break the bank</span>
           <input
             type="radio"
             name="priceRange"
             value="4"
             onChange={this.props.handleEateryChange}
-            id="priceRange" /> <span>4</span>
-          <input
-            type="radio"
-            name="priceRange"
-            value="5"
-            onChange={this.props.handleEateryChange}
-            id="priceRange" /> <span>5</span>
-
+            id="priceRange" /> <span>Fancy AF</span>
           <br />
 
           <label htmlFor="category">Category</label>
-          <select
+          <select className='categoryEats'
             onChange={this.props.handleEateryChange}
             // value={this.props.EateryformData.category}
             name="category">
