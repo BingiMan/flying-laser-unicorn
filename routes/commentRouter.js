@@ -31,16 +31,16 @@ comments.put('/:id', restrict, async (req, res) => {
   }
 });
 
-// Tibby tuesday night asks: why was below commented out
-comments.post('/', async (req, res) => {
-  const { id, ...data } = req.body;
-  const restaurant = await Restaurant.findByPk(id);
-  const comment = await Comment.create(data);
-  await restaurant.setRestaurant(comment);
-  await restaurant.setUser(res.locals.user.id);
-  res.json({ comment });
-});
-// Tibby tuesday night asks: why was above commented out
+
+// comments.post('/', async (req, res) => {
+//   const { id, ...data } = req.body;
+//   const restaurant = await Restaurant.findByPk(id);
+//   const comment = await Comment.create(data);
+//   await restaurant.setRestaurant(comment);
+//   // await restaurant.setUser(res.locals.user.id);
+//   res.json({ comment });
+// });
+
 
 
 // below added by Tibby Tuesday night for UI , sorry git szar

@@ -60,18 +60,14 @@ restaurants.delete('/:id', async (req, res) => {
   }
 });
 
-restaurants.post('/:restaurant_id/comments', restrict, async (req, res) => {
-  const { message, yaynay } = req.body;
-  const restaurant = await Restaurant.findByPk(req.params.restaurant_id)
-  const comment = await Comment.create({
-    message: message,
-    yaynay: yaynay,
-  });
+restaurants.post('/:id/comments', async (req, res) => {
+  const data = req.body;
+  const restaurant = await Restaurant.findByPk(req.params.id);
+  const comment = await Comment.create(data);
   await comment.setRestaurant(restaurant);
   await comment.setUser(res.locals.user.id);
   res.json({ comment });
 })
-
 
 
 module.exports = restaurants;

@@ -114,8 +114,8 @@ class SingleEatery extends React.Component {
 
   handleCommentFormSubmit = async (ev) => {
     ev.preventDefault();
-    console.log("clicked");
-    const newComment = await createComment({ ...this.state.commentFormData, id: this.state.eateryData.id });
+    const data = { ...this.state.commentFormData, id: this.state.eateryData.id };
+    const newComment = await createComment(data);
     this.setState({
       commentFormData: {
         message: '',
@@ -123,7 +123,7 @@ class SingleEatery extends React.Component {
       },
       commenting: false
     })
-    console.log(newComment);
+
   }
 
   handleCommentFormChange = (ev) => {
