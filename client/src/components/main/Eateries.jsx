@@ -17,9 +17,9 @@ class Eateries extends React.Component {
     return (
       <div className='eatery-form'>
 
-        <div className='eateryh3'>
-          <h3>Submit a place to eat</h3>
-        </div>
+
+        <h3>Submit a place to eat</h3>
+
         <form onSubmit={(e) => {
           e.preventDefault();
           this.handleRedirect(e);
@@ -115,7 +115,10 @@ class Eateries extends React.Component {
               value="deli">Deli</option>
           </select>
           <br />
-          <button className='submit-resto'>Submit Eatery</button>
+          <div className='eatButton'>
+            <button onClick={this.routeChange} className='submit-resto'>Submit Eatery</button>
+          </div>
+
         </form>
       </div >
     );
