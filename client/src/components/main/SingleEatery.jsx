@@ -36,6 +36,11 @@ class SingleEatery extends React.Component {
       commentFormData: {
         message: "",
         yaynay: ""
+      },
+      commentUpdateFormData: {
+          id: "",
+          messsage: "",
+          yaynay: ""
       }
     }
   }
@@ -243,14 +248,14 @@ class SingleEatery extends React.Component {
           handleSubmit={this.handleCommentFormSubmit}/>
         }
 
-        {/* <CommentsList
+        <CommentsList
           comments={this.state.comments}
           commentUpdateFormData={this.props.commentUpdateFormData}
           handleUpdate={this.props.handleCommentUpdate}
           handleChange={this.props.handleCommentUpdateChange}
           handleSubmit={this.props.handleCommentUpdateSubmit}
           handleCancel={this.props.handleCommentCancel}
-        /> */}
+        />
 
       </>
 

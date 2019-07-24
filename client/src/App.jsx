@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { createUser, loginUser, createEatery, createComment, fetchComments, fetchEateries } from './services/api-calls'
+import { createUser, loginUser, createEatery, fetchEateries } from './services/api-calls'
 import { Route, Link } from 'react-router-dom'
 import Home from './components/main/Home';
 import CommentsList from './components/main/CommentsList'
@@ -19,10 +19,6 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      commentFormData: {
-        message: '',
-        yaynay: ''
-      },
       loginFormData: {
         name: '',
         password: ''
@@ -41,11 +37,6 @@ class App extends React.Component {
         website: '',
         priceRange: null,
       },
-      commentUpdateFormData: {
-        id: "",
-        messsage: "",
-        yaynay: ""
-      },
       currentEatery: {
         id: "",
         name: "",
@@ -62,22 +53,7 @@ class App extends React.Component {
     const eateries = resp.restaurants;
     this.setState({
       eateries: eateries
-    })
-    if (this.state.currentEatery.id) {
-      const comments = await fetchComments(this.state.currentEatery.id);
-      const eatery = await eatery(this.state.currentEatery.id);
-      const { name, address, category, priceRange } = eatery;
-      this.setState(prevState => ({
-        currentEatery: {
-          ...prevState.currentEatery,
-          name: name,
-          address: address,
-          category: category,
-          priceRange
-        },
-        comments: comments
-      }))
-    }
+    });
   }
 
   // Below is Reigister From 
@@ -147,24 +123,6 @@ class App extends React.Component {
     }));
   }
 
-
-  async componentDidMount() {
-    if (this.state.currentEatery.id) {
-      const comments = await fetchComments(this.state.currentEatery.id);
-      const eatery = await eatery(this.state.currentEatery.id);
-      const { name, address, category, priceRange } = eatery;
-      this.setState(prevState => ({
-        currentEatery: {
-          ...prevState.currentEatery,
-          name: name,
-          address: address,
-          category: category,
-          priceRange
-        },
-        comments: comments
-      }))
-    }
-  }
 
 
   handleDetail = (id) => {
