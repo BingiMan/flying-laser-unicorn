@@ -79,7 +79,7 @@ cursor: pointer;
 /*Eatery Form Section*/
 
 .eatery-form {
-  
+display: flex;
 }
 
 .eateryh3 {
@@ -91,17 +91,6 @@ label {
 }
 
 input[type=text], select, textarea {
-width: 100%;
-padding: 12px;
-border: 1px solid #ccc;
-border-radius: 7px;
-box-sizing: border-box;
-margin-top: 7px;
-margin-bottom: 16px;
-resize: vertical;
-}
-
-input[type=email], select, textarea {
 width: 100%;
 padding: 12px;
 border: 1px solid #ccc;
@@ -156,6 +145,17 @@ input[type="radio"]:focus {
 outline: 0; 
 } 
 
+.categoryEats {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 7px;
+  box-sizing: border-box;
+  margin-top: 7px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
 .submit-resto {
 width: 150px;
 height: 70px;
@@ -164,7 +164,7 @@ background-color: transparent;
 border: 2px solid black;
 border-radius: 10px;
 font-size: 20px;
-text-transform:lowercase;
+text-transform:lowercase; 
 font-weight: bolder;
 align-content: center;
 margin-top: 10px;
