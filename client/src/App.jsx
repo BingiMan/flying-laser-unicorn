@@ -9,7 +9,8 @@ import SingleEatery from './components/main/SingleEatery';
 import EateriesList from './components/main/EateriesList';
 import HireUs from "./components/footer/HireUs";
 import NavigationBar from "./components/header/NavBar";
-import getTokenFromStorage from './auth';
+import NavBarSide from "./components/header/NavBarSide";
+import  getTokenFromStorage  from './auth';
 import RegisterUser from "./components/main/RegisterUser";
 import LoginUser from "./components/main/LoginUser"
 import { CommentsForm } from "./components/main/CommentsForm";
@@ -161,6 +162,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <header>
+          <NavBarSide />
           <NavigationBar />
         </header>
 
