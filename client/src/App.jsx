@@ -162,7 +162,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <header>
-          <NavigationBar />
+          <NavigationBar currentUser={this.state.currentUser}/>
         </header>
 
         <main>
