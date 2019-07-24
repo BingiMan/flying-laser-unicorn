@@ -12,8 +12,8 @@ export default class NavBarSide extends React.Component {
           <span></span>
           <span></span>
           <ul id="menu">
-            <Link to="/introduction">
-              <li>Team</li>
+            <Link to="/">
+              <li>Home</li>
             </Link>
             <Link to="/eateries-list">
               <li>Eatery List</li>
@@ -21,9 +21,10 @@ export default class NavBarSide extends React.Component {
             <Link to="/addEatery">
               <li>Add Eatery</li>
             </Link>
-            <a href="https://github.com/BingiMan/flying-laser-unicorn/" target="_blank">
-              <li>Git Magic</li>
-            </a>
+            <Link to="/introduction">
+              <li>Team</li>
+            </Link>
+
           </ul>
         </div>
       </nav>
