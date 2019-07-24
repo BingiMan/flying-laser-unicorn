@@ -1,8 +1,12 @@
 import React from 'react';
-
+import { withRouter } from 'react-router-dom'
 class Eateries extends React.Component {
   constructor(props) {
     super(props);
+  }
+  routeChange() {
+    let path = `/eateries-list`;
+    // this.props.history.push(path);
   }
 
   render() {
@@ -15,15 +19,14 @@ class Eateries extends React.Component {
         <form onSubmit={(e) => {
           e.preventDefault();
           this.props.handleEaterySubmit(e);
-          this.props.handleEateryChange(e);
         }}>
 
 
           <label htmlFor="name">Name</label>
           <input
+            value={this.props.eateryFormData.name}
             type="text"
             name="name"
-            // value={this.props.EateryformData.name}
             onChange={this.props.handleEateryChange}
             id="name" />
 
@@ -31,9 +34,9 @@ class Eateries extends React.Component {
 
           <label htmlFor="address">Address</label>
           <input
+            value={this.props.eateryFormData.address}
             type="text"
             name="address"
-            // value={this.props.EateryformData.address}
             onChange={this.props.handleEateryChange}
             id="address" />
 
@@ -43,7 +46,7 @@ class Eateries extends React.Component {
           <input
             type="url"
             name="website"
-            // value={this.props.EateryformData.address}
+            value={this.props.eateryFormData.website}
             onChange={this.props.handleEateryChange}
             id="website" />
 
@@ -87,8 +90,7 @@ class Eateries extends React.Component {
           <label htmlFor="category">Category</label>
           <select
             onChange={this.props.handleEateryChange}
-            // value={this.props.EateryformData.category}
-            name="category">
+            name="category" value={this.props.eateryFormData.category}>
             <option
               value="start">Please select one</option>
             <option
@@ -109,11 +111,11 @@ class Eateries extends React.Component {
               value="deli">Deli</option>
           </select>
           <br />
-          <button className='submit-resto'>Submit Eatery</button>
+          <button onClick={this.routeChange} className='submit-resto'>Submit Eatery</button>
         </form>
       </div >
     );
   }
 }
 
-export default Eateries;
+export default withRouter(Eateries);
