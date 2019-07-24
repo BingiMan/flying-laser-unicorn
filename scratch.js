@@ -56,22 +56,22 @@ const main = async () => {
 
   const comment2 = await Comment.create({
     message: 'salmon was bland.',
-    yaynay: 'n',
+    yaynay: 'f',
   });
 
   const comment3 = await Comment.create({
     message: 'friendly staff',
-    yaynay: 'y',
+    yaynay: 't',
   });
 
   const comment4 = await Comment.create({
     message: 'my favorite spot',
-    yaynay: 'y',
+    yaynay: 't',
   });
 
   const comment5 = await Comment.create({
     message: 'pricey but worth every single penny.',
-    yaynay: 'y',
+    yaynay: 't',
   });
 
 

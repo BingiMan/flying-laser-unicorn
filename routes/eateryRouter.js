@@ -15,16 +15,15 @@ restaurants.get('/:id', async (req, res) => {
 
 restaurants.put('/:id', restrict, async (req, res) => {
   try {
-    const id = req.params.id;
-    const data = req.body;
     await Restaurant.update(
-      data,
+      req.body,
       {
         where: {
-          id,
+          id: req.params.id,
         },
-      });
-    const restaurant = await Restaurant.findByPk(id);
+      },
+    );
+    const restaurant = await Restaurant.findByPk(req.params.id);
     res.json(restaurant);
   } catch (e) {
     console.log(e.message);
@@ -40,10 +39,10 @@ restaurants.post('/', restrict, async (req, res) => {
     price_range: priceRange,
     website: website,
     category: category,
-  })
-  await restaurant.setUser(res.locals.user.id)
-  res.json({ restaurant })
-})
+  });
+  await restaurant.setUser(res.locals.user.id);
+  res.json({ restaurant });
+});
 
 restaurants.delete('/:id', restrict, async (req, res) => {
   try {
@@ -61,18 +60,14 @@ restaurants.delete('/:id', restrict, async (req, res) => {
   }
 });
 
-restaurants.post('/:restaurant_id/comments', restrict, async (req, res) => {
-  const { message, yaynay } = req.body
-  const restaurant = await Restaurant.findByPk(req.params.restaurant_id)
-  const comment = await Comment.create({
-    message: message,
-    yaynay: yaynay,
-  });
-  await comment.setRestaurant(restaurant)
-  await comment.setUser(res.locals.user.id)
-  res.json({ comment })
+restaurants.post('/:id/comments', restrict, async (req, res) => {
+  const data = req.body;
+  const restaurant = await Restaurant.findByPk(req.params.id);
+  const comment = await Comment.create(data);
+  await comment.setRestaurant(restaurant);
+  await comment.setUser(res.locals.user.id);
+  res.json({ comment });
 })
-
 
 
 module.exports = restaurants;

@@ -3,20 +3,31 @@ import React from 'react';
 export default function CommentsList(props) { 
   return (
     <>
+      <h1>comment list below</h1>
       {props.comments.map(comment =>
         <div className="comment" key={comment.id}>
-          <h3> {comment.name} </h3>
-          <p>{comment.address}</p>
-          <p>{comment.priceRange}</p>
-          <p>{comment.category}</p>
-          <button onClick={this.handleDelete}> Delete </button>
-          <button onClick={this.handleUpdate}> Update </button>
-          {props.commentUpdateFormData.id === comment.id &&
-            (<form onChange={props.handleChange}>
-              <input type="text" name="message" placeholder="name of the restraurant" />
-              <input type="text" name="yaynay" placeholder="name of the restraurant" />
-              <button name={comment.id} onClick={props.handleSubmit}> Finalize </button>
-              <button onClick={props.handleCancel}> Cancel </button>
+          <h3>{comment.yaynay.toString()}</h3>
+          <p1> {comment.message} </p1>
+          {props.editingId === null &&
+            <button name={comment.id} onClick={props.handleDelete}> Delete </button>}
+          {props.editingId === null &&
+            <button onClick={() => props.handleUpdate(comment.id)}> Update </button>}
+          {props.updatingId === comment.id &&
+            (<form>
+            <input
+              type="text"
+              name="message"
+              onChange={props.handleChange}
+              value={props.commentUpdateFormData.message}
+              placeholder="message" />
+            <input
+              type="text"
+              name="yaynay"
+              onChange={props.handleChange}
+              value={props.commentUpdateFormData.yaynay}
+              placeholder="yay(t) or nay(f)" />
+            <button onClick={props.handleSubmit}> Finalize </button>
+            <button onClick={props.handleCancel}> Cancel </button>
             </form>)}
         </div>)}
     </>

@@ -10,7 +10,7 @@ export const fetchEateries = async () => {
   return resp.data;
 }
 export const fetchComments = async (id) => {
-  const resp = await api.get(`/restaurants/${id}/comments`);
+  const resp = await api.get(`/comments/${id}`);
   return resp.data;
 }
 export const eateryInfo = async (id) => {
@@ -18,15 +18,14 @@ export const eateryInfo = async (id) => {
   return resp.data;
 }
 export const updateEatery = async (data) => {
-  const { id, ...eateryData } = data;
-  await api.put(`/restaurants/${id}`, eateryData)
+  const resp = await api.put(`/restaurants/${data.id}`, data);
+  return resp.data;
 }
 export const updateComment = async (data) => {
   const { id, ...commentData } = data;
-  await api.put(`comments/${id}`, commentData)
+  await api.put(`/comments/${id}`, commentData)
 }
 export const createEatery = async (eatery) => {
-  console.log('doesthiswork')
   const resp = await api.post(`/restaurants`, eatery);
   return resp.data
 }
@@ -49,6 +48,16 @@ export const loginUser = async (name, password) => {
   return resp;
 }
 
+//below is added Tuesday night by Tibby
+export const deleteEatery = async (id) => {
+  const resp = await api.delete(`/restaurants/${id}`);
+  return resp.data;
+}
+export const deleteComment = async (id) => {
+  const resp = await api.delete(`/comments/${id}`);
+  return resp.data;
+}
+//above is added Tuesday night by Tibby
 
 
 
