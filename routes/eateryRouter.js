@@ -13,7 +13,7 @@ restaurants.get('/:id', async (req, res) => {
   res.json({ restaurant })
 });
 
-restaurants.put('/:id', async (req, res) => {
+restaurants.put('/:id', restrict, async (req, res) => {
   try {
     await Restaurant.update(
       req.body,
@@ -31,7 +31,7 @@ restaurants.put('/:id', async (req, res) => {
   }
 });
 
-restaurants.post('/', async (req, res) => {
+restaurants.post('/', restrict, async (req, res) => {
   const { name, address, priceRange, website, category } = req.body;
   const restaurant = await Restaurant.create({
     name: name,
@@ -44,7 +44,7 @@ restaurants.post('/', async (req, res) => {
   res.json({ restaurant });
 });
 
-restaurants.delete('/:id', async (req, res) => {
+restaurants.delete('/:id', restrict, async (req, res) => {
   try {
     const id = req.params.id;
     const restaurant = await Restaurant.destroy(
@@ -60,7 +60,7 @@ restaurants.delete('/:id', async (req, res) => {
   }
 });
 
-restaurants.post('/:id/comments', async (req, res) => {
+restaurants.post('/:id/comments', restrict, async (req, res) => {
   const data = req.body;
   const restaurant = await Restaurant.findByPk(req.params.id);
   const comment = await Comment.create(data);

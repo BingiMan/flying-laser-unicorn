@@ -10,7 +10,7 @@ comments.get('/', async (req, res) => {
   res.json({ comments });
 });
 
-comments.put('/:id', async (req, res) => {
+comments.put('/:id', restrict, async (req, res) => {
   try {
     const id = req.params.id;
     console.log(id);
