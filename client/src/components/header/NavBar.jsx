@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import React from 'react';
+import './style.css';
 
 export default class NavigationBar extends React.Component {
   constructor(props) {
@@ -29,10 +30,6 @@ export default class NavigationBar extends React.Component {
       {
         link: '/register',
         label: 'Register',
-      },
-      {
-        link: '/comments',
-        label: 'Comments'
       }
     ]
   }
