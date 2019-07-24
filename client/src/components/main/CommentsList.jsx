@@ -8,19 +8,23 @@ export default function CommentsList(props) {
         <div className="comment" key={comment.id}>
           <h3>{comment.yaynay.toString()}</h3>
           <p1> {comment.message} </p1>
-          <button name={comment.id} onClick={props.handleDelete}> Delete </button>
-          <button onClick={()=>props.handleUpdate(comment.id)}> Update </button> }
+          {props.editingId === null &&
+            <button name={comment.id} onClick={props.handleDelete}> Delete </button>}
+          {props.editingId === null &&
+            <button onClick={() => props.handleUpdate(comment.id)}> Update </button>}
           {props.updatingId === comment.id &&
             (<form>
             <input
               type="text"
               name="message"
               onChange={props.handleChange}
+              value={props.commentUpdateFormData.message}
               placeholder="message" />
             <input
               type="text"
               name="yaynay"
               onChange={props.handleChange}
+              value={props.commentUpdateFormData.yaynay}
               placeholder="yay(t) or nay(f)" />
             <button onClick={props.handleSubmit}> Finalize </button>
             <button onClick={props.handleCancel}> Cancel </button>

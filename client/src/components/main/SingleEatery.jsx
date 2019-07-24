@@ -121,7 +121,6 @@ class SingleEatery extends React.Component {
   }
   
   handleCommentFormChange = (ev) => {
-    ev.preventDefault();
     const { name, value } = ev.target;
     this.setState(prevState => ({
       commentFormData: {
@@ -133,7 +132,7 @@ class SingleEatery extends React.Component {
   };
 
  handleCommentFormSubmit = async (ev) => {
-    ev.preventDefault();
+    // ev.preventDefault();
    const data = { ...this.state.commentFormData, id: this.state.eateryData.id };
    console.log(data);
     const newComment = await createComment(data);
@@ -173,7 +172,7 @@ class SingleEatery extends React.Component {
   }
 
   handleCommentUpdateSubmit = async (ev) => {
-    ev.preventDefault();
+    // ev.preventDefault();
     console.log('clicked');
     const data = { ...this.state.commentUpdateFormData, id: this.state.updatingcommentId };
     console.log(data);
@@ -190,7 +189,9 @@ class SingleEatery extends React.Component {
 
 
   handleCommentCancel = () => {
-    //..
+    this.setState({
+      updatingcommentId: null
+    });
   }
 
 
@@ -263,10 +264,10 @@ class SingleEatery extends React.Component {
           handleUpdate={this.handleCommentUpdate}
           handleChange={this.handleCommentUpdateChange}
           handleSubmit={this.handleCommentUpdateSubmit}
-          
-          commentUpdateFormData={this.props.commentUpdateFormData}
+          handleCancel={this.handleCommentCancel}
+          editingId={this.state.updatingcommentId}
+          commentUpdateFormData={this.state.commentUpdateFormData}
         
-          handleCancel={this.props.handleCommentCancel}
         />
 
       </>
