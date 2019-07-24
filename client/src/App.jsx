@@ -60,7 +60,7 @@ class App extends React.Component {
     const token = localStorage.getItem('authToken');
     if (token !== null) {
       storeToken(token);
-     }
+    }
   }
 
   // Below is Reigister From 
@@ -77,6 +77,13 @@ class App extends React.Component {
     e.preventDefault();
     console.log(this.state.registerFormData);
     const newUser = await createUser(this.state.registerFormData);
+    this.setState({
+      registerFormData: {
+        name: '',
+        password: '',
+        email: '',
+      },
+    })
   }
 
   // Above is Login From 
@@ -97,6 +104,10 @@ class App extends React.Component {
       currentUser: resp.data.user.name,
 
       user: resp.data.user.id,
+      loginFormData: {
+        name: '',
+        password: '',
+      },
     });
     console.log(this.state.currentUser)
   }
@@ -123,9 +134,9 @@ class App extends React.Component {
       eateryFormData: {
         name: '',
         address: '',
-        category: '',
+        category: 'start',
         website: '',
-        priceRange: '',
+        priceRange: null,
       },
     }));
   }
@@ -187,15 +198,15 @@ class App extends React.Component {
             handleSubmit={this.handleLoginSubmit}
             formData={this.state.loginFormData} />} />
           <Route path="/register" exact render={() => <RegisterUser
-              formData={this.state.registerFormData}
-              handleChange={this.handleRegisterChange}
-              handleSubmit={this.handleRegisterSubmit} />} />
-        
+            formData={this.state.registerFormData}
+            handleChange={this.handleRegisterChange}
+            handleSubmit={this.handleRegisterSubmit} />} />
+
           <Route path="/single-eatery/:id" exact render={(props) => <SingleEatery
             {...props}
             currentEatery={this.state.currentEatery}
-            
-            />} />
+
+          />} />
         </main>
         <footer>
           <HireUs />
