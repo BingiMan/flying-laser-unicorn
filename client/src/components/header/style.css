@@ -135,3 +135,6 @@
  {
    transform: none;
  }
+ .nav-wrapper{
+     text-align: right;
+ }

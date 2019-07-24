@@ -162,15 +162,6 @@ class App extends React.Component {
     return (
       <div className="App">
         <header>
-          <div className="nav-wrapper">
-          <Link to="/"> Home </Link>
-          <Link to="/introduction"> Introduction </Link>
-          <Link to="/addEatery"> Add Eatery </Link>
-          <Link to="/eateries-list"> Eateries </Link>
-          <Link to="/Login"> Login </Link>
-          <Link to="/Register"> Register </Link>
-          </div>
-          <NavBarSide />
           <NavigationBar />
         </header>
 
