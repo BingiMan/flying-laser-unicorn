@@ -31,5 +31,7 @@ input[type=url], select, textarea {
   width: 80vw;
   height: 80vh;
 }
-
+.nav-wrapper{
+  text-align: right;
+}
 

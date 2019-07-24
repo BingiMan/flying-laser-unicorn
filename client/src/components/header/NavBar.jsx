@@ -7,30 +7,30 @@ export default class NavigationBar extends React.Component {
     super(props);
 
     this.tabs = [
-      {
-        link: '/',
-        label: 'Home',
-      },
-      {
-        link: '/introduction',
-        label: 'Introduction'
-      },
-      {
-        link: '/addEatery',
-        label: 'Eatery',
-      },
-      {
-        link: '/eateries-list',
-        label: 'Eatery List',
-      },
-      {
-        link: '/login',
-        label: 'Login',
-      },
-      {
-        link: '/register',
-        label: 'Register',
-      }
+      // {
+      //   link: '/',
+      //   label: 'Home',
+      // },
+      // {
+      //   link: '/introduction',
+      //   label: 'Introduction'
+      // },
+      // {
+      //   link: '/addEatery',
+      //   label: 'Eatery',
+      // },
+      // {
+      //   link: '/eateries-list',
+      //   label: 'Eatery List',
+      // },
+      // {
+      //   link: '/login',
+      //   label: 'Login',
+      // },
+      // {
+      //   link: '/register',
+      //   label: 'Register',
+      // }
     ]
   }
 
