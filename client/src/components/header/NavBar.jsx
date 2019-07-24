@@ -64,7 +64,7 @@ export default class NavigationBar extends React.Component {
             <div>Hi, {this.props.currentUser.charAt(0).toUpperCase() + this.props.currentUser.slice(1)} ❤ </div>
           }
           {this.props.currentUser !== null &&
-            <div onClick={this.props.handleLogOut}>Log Out</div>
+            <div id="logout" onClick={this.props.handleLogOut}>Log Out</div>
           }
 
         </div>
