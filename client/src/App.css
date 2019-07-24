@@ -33,3 +33,9 @@ input[type=url], select, textarea {
 }
 
 
+/* below is for the button to toggle adding eatery / not */
+#postingEatery {
+  cursor: pointer;
+  font-weight: bold;
+}
+/* above is for the button to toggle adding eatery / not */

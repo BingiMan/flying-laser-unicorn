@@ -46,7 +46,8 @@ class App extends React.Component {
         category: "",
         priceRange: ""
       },
-      eateriesData: []
+      eateriesData: [],
+      postingEatery: false
     }
   }
 
@@ -163,7 +164,13 @@ class App extends React.Component {
 
 
 
-
+// below is for clickle add eatery div //
+  postingEatery = () => {
+    this.setState(prevState=> ({
+      postingEatery: !prevState.postingEatery
+    }))
+   }
+// above is for clickle add eatery div //
 
   render() {
     return (
@@ -187,6 +194,19 @@ class App extends React.Component {
             handleSubmit={this.handleCommentUpdateSubmit}
             handleCancel={this.handleCommentCancel}
           />} />
+          {/* place below div inside or with eateries */}
+          <div id="postingEatery"
+            onClick={this.postingEatery}>
+            {this.state.postingEatery ?
+              "Cancel Posting": "Posting an Eatery"}
+          </div>
+          {/* place above div inside or with eateries */}
+          {/* below is toggle based on above bottom  */}
+          {this.state.postingEatery && <Eateries
+          handleEateryChange={this.handleEateryChange}
+          handleEaterySubmit={this.handleEaterySubmit}
+          eateryFormData={this.state.eateryFormData}/>}
+          {/* above is toggle based on above bottom  */}
           <Route exact path="/eateries-list" render={() => <EateriesList
             eateries={this.state.eateries}
             eateryUpdateFormData={this.state.eateryUpdateFormData}

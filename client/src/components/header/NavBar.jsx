@@ -44,7 +44,21 @@ export default class NavigationBar extends React.Component {
   // }
   // this.tabs.map(tab => this.linkOrButton(tab))
 
+
+
   render() {
+
+   let  prevScrollpos = window.pageYOffset;
+    window.onscroll = function() {
+    let currentScrollPos = window.pageYOffset;
+      if (prevScrollpos < 200) {
+        document.querySelector(".nav-wrapper-left").style.visibility = "visible";
+      } else {
+        document.querySelector(".nav-wrapper-left").style.visibility = "hidden";
+      }
+      prevScrollpos = currentScrollPos;
+    }
+    console.log(window.pageYOffset);
     return (
       <nav>
         <NavBarSide />
@@ -64,7 +78,7 @@ export default class NavigationBar extends React.Component {
             <div>Hi, {this.props.currentUser.charAt(0).toUpperCase() + this.props.currentUser.slice(1)} ❤ </div>
           }
           {this.props.currentUser !== null &&
-            <div id="logout" onClick={this.props.handleLogOut}>Log Out</div>
+            <div id="logout" onClick={this.props.handleLogOut}> Log Out</div>
           }
 
         </div>
