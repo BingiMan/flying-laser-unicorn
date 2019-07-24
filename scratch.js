@@ -1,12 +1,27 @@
-const { Restaurant, Comment } = require('./models');
+const { Restaurant, Comment, User } = require('./models');
 
 const main = async () => {
+  await User.destroy({
+    where: {},
+  });
   await Restaurant.destroy({
     where: {},
   });
   await Comment.destroy({
     where: {},
   });
+
+  const testUser1 = await User.create({
+    name: 'test',
+    pw_digest: 'test',
+    email: 'test@test.test'
+  });
+
+  const testUser2 = await User.create({
+    name: 'test2',
+    pw_digest: 'test2',
+    email: 'test2@test.test'
+  })
 
   const rest1 = await Restaurant.create({
     name: 'Berry 21',
@@ -74,6 +89,16 @@ const main = async () => {
     yaynay: 't',
   });
 
+  await comment1.setUser(testUser1);
+  await comment2.setUser(testUser2);
+  await comment3.setUser(testUser1);
+  await comment4.setUser(testUser2);
+  await comment5.setUser(testUser1);
+  await rest1.setUser(testUser1);
+  await rest2.setUser(testUser1);
+  await rest3.setUser(testUser1);
+  await rest4.setUser(testUser2);
+  await rest5.setUser(testUser1);
 
   await comment1.setRestaurant(rest1);
   await comment2.setRestaurant(rest1);
