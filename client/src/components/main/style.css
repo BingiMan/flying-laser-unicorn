@@ -80,15 +80,28 @@ cursor: pointer;
 
 .eatery-form {
 display: flex;
-}
-
-.eateryh3 {
-  text-align: center;
+flex-direction: column;
+width: 60%;
+margin: 0 auto;
+background-color:  #b2b3b4;
+padding: 20px 20px 50px 50px;
+border-radius: 10px;
 }
 
 label {
-  text-align: center;
+  font-size: 20px;
+  padding-top: 12px;
+  padding-bottom: 15px;
+  
 }
+
+h3 {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+  font-size: 30px;
+}
+
 
 input[type=text], select, textarea {
 width: 100%;
@@ -108,13 +121,13 @@ border: 1px solid #ccc;
 border-radius: 7px;
 box-sizing: border-box;
 margin-top: 7px;
-margin-bottom: 16px;
+margin-bottom: 26px;
 resize: vertical;
 }
 
 input[type="radio"] {
 appearance:none;
-margin:0 40px;
+margin:0 30px;
 width: 24px;
 height: 24px;
 background: #eeeeee;
@@ -125,6 +138,7 @@ border-radius: 50%;
 transition: .2s;
 cursor:pointer;
 color: #363945;
+
 }
 
 input[type="radio"]:hover {
@@ -147,13 +161,14 @@ outline: 0;
 
 .categoryEats {
   width: 100%;
-  padding: 12px;
+  padding:12px;
   border: 1px solid #ccc;
   border-radius: 7px;
   box-sizing: border-box;
   margin-top: 7px;
   margin-bottom: 16px;
   resize: vertical;
+  
 }
 
 .submit-resto {
@@ -167,14 +182,21 @@ font-size: 20px;
 text-transform:lowercase; 
 font-weight: bolder;
 align-content: center;
-margin-top: 10px;
-margin-left: 50px;
+margin: 0 auto;
+justify-content: center;
+
 }
 
 .submit-resto:hover {
-background-color: #b2b3b4;
+background-color: #7a7b7b;
 color: black;
 cursor: pointer;
+}
+
+.eatButton {
+  display: flex;
+  margin: 0 auto;
+  padding-top: 25px;
 }
       
 
