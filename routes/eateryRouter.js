@@ -13,18 +13,17 @@ restaurants.get('/:id', async (req, res) => {
   res.json({ restaurant })
 });
 
-restaurants.put('/:id', restrict, async (req, res) => {
+restaurants.put('/:id', async (req, res) => {
   try {
-    const id = req.params.id;
-    const data = req.body;
     await Restaurant.update(
-      data,
+      req.body,
       {
         where: {
-          id,
+          id: req.params.id,
         },
-      });
-    const restaurant = await Restaurant.findByPk(id);
+      },
+    );
+    const restaurant = await Restaurant.findByPk(req.params.id);
     res.json(restaurant);
   } catch (e) {
     console.log(e.message);
@@ -32,7 +31,7 @@ restaurants.put('/:id', restrict, async (req, res) => {
   }
 });
 
-restaurants.post('/', restrict, async (req, res) => {
+restaurants.post('/', async (req, res) => {
   const { name, address, priceRange, website, category } = req.body;
   const restaurant = await Restaurant.create({
     name: name,
@@ -40,12 +39,12 @@ restaurants.post('/', restrict, async (req, res) => {
     price_range: priceRange,
     website: website,
     category: category,
-  })
-  await restaurant.setUser(res.locals.user.id)
-  res.json({ restaurant })
-})
+  });
+  await restaurant.setUser(res.locals.user.id);
+  res.json({ restaurant });
+});
 
-restaurants.delete('/:id', restrict, async (req, res) => {
+restaurants.delete('/:id', async (req, res) => {
   try {
     const id = req.params.id;
     const restaurant = await Restaurant.destroy(
@@ -62,15 +61,15 @@ restaurants.delete('/:id', restrict, async (req, res) => {
 });
 
 restaurants.post('/:restaurant_id/comments', restrict, async (req, res) => {
-  const { message, yaynay } = req.body
+  const { message, yaynay } = req.body;
   const restaurant = await Restaurant.findByPk(req.params.restaurant_id)
   const comment = await Comment.create({
     message: message,
     yaynay: yaynay,
   });
-  await comment.setRestaurant(restaurant)
-  await comment.setUser(res.locals.user.id)
-  res.json({ comment })
+  await comment.setRestaurant(restaurant);
+  await comment.setUser(res.locals.user.id);
+  res.json({ comment });
 })
 
 

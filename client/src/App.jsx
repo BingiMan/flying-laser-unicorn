@@ -33,7 +33,6 @@ class App extends React.Component {
         email: ''
       },
       currentUser: null,
-      comments: [],
       eateries: [],
       eateryFormData: {
         name: '',
@@ -46,14 +45,6 @@ class App extends React.Component {
         id: "",
         messsage: "",
         yaynay: ""
-      },
-      eateryUpdateFormData: {
-        id: "",
-        name: "",
-        address: "",
-        website: "",
-        category: "",
-        priceRange: ""
       },
       currentEatery: {
         id: "",
@@ -213,15 +204,7 @@ class App extends React.Component {
       }
     }));
   }
-  handleEateryUpdateChange = (ev) => {
-    const { name, value } = ev.target;
-    this.setState(prevState => ({
-      eateryUpdateFormData: {
-        ...prevState.eateryUpdateFormData,
-        [name]: value
-      }
-    }));
-  }
+
   handleCommentUpdateSubmit = async (ev) => {
     ev.preventDefault();
     const data = this.state.commentUpdateFormData;
@@ -235,33 +218,11 @@ class App extends React.Component {
       }
     })
   }
-  handleEateryUpdateSubmit = async (ev) => {
-    ev.preventDefault();
-    const data = this.state.eateryUpdateFormData;
-    console.log(`updated Eatery no. ${data.id} !!!`);
-    //insert function from service to make axios call. await!!
-    this.setState({
-      eateryUpdateFormData: {
-        id: "",
-        name: "",
-        address: "",
-        category: "",
-        priceRange: ""
-      }
-    })
-  }
+
   handleCommentCancel = () => {
     this.setState(prevState => ({
       commentUpdateFormData: {
         ...prevState.commentUpdateFormData,
-        id: ""
-      }
-    }))
-  }
-  handleEateryCancel = () => {
-    this.setState(prevState => ({
-      eateryUpdateFormData: {
-        ...prevState.eateryUpdateFormData,
         id: ""
       }
     }))
@@ -329,7 +290,8 @@ class App extends React.Component {
             handleEateryChange={this.handleEateryChange}
             handleEaterySubmit={this.handleEaterySubmit}
             eateryFormData={this.state.eateryFormData}
-          />} />)}
+          />} />
+
           <Route path="/login" exact render={() => <LoginUser
             handleChange={this.handleLoginChange}
             handleSubmit={this.handleLoginSubmit}
@@ -339,9 +301,9 @@ class App extends React.Component {
             {...props}
             currentEatery={this.state.currentEatery}
             comments={this.state.comments}
-            handleChange={this.handleEateryUpdateChange}
-            handleSubmit={this.handleEateryUpdateSubmit}
-            handleCancel={this.handleEateryCancel}
+            handleUpdateChange={this.handleEateryUpdateChange}
+            handleHandleSubmit={this.handleEateryUpdateSubmit}
+            
             />} />
         </main>
         <footer>
