@@ -9,6 +9,7 @@ import SingleEatery from './components/main/SingleEatery';
 import EateriesList from './components/main/EateriesList';
 import HireUs from "./components/footer/HireUs";
 import NavigationBar from "./components/header/NavBar";
+import  getTokenFromStorage  from './auth';
 import RegisterUser from "./components/main/RegisterUser";
 import LoginUser from "./components/main/LoginUser"
 import { CommentsForm } from "./components/main/CommentsForm";
@@ -87,6 +88,7 @@ class App extends React.Component {
         comments: comments
       }))
     }
+    console.log(`Auth Token: ${getTokenFromStorage()}`)
   }
 
   // Below is Reigister From 
@@ -302,11 +304,6 @@ class App extends React.Component {
         <main>
           <Route exact path="/" render={() => <Home />} />
           <Route exact path="/introduction" render={() => <Introduction />} />
-          <Route exact path='/addEatery' render={() => <Eateries
-            handleEateryChange={this.handleEateryChange}
-            handleEaterySubmit={this.handleEaterySubmit}
-            eateryFormData={this.state.eateryFormData}
-          />} />
           <Route exact path="/comments" render={() => <CommentsForm
             handleChange={this.handleCommentFormChange}
             handleSubmit={this.handleCommentFormSubmit}
@@ -329,7 +326,7 @@ class App extends React.Component {
             handleEateryChange={this.handleEateryChange}
             handleEaterySubmit={this.handleEaterySubmit}
             eateryFormData={this.state.eateryFormData}
-          />} />)}
+          />} />
           <Route path="/login" exact render={() => <LoginUser
             handleChange={this.handleLoginChange}
             handleSubmit={this.handleLoginSubmit}
