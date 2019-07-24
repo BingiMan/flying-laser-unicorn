@@ -76,3 +76,111 @@ color: black;
 cursor: pointer;
 }
 
+/*Eatery Form Section*/
+
+.eatery-form {
+  
+}
+
+.eateryh3 {
+  text-align: center;
+}
+
+label {
+  text-align: center;
+}
+
+input[type=text], select, textarea {
+width: 100%;
+padding: 12px;
+border: 1px solid #ccc;
+border-radius: 7px;
+box-sizing: border-box;
+margin-top: 7px;
+margin-bottom: 16px;
+resize: vertical;
+}
+
+input[type=email], select, textarea {
+width: 100%;
+padding: 12px;
+border: 1px solid #ccc;
+border-radius: 7px;
+box-sizing: border-box;
+margin-top: 7px;
+margin-bottom: 16px;
+resize: vertical;
+}
+
+input[type=url], select, textarea {
+width: 100%;
+padding: 12px;
+border: 1px solid #ccc;
+border-radius: 7px;
+box-sizing: border-box;
+margin-top: 7px;
+margin-bottom: 16px;
+resize: vertical;
+}
+
+input[type="radio"] {
+appearance:none;
+margin:0 40px;
+width: 24px;
+height: 24px;
+background: #eeeeee;
+box-shadow:
+inset 0 0 0 .4em white,
+0 0 0 .3em;
+border-radius: 50%;
+transition: .2s;
+cursor:pointer;
+color: #363945;
+}
+
+input[type="radio"]:hover {
+background: #363945;
+box-shadow:
+inset 0 0 0 .6em white,
+0 0 0 .3em;
+}
+        
+input[type="radio"]:checked {
+background: #b2b3b4;
+box-shadow:
+inset 0 0 0 .4em white,
+0 0 0 .3em #b2b3b4;
+} 
+      
+input[type="radio"]:focus { 
+outline: 0; 
+} 
+
+.submit-resto {
+width: 150px;
+height: 70px;
+text-align: center;
+background-color: transparent;
+border: 2px solid black;
+border-radius: 10px;
+font-size: 20px;
+text-transform:lowercase;
+font-weight: bolder;
+align-content: center;
+margin-top: 10px;
+margin-left: 50px;
+}
+
+.submit-resto:hover {
+background-color: #b2b3b4;
+color: black;
+cursor: pointer;
+}
+      
+
+
+
+  
+
+
+

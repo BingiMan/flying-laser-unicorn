@@ -7,13 +7,17 @@ class Eateries extends React.Component {
 
   render() {
     return (
-      <div>
-        <h3>Submit a place to eat</h3>
+      <div className='eatery-form'>
+
+        <div className='eateryh3'>
+          <h3>Submit a place to eat</h3>
+        </div>
         <form onSubmit={(e) => {
           e.preventDefault();
           this.props.handleEaterySubmit(e);
           this.props.handleEateryChange(e);
         }}>
+
 
           <label htmlFor="name">Name</label>
           <input
@@ -45,7 +49,8 @@ class Eateries extends React.Component {
 
           <br />
 
-          <label htmlFor="price_range">Price Range</label>
+
+
           <input
             type="radio"
             name="priceRange"
@@ -104,7 +109,7 @@ class Eateries extends React.Component {
               value="deli">Deli</option>
           </select>
           <br />
-          <button>Submit Eatery</button>
+          <button className='submit-resto'>Submit Eatery</button>
         </form>
       </div >
     );
