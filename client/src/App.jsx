@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { createUser, loginUser, createEatery, fetchEateries } from './services/api-calls'
+import { createUser, loginUser, createEatery, fetchEateries, storeToken } from './services/api-calls'
 import { Route, Link } from 'react-router-dom'
 import Home from './components/main/Home';
 import CommentsList from './components/main/CommentsList'
@@ -56,6 +56,10 @@ class App extends React.Component {
       eateries: eateries
     })
     console.log(`Auth Token: ${getTokenFromStorage()}`)
+    const token = localStorage.getItem('authToken');
+    if (token !== null) {
+      storeToken(token);
+     }
   }
 
   // Below is Reigister From 
