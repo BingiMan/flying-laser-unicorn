@@ -9,7 +9,7 @@ export default function CommentsList(props) {
           <h3>{comment.yaynay.toString()}</h3>
           <h1> {comment.message} </h1>
           {props.editingId === '' &&
-            <button name={comment.id} onClick={props.handleDelete}> Delete </button>}
+            <button onClick={()=>props.handleDelete(comment.id)}> Delete </button>}
           {props.editingId === '' &&
             <button onClick={() => props.handleUpdate(comment.id)}> Update </button>}
           {props.updatingId === comment.id &&

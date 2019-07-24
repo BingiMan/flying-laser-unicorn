@@ -52,7 +52,8 @@ restaurants.delete('/:id', restrict, async (req, res) => {
         where: {
           id,
         },
-      });
+      },
+    );
     res.json(restaurant);
   } catch (e) {
     console.log(e.message);
@@ -67,7 +68,7 @@ restaurants.post('/:id/comments', restrict, async (req, res) => {
   await comment.setRestaurant(restaurant);
   await comment.setUser(res.locals.user.id);
   res.json({ comment });
-})
+});
 
 
 module.exports = restaurants;

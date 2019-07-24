@@ -93,9 +93,9 @@ class SingleEatery extends React.Component {
     const data = this.state.eateryUpdateFormData;
     const resp = await updateEatery(data);
  
-    this.setState(prevState => ({
+    this.setState({
       eateryUpdateFormData: {
-        ...prevState.eateryUpdateFormData,
+        id: "",
         name: "",
         address: "",
         category: "",
@@ -103,7 +103,7 @@ class SingleEatery extends React.Component {
       },
       updating: false,
       eateryData: resp,
-    }))
+    })
   }
 
   handleDelete = async (id) => {
@@ -136,13 +136,14 @@ class SingleEatery extends React.Component {
    const data = { ...this.state.commentFormData, id: this.state.eateryData.id };
    console.log(data);
     const newComment = await createComment(data);
-    this.setState({
+    this.setState(prevState=> ({
     commentUpdateFormData: {
     message: '',
     yaynay: '',
     },
-    commenting: false
-  })
+      commenting: false,
+    comments: [...prevState.comments, newComment]
+  }))
 }
 // aboove is for posting new comments ////////////////////////////////////
 

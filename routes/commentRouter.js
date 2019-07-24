@@ -51,7 +51,7 @@ comments.get('/:id', async (req, res) => {
   });
   res.json({ comments });
 });
-comments.delete('/:id', async (req, res) => {
+comments.delete('/:id', restrict, async (req, res) => {
   const comments = await Comment.destroy({
     where: {
       id: req.params.id,
