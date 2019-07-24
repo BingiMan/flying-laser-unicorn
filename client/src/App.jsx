@@ -128,14 +128,7 @@ class App extends React.Component {
     }))
   }
 
-  handleCommentUpdate = (ev) => {
-    this.setState(prevState => ({
-      commentUpdateFormData: {
-        ...prevState.commentUpdateFormData,
-        id: ev.target.name
-      }
-    }));
-  }
+
 
   handleEaterySubmit = async (ev) => {
     ev.preventDefault();
@@ -154,14 +147,7 @@ class App extends React.Component {
     }));
   }
 
-  handleCommentUpdate = (ev) => {
-    this.setState(prevState => ({
-      commentUpdateFormData: {
-        ...prevState.commentUpdateFormData,
-        id: ev.target.name
-      }
-    }));
-  }
+
   async componentDidMount() {
     if (this.state.currentEatery.id) {
       const comments = await fetchComments(this.state.currentEatery.id);
@@ -189,69 +175,12 @@ class App extends React.Component {
       }
     }));
   }
-  handleEateryUpdate = (ev) => {
-    this.setState(prevState => ({
-      ...prevState.eateryUpdateFormData,
-      id: ev.target.name
-    }));
-  }
-  handleCommentUpdateChange = (ev) => {
-    const { name, value } = ev.target;
-    this.setState(prevState => ({
-      eateryUpdateFormData: {
-        ...prevState.commentUpdateFormData,
-        [name]: value
-      }
-    }));
-  }
 
-  handleCommentUpdateSubmit = async (ev) => {
-    ev.preventDefault();
-    const data = this.state.commentUpdateFormData;
-    console.log(`update Comment No. ${data.id} !!!`);
-    //insert function from service to make axios call. await!!
-    this.setState({
-      commentUpdateFormData: {
-        id: "",
-        messsage: "",
-        yaynay: ""
-      }
-    })
-  }
 
-  handleCommentCancel = () => {
-    this.setState(prevState => ({
-      commentUpdateFormData: {
-        ...prevState.commentUpdateFormData,
-        id: ""
-      }
-    }))
-  }
 
-  handleCommentFormSubmit = async (ev) => {
-    ev.preventDefault();
-    console.log("clicked");
-    const newComment = await createComment({ ...this.state.commentFormData, id: this.state.currentEatery.id });
-    this.setState({
-      commentFormData: {
-        message: '',
-        yaynay: '',
-      }
-    })
-    console.log(newComment);
-  }
 
-  handleCommentFormChange = (ev) => {
-    ev.preventDefault();
-    const { name, value } = ev.target;
-    this.setState(prevState => ({
-      commentFormData: {
-        ...prevState.commentFormData,
-        [name]: value
-      }
-    }));
-    console.log(ev.target.value);
-  };
+
+
 
   render() {
     return (
@@ -300,9 +229,6 @@ class App extends React.Component {
           <Route path="/single-eatery/:id" exact render={(props) => <SingleEatery
             {...props}
             currentEatery={this.state.currentEatery}
-            comments={this.state.comments}
-            handleUpdateChange={this.handleEateryUpdateChange}
-            handleHandleSubmit={this.handleEateryUpdateSubmit}
             
             />} />
         </main>

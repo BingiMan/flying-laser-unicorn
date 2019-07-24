@@ -6,7 +6,8 @@ import {
   eateryInfo,
   updateEatery,
   fetchComments,
-  deleteEatery
+  deleteEatery,
+  createComment
 } from '../../services/api-calls'
 
 
@@ -15,6 +16,7 @@ class SingleEatery extends React.Component {
     super(props);
     this.state = {
       updating: false,
+      commenting: false,
       eateryData: {
         name: "",
         address: "",
@@ -30,7 +32,11 @@ class SingleEatery extends React.Component {
         category: "",
         price_range: ""
       },
-      comments: []
+      comments: [],
+      commentFormData: {
+        message: "",
+        yaynay: ""
+      }
     }
   }
 
@@ -50,12 +56,14 @@ class SingleEatery extends React.Component {
     console.log(this.state.eateryData);
   }
 
+  // below is for the Eatery on this page's update and deletion //////////
   handleUpdate = (eateryData) => {
     this.setState({
       updating: true,
       eateryUpdateFormData: eateryData
     })
   }
+
   handleUpdateCancel = () => {
     this.setState({
       updating: false
@@ -76,7 +84,6 @@ class SingleEatery extends React.Component {
     ev.preventDefault();
     const data = this.state.eateryUpdateFormData;
     const resp = await updateEatery(data);
-
     console.log(resp);
     this.setState(prevState => ({
       eateryUpdateFormData: {
@@ -88,14 +95,93 @@ class SingleEatery extends React.Component {
       },
       updating: false,
       eateryData: resp,
-
     }))
   }
 
   handleDelete = async (id) => {
     const resp = await deleteEatery(id);
     this.props.history.push('/eateries-list');
-   }
+  }
+   // above is for the Eatery on this page's update and deletion //////////
+  
+  
+  // below is for posting new comments ////////////////////////////////////
+  handleAddComment = () => {
+    this.setState(prevState=> ({
+      commenting: !prevState.commenting
+    }))
+  }
+
+  handleCommentFormSubmit = async (ev) => {
+    ev.preventDefault();
+    console.log("clicked");
+    const newComment = await createComment({ ...this.state.commentFormData, id: this.state.eateryData.id });
+    this.setState({
+      commentFormData: {
+        message: '',
+        yaynay: '',
+      },
+      commenting: false
+    })
+    console.log(newComment);
+  }
+
+  handleCommentFormChange = (ev) => {
+    ev.preventDefault();
+    const { name, value } = ev.target;
+    this.setState(prevState => ({
+      commentFormData: {
+        ...prevState.commentFormData,
+        [name]: value
+      }
+    }));
+    console.log(ev.target.value);
+  };
+  // aboove is for posting new comments ////////////////////////////////////
+
+  handleCommentUpdateChange = (ev) => {
+    const { name, value } = ev.target;
+    this.setState(prevState => ({
+      eateryUpdateFormData: {
+        ...prevState.commentUpdateFormData,
+        [name]: value
+      }
+    }));
+  }
+
+  handleCommentUpdateSubmit = async (ev) => {
+    ev.preventDefault();
+    const data = this.state.commentUpdateFormData;
+    console.log(`update Comment No. ${data.id} !!!`);
+    //insert function from service to make axios call. await!!
+    this.setState({
+      commentUpdateFormData: {
+        id: "",
+        messsage: "",
+        yaynay: ""
+      }
+    })
+  }
+
+  handleCommentCancel = () => {
+    this.setState(prevState => ({
+      commentUpdateFormData: {
+        ...prevState.commentUpdateFormData,
+        id: ""
+      }
+    }))
+  }
+
+
+  handleCommentUpdate = (ev) => {
+    this.setState(prevState => ({
+      commentUpdateFormData: {
+        ...prevState.commentUpdateFormData,
+        id: ev.target.name
+      }
+    }));
+  }
+
 
 
   render() {
@@ -111,7 +197,6 @@ class SingleEatery extends React.Component {
             <button onClick={() => { this.handleUpdate(this.state.eateryData) }}> Update </button>}
           {!this.state.updating &&
             <button onClick={() => { this.handleDelete(this.state.eateryData.id) }}> Delete </button>}
-        
         </div>
 
         {this.state.updating &&
@@ -147,7 +232,17 @@ class SingleEatery extends React.Component {
             <button name={this.props.currentEatery.id}> Finalize </button>
             <button onClick={this.handleUpdateCancel}> Cancel </button>
           </form>)}
-        <CommentsForm />
+        
+          <button onClick={this.handleAddComment}>
+          {!this.state.commenting ? "Leave a comment" : "Cancel commenting"}
+            </button>
+
+        {this.state.commenting &&
+          <CommentsForm
+          handleChange={this.handleCommentFormChange}
+          handleSubmit={this.handleCommentFormSubmit}/>
+        }
+
         {/* <CommentsList
           comments={this.state.comments}
           commentUpdateFormData={this.props.commentUpdateFormData}

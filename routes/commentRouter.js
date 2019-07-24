@@ -31,18 +31,16 @@ comments.put('/:id', restrict, async (req, res) => {
   }
 });
 
-
-// comments.post('/', restrict, async (req, res) => { COMMENT POST MOVED TO RESTAURANTS!!!!!!
-//   const { message, yaynay } = req.body
-//   const restaurant = await Restaurant.findByPk(2)
-//   const comment = await Comment.create({
-//     message: 'meepbeep',
-//     yaynay: false,
-//   });
-//   await restaurant.setRestaurant(comment)
-//   await restaurant.setUser(res.locals.user.id)
-//   res.json({ comment })
-// })
+// Tibby tuesday night asks: why was below commented out
+comments.post('/', async (req, res) => {
+  const { id, ...data } = req.body;
+  const restaurant = await Restaurant.findByPk(id);
+  const comment = await Comment.create(data);
+  await restaurant.setRestaurant(comment);
+  await restaurant.setUser(res.locals.user.id);
+  res.json({ comment });
+});
+// Tibby tuesday night asks: why was above commented out
 
 
 // below added by Tibby Tuesday night for UI , sorry git szar
