@@ -312,6 +312,7 @@ padding-left: 30px;
 padding-right: 30px;
 padding-bottom: 15px;
 text-align: center;
+border-radius: 10px;
 }
 
 .eateryh2 {
@@ -522,8 +523,18 @@ and (max-width: 825px) {
 }
 
 
+/* comments in single eatery */
+.comment {
+  width: 80vw;
+  background: purple;
+  border-radius: 10px;
+  padding: 10vh;
+  margin: 10vw;
+}
 
-
+.comment h3 {
+  margin-left: -50vw;
+}
 
 
 
