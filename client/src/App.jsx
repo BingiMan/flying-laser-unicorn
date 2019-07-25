@@ -178,9 +178,13 @@ class App extends React.Component {
 
           <NavigationBar currentUser={this.state.currentUser}
                          handleLogOut={this.handleLogOut}
-                         handleChange={this.handleLoginChange}
-                         handleSubmit={this.handleLoginSubmit}
-                         formData={this.state.loginFormData}
+                         handleLoginChange={this.handleLoginChange}
+                         handleLoginSubmit={this.handleLoginSubmit}
+                         loginFormData={this.state.loginFormData}
+
+                         registerFormData={this.state.registerFormData}
+                         handleRegisterChange={this.handleRegisterChange}
+                         handleRegisterSubmit={this.handleRegisterSubmit}
           />
         </header>
 
