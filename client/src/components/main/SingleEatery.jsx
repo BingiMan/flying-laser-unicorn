@@ -222,37 +222,79 @@ class SingleEatery extends React.Component {
 
         {this.state.updating &&
           (<form onSubmit={this.handleEateryUpdateSubmit}>
-            <input
-              type="text"
-              value={this.state.eateryUpdateFormData.name}
-              name="name"
-              placeholder="name of the restraurant"
-              onChange={this.handleEateryUpdateChange}
-            />
-            <input
-              type="text"
-              value={this.state.eateryUpdateFormData.address}
-              name="address"
-              placeholder="address of the restraurant"
-              onChange={this.handleEateryUpdateChange}
-            />
-            <input
-              type="text"
-              value={this.state.eateryUpdateFormData.category}
-              name="category"
-              placeholder="category of the restraurant"
-              onChange={this.handleEateryUpdateChange}
-            />
-            <input
-              type="text"
-              value={this.state.eateryUpdateFormData.price_range}
-              name="price_range"
-              placeholder="$$$ of the restraurant"
-              onChange={this.handleEateryUpdateChange}
-            />
-            <button name={this.props.currentEatery.id}> Finalize </button>
-            <button onClick={this.handleUpdateCancel}> Cancel </button>
-          </form>)}
+            <div className='updateEatery'>
+              <input
+                type="text"
+                value={this.state.eateryUpdateFormData.name}
+                name="updateName"
+                placeholder="name of the restraurant"
+                onChange={this.handleEateryUpdateChange}
+              />
+              <input
+                type="text"
+                value={this.state.eateryUpdateFormData.address}
+                name="updateAddress"
+                placeholder="address of the restraurant"
+                onChange={this.handleEateryUpdateChange}
+              />
+              <input
+                type="radio"
+                name="priceRange"
+                value={this.state.eateryUpdateFormData.price_range}
+                onChange={this.handleEateryUpdateChange}
+                id="priceRange" /> <span>Basically free</span>
+              <input
+                type="radio"
+                name="priceRange"
+                value={this.state.eateryUpdateFormData.price_range}
+                onChange={this.handleEateryUpdateChange}
+                id="priceRange" /> <span>Cheap as chips</span>
+              <input
+                type="radio"
+                name="priceRange"
+                value={this.state.eateryUpdateFormData.price_range}
+                onChange={this.handleEateryUpdateChange}
+                id="priceRange" /> <span>Won't break the bank</span>
+              <input
+                type="radio"
+                name="priceRange"
+                value={this.state.eateryUpdateFormData.price_range}
+                onChange={this.handleEateryUpdateChange}
+                id="priceRange" /> <span>Fancy AF</span>
+
+              <label htmlFor="category">Category</label>
+              <select className='categoryEats'
+                onChange={this.handleEateryUpdateChange}
+                name="category"
+                value={this.state.eateryUpdateFormData.category}
+              >
+                <option
+                  value="start">Please select one</option>
+                <option
+                  value="Ramen">Ramen</option>
+                <option
+                  value="Vegan">Vegan</option>
+                <option
+                  value="Pizza">Pizza</option>
+                <option
+                  value="Cafe">Cafe</option>
+                <option
+                  value="Sandwich_shop">Sandwiches</option>
+                <option
+                  value="Healthy_cafe">Healty cafe</option>
+                <option
+                  value="cafeteria">cafeteria</option>
+                <option
+                  value="deli">Deli</option>
+              </select>
+
+
+              <button className='finalizeEats' name={this.props.currentEatery.id}> Finalize </button>
+              <button className='cancelEats' onClick={this.handleUpdateCancel}> Cancel </button>
+            </div>
+          </form>
+
+          )}
 
         <button className='leaveCommentButton' onClick={this.handleAddComment}>
           {!this.state.commenting ? "Leave a comment" : "Cancel commenting"}
