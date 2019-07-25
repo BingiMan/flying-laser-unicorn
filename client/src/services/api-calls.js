@@ -68,6 +68,7 @@ export const logoutUser = () => {
   localStorage.setItem('authToken', '');
   localStorage.setItem('clientId', '')
   api.defaults.headers.common.authorization = ``;
+  api.defaults.headers.common.user = '';
 }
 
 
