@@ -204,11 +204,18 @@ class App extends React.Component {
             handleCancel={this.handleCommentCancel}
           />} />
           {/* place below div inside or with eateries */}
-          <div id="postingEatery"
-            onClick={this.postingEatery}>
-            {this.state.postingEatery ?
+          <div id="eateries-list">
+            <div id="postingEatery"
+             onClick={this.postingEatery}>
+             {this.state.postingEatery ?
               "Cancel Posting": "Posting an Eatery"}
-          </div>
+            </div>
+          <EateriesList
+            eateries={this.state.eateries}
+            eateryUpdateFormData={this.state.eateryUpdateFormData}
+            handleDetail={this.handleDetail}
+          />
+        </div>
           {/* place above div inside or with eateries */}
           {/* below is toggle based on above bottom  */}
           {this.state.postingEatery && <Eateries

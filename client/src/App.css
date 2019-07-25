@@ -37,5 +37,20 @@ input[type=url], select, textarea {
 #postingEatery {
   cursor: pointer;
   font-weight: bold;
+  padding: 10px;
+  width: 10vw;
+  border: 2px black solid;
+  border-radius: 10px;
 }
+#postingEatery:hover {
+ background-color: lightgray;
+}
+
+#eateries-list {
+  background-color: lightgray;
+  border-radius: 10px;
+  width: 80vw;
+  margin-left: 10vw;
+}
+/*need to check with Jas to keep all this consistent*/
 /* above is for the button to toggle adding eatery / not */
