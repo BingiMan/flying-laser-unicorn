@@ -14,6 +14,9 @@
   height: 50px;
   background-color: #ededed;
     display: flex;
+    background-color: hotpink;
+
+
 }
 
 .nav-opts{
@@ -24,9 +27,8 @@
 
  a {
    text-decoration: none;
-   color: #232323;
    transition: color 0.3s ease;
-     margin: 40px;
+     margin: auto 50px;
  }
  
  a:hover {
@@ -36,7 +38,7 @@
  #menuToggle
  {
    display: block;
-   position: relative;
+   position: absolute;
    top: 16px;
    left: 18px;
    z-index: 13;
@@ -99,6 +101,7 @@
    opacity: 1;
    transform: rotate(45deg) translate(-2px, -1px);
    background: #232323;
+     z-index: 13;
  }
  
  /*
@@ -126,10 +129,10 @@
  {
    position: absolute;
    width: 300px;
-   margin: -100px 0 0 -50px;
+   margin: -43px 0 0 -80px;
+     border-radius: 10px 10px 10px 10px;
    padding: 50px;
-   padding-top: 125px;
-   
+   padding-top: 85px;
    background: #ededed;
    list-style-type: none;
    -webkit-font-smoothing: antialiased;
@@ -143,8 +146,10 @@
  
  #menu li
  {
-   padding: 10px 0;
+   padding: 10px 50px;
    font-size: 22px;
+   color:#111111;
+     margin: 0px 35px;
  }
  
  /*
@@ -159,9 +164,9 @@
      float: right;
  }
 
- .btn {
+.btn1, .btn2 {
      background-color: #fff;
-     padding: 1em 1.5em;
+     /*padding: 1em 1.5em;*/
      text-decoration: none;
      cursor:pointer;
      font-size: 12px;
@@ -169,8 +174,31 @@
      width: 90px;
      border-radius: 25px;
      font-weight: 900;
+     border: none;
+     outline:none;
  }
- .btn:hover{
+
+ .btn1:hover, .btn2:hover{
      background-color: black;
      color:white;
  }
+.btn1{
+    margin-right: 25px;
+}
+.btn{
+    background-color: #fff;
+    text-decoration: none;
+    cursor:pointer;
+    font-size: 12px;
+    height: 30px;
+    width: 90px;
+    border-radius: 25px;
+    font-weight: 900;
+    outline:none;
+}
+.nav-wrapper-left{
+    margin: 15px;
+}
+.nav-wrapper-right {
+    margin: 10px 50px;
+}

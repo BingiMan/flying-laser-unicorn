@@ -15,7 +15,7 @@ export default class NavBarSide extends React.Component {
           <span></span>
           <ul id="menu">
             <Link to="/">
-              <li>Home</li>
+              <li >Home</li>
             </Link>
             <Link to="/eateries-list">
               <li>Eatery List</li>
