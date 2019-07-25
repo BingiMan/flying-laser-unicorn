@@ -1,5 +1,5 @@
 const { Router } = require('express');
-const { restrict, genToken } = require('../auth')
+const { restrict, genToken, ownership } = require('../auth')
 
 const comments = Router();
 const { Comment, Restaurant } = require('../models');
@@ -11,6 +11,9 @@ comments.get('/', async (req, res) => {
 });
 
 comments.put('/:id', restrict, async (req, res) => {
+  const refId = req.headers.user
+
+
   try {
     const id = req.params.id;
     console.log(id);
@@ -19,7 +22,9 @@ comments.put('/:id', restrict, async (req, res) => {
       data,
       {
         where: {
-          id,
+          id: id,
+          userId: refId,
+
         },
       });
     const comment = await Comment.findByPk(id);
@@ -52,9 +57,14 @@ comments.get('/:id', async (req, res) => {
   res.json({ comments });
 });
 comments.delete('/:id', restrict, async (req, res) => {
+  const refId = req.headers.user
+
+
+
   const comments = await Comment.destroy({
     where: {
       id: req.params.id,
+      userId: refId
     },
   });
   res.json({ comments });

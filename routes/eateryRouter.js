@@ -1,7 +1,7 @@
 const { Router } = require('express');
 const restaurants = Router();
 const { Restaurant, Comment } = require('../models');
-const { restrict, genToken } = require('../auth')
+const { restrict, genToken, ownership } = require('../auth')
 
 restaurants.get('/', async (req, res) => {
   const restaurants = await Restaurant.findAll();
@@ -15,11 +15,14 @@ restaurants.get('/:id', async (req, res) => {
 
 restaurants.put('/:id', restrict, async (req, res) => {
   try {
+    const refId = req.headers.user
+
     await Restaurant.update(
       req.body,
       {
         where: {
           id: req.params.id,
+          userId: refId,
         },
       },
     );
@@ -47,14 +50,18 @@ restaurants.post('/', restrict, async (req, res) => {
 restaurants.delete('/:id', restrict, async (req, res) => {
   try {
     const id = req.params.id;
+    const refId = req.headers.user
+
     const restaurant = await Restaurant.destroy(
       {
         where: {
           id,
+          userId: refId,
         },
       },
     );
     res.json(restaurant);
+
   } catch (e) {
     console.log(e.message);
     res.status(500).send(e.message);
