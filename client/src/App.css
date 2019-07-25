@@ -61,8 +61,8 @@ input[type=url], select, textarea {
   border-radius: 10px;
   position: relative;
   line-height:6vh;
-
 }
+
 #postingEatery:hover {
  background-color: rgb(119, 118, 118);
 }
@@ -72,6 +72,7 @@ input[type=url], select, textarea {
   border-radius: 10px;
   width: 80vw;
   margin-left: 10vw;
+  padding: 45px;
 
 }
 
@@ -80,10 +81,6 @@ input[type=url], select, textarea {
 
 }
 
-.eatery {
- 
-  
-}
 .eatery p, .eatery h3 {
   font-size: 2em;
 } 
@@ -95,25 +92,31 @@ input[type=url], select, textarea {
 #detail-button {
  border: black solid 2px;
  border-radius: 5px;
- padding: 0.5vw;
+ padding: 1vw;
  background-color: rgba(160, 159, 159, 0.6);
+ margin-left: 50vw;
+ width: 10vw;
+ text-align: center;
 }
 #detail-button:hover {
   color: black;
 }
 
 .eatery-list-item {
-width: 80vw;
+width: 70vw;
 margin: 10vw;
 padding: 5px;
-height: 40vh;
+height: 60vh;
 background: lightgray;
-border: black solid 2px;
+border: black solid 3px;
 border-radius: 10px;
+padding: 10vh;
+display: flex;
+flex-direction: column;
 }
 
 .eatery-list-item h3 {
-  font-size: 3em;
+  font-size: 3.5em;
   }
 /*need to check with Jas to keep all this consistent*/
 /* above is for the button to toggle adding eatery / not */
@@ -144,5 +147,18 @@ border-radius: 10px;
 
 .backdrop-wrapper{
   margin: 10vh auto;
+}
+
+.knockout {
+  background: url(https://media.giphy.com/media/t80VLWpC2Y0aeWv1zf/giphy.gif) -80px -80px;
+  color: red;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  font-weight: bold;
+  font-size: 100px;
+  font-family: arial, helvetica;
+  width: 600px;
+  margin: 50px auto;
+  text-align: center;
 }
 /* above is to style all eateries header. knockoout text */
