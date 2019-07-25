@@ -242,7 +242,23 @@ cursor: pointer;
   margin-bottom: 16px;
   resize: vertical;
 }
-  
+.close-thik{
+  color: #777;
+  font: 14px/100% arial, sans-serif;
+  position: absolute;
+  right: 20px;
+  text-decoration: none;
+  text-shadow: 0 1px 0 #fff;
+  top: 20px;
+}
+.close-thik:hover {
+color:red;
+cursor: pointer;
+
+}
+.close-thik:after {
+  content: '✖'; /* UTF-8 symbol */
+}
 
 
 
