@@ -124,6 +124,8 @@ flex-direction: column;
   margin: auto;
   margin-top: 40px;
   width: 75vw;
+  position: relative;
+  top: 200vh;
 }
 
 
@@ -142,6 +144,11 @@ flex-direction: column;
 
 .backdrop-wrapper{
   margin: 10vh auto;
+}
+
+.backdrop-wrapper2{
+  position: relative;
+  top: -40vh;
 }
 
 .knockout {
