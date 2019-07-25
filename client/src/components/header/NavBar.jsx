@@ -2,10 +2,15 @@ import { Link } from "react-router-dom";
 import React from 'react';
 import './style.css';
 import NavBarSide from "./NavBarSide";
+import LoginUser from "../main/LoginUser";
 
 export default class NavigationBar extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state= {
+      showLogin: false
+    };
 
     this.tabs = [
       // {
@@ -44,6 +49,26 @@ export default class NavigationBar extends React.Component {
   // }
   // this.tabs.map(tab => this.linkOrButton(tab))
 
+  showLogin= () =>{
+    this.setState((prevState, props) => (
+        {
+          showLogin: true
+        }
+    ), () => {
+
+    });
+  };
+
+  hideLogin = () =>{
+    this.setState((prevState, props) => (
+        {
+          showLogin: false
+        }
+    ), () => {
+
+    });
+  };
+
   render() {
     return (
       <nav>
@@ -57,9 +82,15 @@ export default class NavigationBar extends React.Component {
           </div>
           {this.props.currentUser === null &&
             (<div className="nav-wrapper-right">
-              <Link to="/Login"> Login </Link>
-              <Link to="/Register"> Register </Link>
+              <button className="btn" onClick={this.showLogin}> Login </button>
+              <button className="btn"> Register </button>
             </div>)}
+
+          { this.state.showLogin ? <LoginUser handleChange={this.props.handleChange}
+                                              handleSubmit={this.props.handleSubmit}
+                                              formData={this.props.formData}
+                                              hideLogin={this.hideLogin}
+          /> : ''}
           {this.props.currentUser !== null &&
             <div>Hi, {this.props.currentUser.charAt(0).toUpperCase() + this.props.currentUser.slice(1)} ❤ </div>
           }

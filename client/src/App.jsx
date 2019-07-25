@@ -16,7 +16,6 @@ import LoginUser from "./components/main/LoginUser"
 import { CommentsForm } from "./components/main/CommentsForm";
 import Eateries from './components/main/Eateries';
 
-
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -169,7 +168,13 @@ class App extends React.Component {
     return (
       <div className="App">
         <header>
-          <NavigationBar currentUser={this.state.currentUser} handleLogOut={this.handleLogOut} />
+
+          <NavigationBar currentUser={this.state.currentUser}
+                         handleLogOut={this.handleLogOut}
+                         handleChange={this.handleLoginChange}
+                         handleSubmit={this.handleLoginSubmit}
+                         formData={this.state.loginFormData}
+          />
         </header>
 
         <main>
@@ -199,10 +204,7 @@ class App extends React.Component {
             eateryFormData={this.state.eateryFormData}
           />} />
 
-          <Route path="/login" exact render={() => <LoginUser
-            handleChange={this.handleLoginChange}
-            handleSubmit={this.handleLoginSubmit}
-            formData={this.state.loginFormData} />} />
+
           <Route path="/register" exact render={() => <RegisterUser
             formData={this.state.registerFormData}
             handleChange={this.handleRegisterChange}
