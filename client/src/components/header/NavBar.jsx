@@ -67,9 +67,9 @@ export default class NavigationBar extends React.Component {
                 <button className="btn btn1" onClick={this.showLogin}> Login</button>
                 <button className="btn btn2" onClick={this.showRegister}> Register</button>
               </div>)}
-            {/* {loggedIn 
-           <div className="display-username">Hi, {this.props.currentUser.charAt(0).toUpperCase() + this.props.currentUser.slice(1)} ❤ </div>
-           } */}
+            {loggedIn &&
+           <div className="display-username">Hi, {this.props.currentUser} ❤ </div>
+           }
             {loggedIn &&
               <button className="btn3" id="logout" onClick={this.props.handleLogOut}> Log Out</button>
             }
