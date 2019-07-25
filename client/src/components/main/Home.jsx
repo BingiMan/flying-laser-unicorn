@@ -28,7 +28,7 @@ export default class Home extends React.Component {
 
         <div>
           <div className='header-img'>
-            <img className='intro-image' src="https://i.imgur.com/lD9dGJ9.jpg" alt="Panda and bamboo" />
+            <img className='intro-image'  alt="Panda and bamboo" />
           </div>
           <About />
 
