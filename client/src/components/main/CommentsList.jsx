@@ -7,13 +7,14 @@ export default function CommentsList(props) {
       {props.comments.map(comment =>
         <div className="comment" key={comment.id}>
           {/* <h3>{comment.yaynay.toString()}</h3> */}
-          <h1> {comment.message} </h1>
+          <h3> {comment.message} </h3>
           {props.editingId === '' &&
             <button className='deleteComment' onClick={() => props.handleDelete(comment.id)}> Delete </button>}
           {props.editingId === '' &&
             <button className='updateComment' onClick={() => props.handleUpdate(comment.id)}> Update </button>}
           {props.updatingId === comment.id &&
             (<form>
+              <span class="tip tip-left"></span>
               <input
                 type="text"
                 name="message"
