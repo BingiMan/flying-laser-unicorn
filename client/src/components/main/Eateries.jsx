@@ -5,13 +5,6 @@ class Eateries extends React.Component {
     super(props);
   }
 
-  // handleRedirect = async (e) => {
-  //   e.preventDefault()
-  //   await this.props.handleEaterySubmit(e)
-
-
-  //   this.props.history.push('/eateries-list')
-  // }
 
   render() {
     return (
@@ -25,24 +18,25 @@ class Eateries extends React.Component {
 
           <label htmlFor="name">Name</label>
           <input
-            // value={this.props.eateryFormData.name}
+
+            value={this.props.eateryFormData.name}
             type="text"
             name="name"
 
             placeholder="enter the name of the restaurant"
-            // value={this.props.EateryformData.name}
             onChange={this.props.handleEateryChange}
+
             id="name" />
 
           <br />
 
           <label htmlFor="address">Address</label>
           <input
-            // value={this.props.eateryFormData.address}
+
+            value={this.props.eateryFormData.address}
             type="text"
             name="address"
             placeholder='enter the address of the restaurant'
-            // value={this.props.EateryformData.address}
             onChange={this.props.handleEateryChange}
             id="address" />
 
@@ -52,9 +46,11 @@ class Eateries extends React.Component {
           <input
             type="url"
             name="website"
-            // value={this.props.eateryFormData.website}
+
+
+            value={this.props.eateryFormData.website}
             placeholder='enter the website of the restaurant'
-            // value={this.props.EateryformData.address}
+
             onChange={this.props.handleEateryChange}
             id="website" />
 
@@ -92,7 +88,10 @@ class Eateries extends React.Component {
           <select className='categoryEats'
             onChange={this.props.handleEateryChange}
             name="category"
-          // value={this.props.eateryFormData.category}
+
+
+
+            value={this.props.eateryFormData.category}
           >
             <option
               value="start">Please select one</option>
