@@ -135,6 +135,7 @@ export default class NavigationBar extends React.Component {
                                                          handleChange={this.props.handleRegisterChange}
                                                          handleSubmit={this.props.handleRegisterSubmit}
                                                          hideRegister={this.hideRegister}
+                                                         showLogin={this.showLogin}
 
                 /> : ''}
 
