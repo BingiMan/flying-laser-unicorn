@@ -11,7 +11,7 @@ class RegisterUser extends React.Component {
     await this.props.showLogin(e);
     this.props.history.push('/')
   }
-  handleClose = (e)=>{
+  handleClose = (e) => {
     e.preventDefault();
     this.props.hideRegister();
   }
@@ -24,9 +24,9 @@ class RegisterUser extends React.Component {
           <div className="flex">
             <h1 className="form-title">Register</h1>
           </div>
-          <input className="modern-input-text" onChange={this.props.handleChange} type="text" name="name" value={this.props.formData.name} placeholder="Username"/>
-          <input className="modern-input-text" onChange={this.props.handleChange} type="password" name="password" value={this.props.formData.password} placeholder="Password"/>
-          <input className="modern-input-text" onChange={this.props.handleChange} type="text" name="email" value={this.props.formData.email} placeholder="Email"/>
+          <input className="modern-input-text" onChange={this.props.handleChange} type="text" name="name" value={this.props.formData.name} placeholder="Username" />
+          <input className="modern-input-text" onChange={this.props.handleChange} type="password" name="password" value={this.props.formData.password} placeholder="Password" />
+          <input className="modern-input-text" onChange={this.props.handleChange} type="email" name="email" value={this.props.formData.email} placeholder="Email" />
           <div className="flex">
             <button className="btn form-btn" onClick={this.handleRedirect}>Register</button>
           </div>
