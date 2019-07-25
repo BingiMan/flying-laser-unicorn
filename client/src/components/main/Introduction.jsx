@@ -5,8 +5,8 @@ import Team from './Team';
 export default function Introduction() {
   return (
     <>
-    <About />
-    <Team />
+      <About />
+      <Team />
     </>
 
   )
