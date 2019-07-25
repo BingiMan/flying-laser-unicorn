@@ -41,7 +41,7 @@ export default class NavigationBar extends React.Component {
             // }
         ]
     }
-
+    
     //
     // linkOrButton(tab) {
     //   if (tab.link) {
@@ -85,11 +85,11 @@ export default class NavigationBar extends React.Component {
 
     render() {
 
-        let prevScrollpos = window.pageYOffset;
-        window.onload = function(){
-            document.querySelector(".nav-wrapper-left").style.visibility = "hidden";
-        };
-        window.onscroll = function () {
+      let prevScrollpos = window.pageYOffset;
+      window.onload = function(){
+         document.querySelector(".nav-wrapper-left").style.visibility = "hidden";
+      };
+      window.onscroll = function () {
             let currentScrollPos = window.pageYOffset;
             if (prevScrollpos < 200) {
                 document.querySelector(".nav-wrapper-left").style.visibility = "hidden";
@@ -99,7 +99,7 @@ export default class NavigationBar extends React.Component {
             prevScrollpos = currentScrollPos;
         };
 
-        console.log(window.pageYOffset);
+      
         return (
             <>
                 <NavBarSide/>

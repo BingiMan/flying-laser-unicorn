@@ -1,6 +1,7 @@
 import React from 'react';
 import './style.css';
-import Introduction from './Introduction';
+import About from './About';
+import Team from './Team';
 import RandomEatery from './RandomEatery';
 import Eateries from './Eateries';
 
@@ -30,7 +31,7 @@ export default class Home extends React.Component {
           <div className='header-img'>
             <img className='intro-image' src="https://i.imgur.com/lD9dGJ9.jpg" alt="Panda and bamboo" />
           </div>
-          <Introduction />
+          <About />
 
           <div id="random-and-posting">
             <div id="postingEatery"
@@ -44,7 +45,7 @@ export default class Home extends React.Component {
               eateryFormData={this.props.eateryFormData} />}
             {!this.state.posting && <RandomEatery />}
           </div>
-
+          <Team />
         </div>
       </section>
     )

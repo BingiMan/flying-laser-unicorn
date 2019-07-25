@@ -32,9 +32,9 @@ export default class RandomEatery extends React.Component {
         <div className="random-pick eatery">
           <h2>Random Pick for You</h2>
           <h3>{this.state.eatery.name}</h3>
-          <p> Address: {this.state.eatery.address}</p>
-          <p> Category: {this.state.eatery.category}</p>
-          <p> Price Range: {this.state.eatery.price_range}</p>
+          <p> <span>Address:</span> {this.state.eatery.address}</p>
+          <p> <span>Category:</span> {this.state.eatery.category}</p>
+          <p> <span>Price Range:</span> {this.state.eatery.price_range}</p>
         </div>
       </>
     )

@@ -30,6 +30,7 @@ class App extends React.Component {
         email: ''
       },
       currentUser: null,
+      loggedIn: null,
       eateries: [],
       eateryFormData: {
         name: '',
@@ -53,9 +54,11 @@ class App extends React.Component {
     const resp = await fetchEateries();
     const eateries = resp.restaurants;
     this.setState({
-      eateries: eateries
-    })
+      eateries: eateries,
+      loggedIn: localStorage.getItem('clientId'),
+    });
     console.log(`Auth Token: ${getTokenFromStorage()}`)
+
     const token = localStorage.getItem('authToken');
     const userId = localStorage.getItem('clientId');
     if (token !== null) {
@@ -169,22 +172,23 @@ class App extends React.Component {
         <header>
 
           <NavigationBar currentUser={this.state.currentUser}
-                         handleLogOut={this.handleLogOut}
-                         handleLoginChange={this.handleLoginChange}
-                         handleLoginSubmit={this.handleLoginSubmit}
-                         loginFormData={this.state.loginFormData}
+            loggedIn={this.state.loggedIn}
+            handleLogOut={this.handleLogOut}
+            handleLoginChange={this.handleLoginChange}
+            handleLoginSubmit={this.handleLoginSubmit}
+            loginFormData={this.state.loginFormData}
 
-                         registerFormData={this.state.registerFormData}
-                         handleRegisterChange={this.handleRegisterChange}
-                         handleRegisterSubmit={this.handleRegisterSubmit}
+            registerFormData={this.state.registerFormData}
+            handleRegisterChange={this.handleRegisterChange}
+            handleRegisterSubmit={this.handleRegisterSubmit}
           />
         </header>
 
         <main>
           <Route exact path="/" render={() => <Home
-              handleEateryChange={this.handleEateryChange}
-              handleEaterySubmit={this.handleEaterySubmit}
-              eateryFormData={this.eateryFormData}/>} />
+            handleEateryChange={this.handleEateryChange}
+            handleEaterySubmit={this.handleEaterySubmit}
+            eateryFormData={this.eateryFormData} />} />
           <Route exact path="/introduction" render={() => <Introduction />} />
           <Route exact path="/comments" render={() => <CommentsForm
             handleChange={this.handleCommentFormChange}
@@ -198,7 +202,7 @@ class App extends React.Component {
             handleSubmit={this.handleCommentUpdateSubmit}
             handleCancel={this.handleCommentCancel}
           />} />
-  
+
           <Route exact path="/eateries-list" render={() => <EateriesList
             eateries={this.state.eateries}
             eateryUpdateFormData={this.state.eateryUpdateFormData}
