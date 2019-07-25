@@ -132,7 +132,7 @@ class SingleEatery extends React.Component {
   };
 
   handleCommentFormSubmit = async (ev) => {
-    // ev.preventDefault();
+    ev.preventDefault();
     const data = { ...this.state.commentFormData, id: this.state.eateryData.id };
     console.log(data);
     const newComment = await createComment(data);
@@ -194,7 +194,6 @@ class SingleEatery extends React.Component {
       updatingcommentId: ''
     });
   }
-
 
 
 
