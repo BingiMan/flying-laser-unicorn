@@ -5,7 +5,7 @@ import './style.css';
 export default class NavBarSide extends React.Component {
   render() {
     return (
-      <nav class='nav-container'>
+      <nav className='nav-container'>
         <div id="menuToggle">
           <input type="checkbox" />
           <span></span>

@@ -15,7 +15,7 @@
   background-color: #ededed;
 }
 /* below is to make nav bar stay in place, sorry git szar */
- 
+
  a {
    text-decoration: none;
    color: #232323;
@@ -153,3 +153,9 @@
      float: right;
  }
 
+ .btn {
+     background-color: #fff;
+     padding: 1em 1.5em;
+     border-radius: 3px;
+     text-decoration: none;
+ }
