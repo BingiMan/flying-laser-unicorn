@@ -47,6 +47,7 @@ input[type=url], select, textarea {
     /* align-content: stretch; */
     position: relative;
     padding: 5vw;
+    z-index: -1;
 }
 
 #postingEatery {
@@ -73,6 +74,10 @@ input[type=url], select, textarea {
 
 .random-pick h2 {
  font-size: 4em;
+}
+
+.eatery {
+  
 }
 
 /*need to check with Jas to keep all this consistent*/
