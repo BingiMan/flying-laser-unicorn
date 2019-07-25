@@ -184,14 +184,14 @@ class SingleEatery extends React.Component {
         message: "",
         yaynay: ""
       },
-      updatingcommentId: null
+      updatingcommentId: ''
     })
   }
 
 
   handleCommentCancel = () => {
     this.setState({
-      updatingcommentId: null
+      updatingcommentId: ''
     });
   }
 
