@@ -55,7 +55,7 @@ class App extends React.Component {
       eateries: eateries,
       loggedIn: localStorage.getItem('clientId'),
     });
-    console.log(`Auth Token: ${getTokenFromStorage()}`)
+    // console.log(`Auth Token: ${getTokenFromStorage()}`)
     const token = localStorage.getItem('authToken');
     const userId = localStorage.getItem('clientId');
     if (token !== null) {
@@ -74,7 +74,7 @@ class App extends React.Component {
   }
   handleRegisterSubmit = async (e) => {
     e.preventDefault();
-    console.log(this.state.registerFormData);
+    // console.log(this.state.registerFormData);
     const newUser = await createUser(this.state.registerFormData);
     this.setState({
       registerFormData: {
@@ -105,7 +105,7 @@ class App extends React.Component {
         password: '',
       },
     });
-    console.log(this.state.currentUser)
+    // console.log(this.state.currentUser)
   }
   handleEateryChange = (e) => {
     const { name, value } = e.target;
@@ -119,7 +119,7 @@ class App extends React.Component {
   handleEaterySubmit = async (ev) => {
     ev.preventDefault();
     const eateries = await createEatery(this.state.eateryFormData)
-    console.log(eateries)
+    // console.log(eateries)
     this.setState((prevState) => ({
       eateriesData: [...prevState.eateriesData, eateries],
       eateryFormData: {

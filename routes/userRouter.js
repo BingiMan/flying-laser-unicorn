@@ -14,6 +14,7 @@ users.get('/', async (req, res) => {
 users.post('/', async (req, res) => {
   const { name, email, password } = req.body;
   const pwDigest = await bcrypt.hash(password, 7);
+
   const user = await User.create({
     name: name,
     email: email,
@@ -22,7 +23,6 @@ users.post('/', async (req, res) => {
   const token = genToken({ name: user.name, email: user.email, id: user.id })
 
   res.json({ user, token })
-  // console.log(token)
 });
 
 
