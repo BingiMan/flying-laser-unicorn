@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export default function EateriesList(props) { 
+export default function EateriesList(props) {
   return (
     <>
       {props.eateries.map(eatery =>
@@ -9,8 +9,8 @@ export default function EateriesList(props) {
           <h3> {eatery.name} </h3>
           <p>{eatery.address}</p>
           <p>{eatery.priceRange}</p>
-          <Link 
-          to= {`/single-eatery/${eatery.id}`}> Details </Link>
+          <Link
+            to={`/single-eatery/${eatery.id}`}> Details </Link>
 
         </div>)}
     </>
