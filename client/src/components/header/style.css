@@ -164,7 +164,7 @@
      float: right;
  }
 
-.btn1, .btn2 {
+.btn1, .btn2, .btn3 {
      background-color: #fff;
      /*padding: 1em 1.5em;*/
      text-decoration: none;
@@ -178,13 +178,17 @@
      outline:none;
  }
 
- .btn1:hover, .btn2:hover{
+ .btn1:hover, .btn2:hover, .btn3:hover{
      background-color: black;
      color:white;
  }
 .btn1{
     margin-right: 25px;
 }
+.btn3{
+    margin: 10px 52px 10px 10px;
+}
+
 .btn{
     background-color: #fff;
     text-decoration: none;
@@ -195,6 +199,11 @@
     border-radius: 25px;
     font-weight: 900;
     outline:none;
+}
+.display-username{
+    font-weight: 700;
+    margin: 15px;
+    color: #ffffff;
 }
 .nav-wrapper-left{
     margin: 15px;
