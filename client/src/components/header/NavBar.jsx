@@ -15,42 +15,8 @@ export default class NavigationBar extends React.Component {
     };
 
     this.tabs = [
-      // {
-      //   link: '/',
-      //   label: 'Home',
-      // },
-      // {
-      //   link: '/introduction',
-      //   label: 'Introduction'
-      // },
-      // {
-      //   link: '/addEatery',
-      //   label: 'Eatery',
-      // },
-      // {
-      //   link: '/eateries-list',
-      //   label: 'Eatery List',
-      // },
-      // {
-      //   link: '/login',
-      //   label: 'Login',
-      // },
-      // {
-      //   link: '/register',
-      //   label: 'Register',
-      // }
     ]
   }
-
-  //
-  // linkOrButton(tab) {
-  //   if (tab.link) {
-  //     return <Link to={tab.link}>{tab.label}</Link>
-  //   } else {
-  //     return <button>{tab.label}</button>
-  //   }
-  // }
-  // this.tabs.map(tab => this.linkOrButton(tab))
 
   showRegister = () => {
     this.setState({
@@ -84,21 +50,6 @@ export default class NavigationBar extends React.Component {
 
 
   render() {
-
-    // let prevScrollpos = window.pageYOffset;
-    // window.onload = function () {
-    //   document.querySelector(".nav-wrapper-left").style.visibility = "hidden";
-    // };
-    // window.onscroll = function () {
-    //   let currentScrollPos = window.pageYOffset;
-    //   if (prevScrollpos < 200) {
-    //     document.querySelector(".nav-wrapper-left").style.visibility = "hidden";
-    //   } else {
-    //     document.querySelector(".nav-wrapper-left").style.visibility = "visible";
-    //   }
-    //   prevScrollpos = currentScrollPos;
-    // };
-
     const loggedIn = localStorage.getItem('clientId');
 
     return (
