@@ -7,8 +7,8 @@ export default function EateriesList(props) {
     <>
 
       <div className="backdrop-wrapper">
-        <div class="backdrop">
-          <p class="text lighten">ALL EATERIES</p>
+        <div className="backdrop">
+          <p className="text lighten">ALL EATERIES</p>
         </div>
       </div>
 
