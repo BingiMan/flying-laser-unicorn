@@ -210,6 +210,21 @@ cursor: pointer;
   display: flex;
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
+#random-and-posting {
+  background-color: #B2B3B4;
+  width:80vw;
+  margin-left: 5vw;
+  border: black solid 2px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  /* align-content: stretch; */
+  position: relative;
+  padding: 5vw;
+  /*z-index: -4;*/
+
+}
 
 .flex {
   display: flex;
