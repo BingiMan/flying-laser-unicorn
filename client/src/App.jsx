@@ -57,8 +57,9 @@ class App extends React.Component {
     })
     console.log(`Auth Token: ${getTokenFromStorage()}`)
     const token = localStorage.getItem('authToken');
+    const userId = localStorage.getItem('clientId');
     if (token !== null) {
-      storeToken(token);
+      storeToken(token, userId);
     }
   }
 
