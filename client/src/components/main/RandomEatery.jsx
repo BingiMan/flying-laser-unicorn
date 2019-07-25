@@ -34,7 +34,7 @@ export default class RandomEatery extends React.Component {
           <h3>{this.state.eatery.name}</h3>
           <p> Address: {this.state.eatery.address}</p>
           <p> Category: {this.state.eatery.category}</p>
-          <p> Price Range: {this.state.eartery.price_range}</p>
+          <p> Price Range: {this.state.eatery.price_range}</p>
         </div>
       </>
     )
