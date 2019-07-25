@@ -1,7 +1,8 @@
 a {
   margin: 10px;
   text-decoration: none;
-  color:black;
+  color:#ffffff;
+  font-weight: 700;
 }
 input [type=text], select, textarea {
   width: 50%;

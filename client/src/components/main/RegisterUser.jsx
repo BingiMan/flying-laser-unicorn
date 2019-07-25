@@ -8,7 +8,8 @@ class RegisterUser extends React.Component {
   handleRedirect = async (e) => {
     e.preventDefault()
     await this.props.handleSubmit(e);
-    this.props.history.push('/login')
+    await this.props.showLogin(e);
+    this.props.history.push('/')
   }
   handleClose = (e)=>{
     e.preventDefault();

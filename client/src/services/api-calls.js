@@ -34,9 +34,12 @@ export const createComment = async (data) => {
   const resp = await api.post(`/restaurants/${id}/comments`, newComment)
   return resp.data;
 }
-export const storeToken = (token) => {
+export const storeToken = (token, userId) => {
   localStorage.setItem('authToken', token);
+  localStorage.setItem('clientId', userId);
+  const user = api.defaults.headers.common.user = userId
   api.defaults.headers.common.authorization = `Bearer ${token}`;
+  // console.log(user)
 }
 
 export const createUser = async (userData) => {
@@ -45,7 +48,8 @@ export const createUser = async (userData) => {
 }
 export const loginUser = async (name, password) => {
   const resp = await api.post(`/users/login`, { name, password });
-  storeToken(resp.data.token);
+  storeToken(resp.data.token, resp.data.user.id);
+  // console.log(resp.data)
   return resp;
 }
 
@@ -62,6 +66,7 @@ export const deleteComment = async (id) => {
 
 export const logoutUser = () => {
   localStorage.setItem('authToken', '');
+  localStorage.setItem('clientId', '')
   api.defaults.headers.common.authorization = ``;
 }
 

@@ -32,6 +32,7 @@ users.post('/login', async (req, res) => {
   const isValid = await bcrypt.compare(req.body.password, user.password_digest);
   if (isValid === true) {
     const token = genToken({ name: user.name, email: user.email, id: user.id })
+
     res.json({ user, token })
   } else {
     console.log(e.message)
