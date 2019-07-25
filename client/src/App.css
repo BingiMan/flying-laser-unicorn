@@ -41,13 +41,14 @@ input[type=url], select, textarea {
 #postingEatery {
   cursor: pointer;
   font-weight: bold;
-  padding: 10px;
-  height: 6vh;
-  width: 10vw;
+  padding: 7px;
+  height: 3vh;
+  width: 9vw;
   border: 2px black solid;
   border-radius: 10px;
   position: relative;
-  line-height:6vh;
+  line-height: 3vh;
+  text-align: center;
 }
 
 #postingEatery:hover {
