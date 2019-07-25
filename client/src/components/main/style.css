@@ -286,12 +286,12 @@ cursor: pointer;
 .eateryInfo {
   display: flex;
   flex-direction: column;
-  margin-top: 15px;
+  margin-top: 45px;
   margin-left:25%;
  margin-right: 25%;
   width: 50%;
   border: 3px black solid;
-  padding-top: 10px;
+  padding-top: 20px;
   padding-left: 30px;
   padding-right: 30px;
   padding-bottom: 15px;
@@ -319,7 +319,7 @@ font-weight: bold;
   justify-content: center;
 }
 
-.updateEateryButton, .deleteEateryButton {
+.updateEateryButton, .deleteEateryButton, .cancelSubmit, .finalizeSubmit, .deleteComment, .updateComment {
 width: 100px;
 height: 40px;
 text-align: center;
@@ -334,7 +334,7 @@ margin-top: 10px;
 margin-left: 70px;
 }
 
-.updateEateryButton:hover, .deleteEateryButton:hover {
+.updateEateryButton:hover, .deleteEateryButton:hover, .cancelSubmit:hover, .finalizeSubmit:hover, .deleteComment:hover, .updateComment:hover {
 background-color: #b2b3b4;
 color: black;
 cursor: pointer;
@@ -357,11 +357,11 @@ cursor: pointer;
   margin-left: 45%;
 }
 
-.leaveCommentButton:hover  {
+/* .leaveCommentButton:hover  {
   &:after {
 transform: translateX(-200px);
 }
-}
+} */
 
 .leaveCommentButton:after {
   position: absolute;
@@ -382,6 +382,33 @@ transform: translateX(-200px);
   text-align: center;
 }
 
+input[type=text][name=message], select, textarea {
+  display: flex;
+  margin: 0 auto;
+  height: 80px;
+  width: 40%;
+}
+
+.inputSubmitComment {
+width: 100px;
+height: 40px;
+text-align: center;
+background-color: transparent;
+border: 2px solid black;
+border-radius: 10px;
+font-size: 20px;
+text-transform:lowercase;
+font-weight: bolder;
+justify-content: center;
+margin-top: 10px;
+margin-left: 45%;
+}
+
+.inputSubmitComment:hover {
+background-color: #b2b3b4;
+color: black;
+cursor: pointer;
+}
 
 
 
