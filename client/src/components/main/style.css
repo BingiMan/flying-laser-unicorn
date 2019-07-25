@@ -225,7 +225,25 @@ cursor: pointer;
 
 .form-btn{
   margin: auto;
+  font-weight: 900;
+  cursor: pointer;
+  transition: color 0.3s ease;
 }
+.form-btn:hover {
+  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #c62d1f), color-stop(1, #f24537));
+  background:-moz-linear-gradient(top, #c62d1f 5%, #f24537 100%);
+  background:-webkit-linear-gradient(top, #c62d1f 5%, #f24537 100%);
+  background:-o-linear-gradient(top, #c62d1f 5%, #f24537 100%);
+  background:-ms-linear-gradient(top, #c62d1f 5%, #f24537 100%);
+  background:linear-gradient(to bottom, #c62d1f 5%, #f24537 100%);
+  background-color:#c62d1f;
+  color:#eeeeee;
+}
+.form-btn:active {
+  position:relative;
+  top:1px;
+}
+
 
 .login-form, .register-form{
   margin:auto;
@@ -254,6 +272,7 @@ cursor: pointer;
 .close-thik:hover {
 color:red;
 cursor: pointer;
+  transition: color 0.3s ease;
 
 }
 .close-thik:after {
