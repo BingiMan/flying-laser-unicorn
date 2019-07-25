@@ -59,7 +59,6 @@ export default class NavigationBar extends React.Component {
           <div className="nav-opts">
             <div className="nav-wrapper-left">
               <Link to="/"> Home </Link>
-              <Link to="/introduction"> Introduction </Link>
               <Link to="/addEatery"> Add Eatery </Link>
               <Link to="/eateries-list"> Eateries </Link>
             </div>

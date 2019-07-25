@@ -44,6 +44,11 @@ export default class Home extends React.Component {
               eateryFormData={this.props.eateryFormData} />}
             {!this.state.posting && <RandomEatery />}
           </div>
+            <div className="backdrop-wrapper2">
+              <div class="backdrop2">
+              <p class="text lighten"> THE TEAM </p>
+             </div>
+          </div>
           <Team />
         </div>
       </section>
