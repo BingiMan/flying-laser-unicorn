@@ -5,13 +5,6 @@ class Eateries extends React.Component {
     super(props);
   }
 
-  // handleRedirect = async (e) => {
-  //   e.preventDefault()
-  //   await this.props.handleEaterySubmit(e)
-
-
-  //   this.props.history.push('/eateries-list')
-  // }
 
   render() {
     return (
@@ -32,12 +25,14 @@ class Eateries extends React.Component {
             placeholder="enter the name of the restaurant"
 
             onChange={this.props.handleEateryChange}
+
             id="name" />
 
           <br />
 
           <label htmlFor="address">Address</label>
           <input
+
             value={this.props.eateryFormData.address}
             type="text"
             name="address"
@@ -91,6 +86,7 @@ class Eateries extends React.Component {
           <select className='categoryEats'
             onChange={this.props.handleEateryChange}
             name="category"
+
             value={this.props.eateryFormData.category}
           >
             <option
