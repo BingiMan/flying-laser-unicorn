@@ -34,7 +34,7 @@ input[type=url], select, textarea {
 }
 
 
-/* below is for the button to toggle adding eatery / not */
+/* below is for the button to toggle adding eatery and random / not */
 #random-and-posting {
     background-color: #B2B3B4;
     width:80vw;
@@ -47,6 +47,8 @@ input[type=url], select, textarea {
     /* align-content: stretch; */
     position: relative;
     padding: 5vw;
+  /*z-index: -4;*/
+
 }
 
 #postingEatery {
@@ -59,6 +61,7 @@ input[type=url], select, textarea {
   border-radius: 10px;
   position: relative;
   line-height:6vh;
+
 }
 #postingEatery:hover {
  background-color: rgb(119, 118, 118);
@@ -69,10 +72,25 @@ input[type=url], select, textarea {
   border-radius: 10px;
   width: 80vw;
   margin-left: 10vw;
+
 }
 
 .random-pick h2 {
  font-size: 4em;
+
+}
+
+.eatery {
+ 
+  
+}
+.eatery p, .eatery h3 {
+  font-size: 2em;
+} 
+.eatery span {
+  font-weight: bold;
+
+  margin: 0 1vw;
 }
 
 /*need to check with Jas to keep all this consistent*/
