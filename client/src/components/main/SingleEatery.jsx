@@ -201,6 +201,9 @@ class SingleEatery extends React.Component {
   render() {
     return (
       <>
+        <div className='singleEats'>
+          <img className='intro-image' src="https://i.imgur.com/lD9dGJ9.jpg" alt="Panda and bamboo" />
+        </div>
         <div className="eateryInfo">
           <h2 className='eateryh2'>{this.state.eateryData.name}</h2>
           <p className='eateryAdressTitle'>Address:</p> <p className='eateryAdressResponse'>{this.state.eateryData.address}</p>
