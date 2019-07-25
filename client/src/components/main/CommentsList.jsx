@@ -14,7 +14,6 @@ export default function CommentsList(props) {
             <button className='updateComment' onClick={() => props.handleUpdate(comment.id)}> Update </button>}
           {props.updatingId === comment.id &&
             (<form>
-              <span class="tip tip-left"></span>
               <input
                 type="text"
                 name="message"

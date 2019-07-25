@@ -18,12 +18,12 @@ class Eateries extends React.Component {
 
           <label htmlFor="name">Name</label>
           <input
-
             value={this.props.eateryFormData.name}
             type="text"
             name="name"
 
             placeholder="enter the name of the restaurant"
+
             onChange={this.props.handleEateryChange}
 
             id="name" />
@@ -37,6 +37,7 @@ class Eateries extends React.Component {
             type="text"
             name="address"
             placeholder='enter the address of the restaurant'
+
             onChange={this.props.handleEateryChange}
             id="address" />
 
@@ -46,11 +47,8 @@ class Eateries extends React.Component {
           <input
             type="url"
             name="website"
-
-
             value={this.props.eateryFormData.website}
             placeholder='enter the website of the restaurant'
-
             onChange={this.props.handleEateryChange}
             id="website" />
 
@@ -88,8 +86,6 @@ class Eateries extends React.Component {
           <select className='categoryEats'
             onChange={this.props.handleEateryChange}
             name="category"
-
-
 
             value={this.props.eateryFormData.category}
           >

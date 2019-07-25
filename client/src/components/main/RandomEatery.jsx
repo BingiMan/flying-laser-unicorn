@@ -1,5 +1,6 @@
 import React from 'react';
 import { fetchEateries } from '../../services/api-calls';
+import { Link } from 'react-router-dom';
 
 export default class RandomEatery extends React.Component {
   constructor(props) {
@@ -35,6 +36,8 @@ export default class RandomEatery extends React.Component {
           <p> <span>Address:</span> {this.state.eatery.address}</p>
           <p> <span>Category:</span> {this.state.eatery.category}</p>
           <p> <span>Price Range:</span> {this.state.eatery.price_range}</p>
+          <Link id="detail-button"
+            to={`/single-eatery/${this.state.eatery.id}`}> Details </Link>
         </div>
       </>
     )
