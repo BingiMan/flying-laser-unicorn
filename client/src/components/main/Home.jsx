@@ -27,7 +27,6 @@ export default class Home extends React.Component {
       <section>
 
         <div>
-          <h1>HOME COMPONENT! YAY!</h1>
           <div className='header-img'>
             <img className='intro-image' src="https://i.imgur.com/lD9dGJ9.jpg" alt="Panda and bamboo" />
           </div>
