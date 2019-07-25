@@ -228,6 +228,7 @@ cursor: pointer;
   font-weight: 900;
   cursor: pointer;
   transition: color 0.3s ease;
+
 }
 .form-btn:hover {
   background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #c62d1f), color-stop(1, #f24537));
@@ -243,6 +244,7 @@ cursor: pointer;
   position:relative;
   top:1px;
 }
+
 
 
 .login-form, .register-form{

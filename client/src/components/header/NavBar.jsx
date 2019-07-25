@@ -113,8 +113,8 @@ export default class NavigationBar extends React.Component {
                         </div>
                         {this.props.currentUser === null &&
                         (<div className="nav-wrapper-right">
-                            <button className="btn" onClick={this.showLogin}> Login</button>
-                            <button className="btn" onClick={this.showRegister}> Register</button>
+                            <button className="btn btn1" onClick={this.showLogin}> Login</button>
+                            <button className="btn btn2" onClick={this.showRegister}> Register</button>
                         </div>)}
                         {this.props.currentUser !== null &&
                         <div>Hi, {this.props.currentUser.charAt(0).toUpperCase() + this.props.currentUser.slice(1)} ❤ </div>
@@ -135,6 +135,7 @@ export default class NavigationBar extends React.Component {
                                                          handleChange={this.props.handleRegisterChange}
                                                          handleSubmit={this.props.handleRegisterSubmit}
                                                          hideRegister={this.hideRegister}
+                                                         showLogin={this.showLogin}
 
                 /> : ''}
 
