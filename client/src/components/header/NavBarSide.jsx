@@ -4,6 +4,9 @@ import './style.css';
 
 export default class NavBarSide extends React.Component {
   render() {
+
+
+
     return (
       <nav className='nav-container'>
         <div id="menuToggle">
