@@ -75,13 +75,11 @@ export default class NavigationBar extends React.Component {
     };
 
     hideLogin = () => {
-        this.setState((prevState, props) => (
+        this.setState(
             {
                 showLogin: false
             }
-        ), () => {
-
-        });
+        )
     };
 
 
@@ -103,7 +101,7 @@ export default class NavigationBar extends React.Component {
 
         console.log(window.pageYOffset);
         return (
-            <nav>
+            <>
                 <NavBarSide/>
                 <div className="nav-wrapper">
                     <div className="nav-opts">
@@ -140,7 +138,7 @@ export default class NavigationBar extends React.Component {
 
                 /> : ''}
 
-            </nav>
+            </>
         );
     }
 }

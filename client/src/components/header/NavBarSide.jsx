@@ -8,7 +8,6 @@ export default class NavBarSide extends React.Component {
 
 
     return (
-      <nav className='nav-container'>
         <div id="menuToggle">
           <input type="checkbox" />
           <span></span>
@@ -27,10 +26,8 @@ export default class NavBarSide extends React.Component {
             <Link to="/introduction">
               <li>Team</li>
             </Link>
-
           </ul>
         </div>
-      </nav>
     )
   }
 }

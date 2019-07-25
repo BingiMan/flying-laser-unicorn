@@ -9,12 +9,16 @@ class RegisterUser extends React.Component {
     e.preventDefault()
     await this.props.handleSubmit(e);
     this.props.history.push('/login')
-
+  }
+  handleClose = (e)=>{
+    e.preventDefault();
+    this.props.hideRegister();
   }
 
   render() {
     return (
       <div className="register-dialog">
+        <div className="close-thik" onClick={this.handleClose} ></div>
         <form className="register-form">
           <div className="flex">
             <h1 className="form-title">Register</h1>

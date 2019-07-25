@@ -12,11 +12,15 @@ class LoginUser extends React.Component {
     this.props.history.push('/');
     this.props.hideLogin();
   };
-
+  handleClose = (e)=>{
+    e.preventDefault();
+    this.props.hideLogin();
+  }
 
   render() {
     return (
       <div className="login-dialog">
+        <div className="close-thik" onClick={this.handleClose} ></div>
           <form className="login-form">
             <div className="flex">
               <h1 className="form-title">
