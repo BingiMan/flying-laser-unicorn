@@ -35,8 +35,45 @@ input[type=url], select, textarea {
 
 
 /* below is for the button to toggle adding eatery / not */
+#random-and-posting {
+    background-color: #B2B3B4;
+    width:80vw;
+    margin-left: 5vw;
+    border: black solid 2px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    /* align-content: stretch; */
+    position: relative;
+    padding: 5vw;
+}
+
 #postingEatery {
   cursor: pointer;
   font-weight: bold;
+  padding: 10px;
+  height: 6vh;
+  width: 10vw;
+  border: 2px black solid;
+  border-radius: 10px;
+  position: relative;
+  line-height:6vh;
 }
+#postingEatery:hover {
+ background-color: rgb(119, 118, 118);
+}
+
+#eateries-list {
+  background-color: lightgray;
+  border-radius: 10px;
+  width: 80vw;
+  margin-left: 10vw;
+}
+
+.random-pick h2 {
+ font-size: 4em;
+}
+
+/*need to check with Jas to keep all this consistent*/
 /* above is for the button to toggle adding eatery / not */

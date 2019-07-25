@@ -5,13 +5,13 @@ class Eateries extends React.Component {
     super(props);
   }
 
-  handleRedirect = async (e) => {
-    e.preventDefault()
-    await this.props.handleEaterySubmit(e)
+  // handleRedirect = async (e) => {
+  //   e.preventDefault()
+  //   await this.props.handleEaterySubmit(e)
 
 
-    this.props.history.push('/eateries-list')
-  }
+  //   this.props.history.push('/eateries-list')
+  // }
 
   render() {
     return (
@@ -20,15 +20,12 @@ class Eateries extends React.Component {
 
         <h3>Submit a place to eat</h3>
 
-        <form onSubmit={(e) => {
-          e.preventDefault();
-          this.handleRedirect(e);
-        }} onSubmit={this.handleRedirect}>
+        <form>
 
 
           <label htmlFor="name">Name</label>
           <input
-            value={this.props.eateryFormData.name}
+            // value={this.props.eateryFormData.name}
             type="text"
             name="name"
 
@@ -41,7 +38,7 @@ class Eateries extends React.Component {
 
           <label htmlFor="address">Address</label>
           <input
-            value={this.props.eateryFormData.address}
+            // value={this.props.eateryFormData.address}
             type="text"
             name="address"
             placeholder='enter the address of the restaurant'
@@ -55,7 +52,7 @@ class Eateries extends React.Component {
           <input
             type="url"
             name="website"
-            value={this.props.eateryFormData.website}
+            // value={this.props.eateryFormData.website}
             placeholder='enter the website of the restaurant'
             // value={this.props.EateryformData.address}
             onChange={this.props.handleEateryChange}
@@ -94,7 +91,9 @@ class Eateries extends React.Component {
           <label htmlFor="category">Category</label>
           <select className='categoryEats'
             onChange={this.props.handleEateryChange}
-            name="category" value={this.props.eateryFormData.category}>
+            name="category"
+          // value={this.props.eateryFormData.category}
+          >
             <option
               value="start">Please select one</option>
             <option
@@ -116,7 +115,7 @@ class Eateries extends React.Component {
           </select>
           <br />
           <div className='eatButton'>
-            <button onClick={this.routeChange} className='submit-resto'>Submit Eatery</button>
+            <button onClick={this.props.handleEaterySubmit} className='submit-resto'>Submit Eatery</button>
           </div>
 
         </form>
