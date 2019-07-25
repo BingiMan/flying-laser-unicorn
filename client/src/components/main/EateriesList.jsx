@@ -5,7 +5,6 @@ export default function EateriesList(props) {
 
   return (
     <>
-
       <div className="backdrop-wrapper">
         <div className="backdrop">
           <p className="text lighten">ALL EATERIES</p>
@@ -16,6 +15,7 @@ export default function EateriesList(props) {
         <div className="eatery eatery-list-item" key={eatery.id}>
           <h3 className="knockout">{eatery.name.toUpperCase()} </h3>
           <p><span>Address:</span> {eatery.address}</p>
+          <p><span>Category:</span>{eatery.category}</p>
           <p><span>Price Range:</span>{eatery.price_range}</p>
           <Link id="detail-button"
             to={`/single-eatery/${eatery.id}`}> Details </Link>
