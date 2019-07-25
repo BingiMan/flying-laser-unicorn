@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import { createUser, loginUser, createEatery, fetchEateries, storeToken, logoutUser } from './services/api-calls'
-import { Route, Link } from 'react-router-dom'
+import { Route, Link, withRouter } from 'react-router-dom'
 import Home from './components/main/Home';
 import CommentsList from './components/main/CommentsList'
 import Introduction from "./components/main/Introduction";
@@ -45,8 +45,7 @@ class App extends React.Component {
         category: "",
         priceRange: ""
       },
-      eateriesData: [],
-      postingEatery: false
+      eateriesData: []
     }
   }
 
@@ -139,6 +138,7 @@ class App extends React.Component {
         priceRange: null,
       },
     }));
+    this.props.history.push('/eateries-list')
   }
 
 
@@ -162,15 +162,6 @@ class App extends React.Component {
   // above is added for log out. wed night ////////////////////////////////////////
 
 
-
-// below is for clickle add eatery div //
-  postingEatery = () => {
-    this.setState(prevState=> ({
-      postingEatery: !prevState.postingEatery
-    }))
-   }
-// above is for clickle add eatery div //
-
   render() {
     return (
       <div className="App">
@@ -189,7 +180,10 @@ class App extends React.Component {
         </header>
 
         <main>
-          <Route exact path="/" render={() => <Home />} />
+          <Route exact path="/" render={() => <Home
+              handleEateryChange={this.handleEateryChange}
+              handleEaterySubmit={this.handleEaterySubmit}
+              eateryFormData={this.eateryFormData}/>} />
           <Route exact path="/introduction" render={() => <Introduction />} />
           <Route exact path="/comments" render={() => <CommentsForm
             handleChange={this.handleCommentFormChange}
@@ -203,26 +197,7 @@ class App extends React.Component {
             handleSubmit={this.handleCommentUpdateSubmit}
             handleCancel={this.handleCommentCancel}
           />} />
-          {/* place below div inside or with eateries */}
-          <div id="eateries-list">
-            <div id="postingEatery"
-             onClick={this.postingEatery}>
-             {this.state.postingEatery ?
-              "Cancel Posting": "Posting an Eatery"}
-            </div>
-          <EateriesList
-            eateries={this.state.eateries}
-            eateryUpdateFormData={this.state.eateryUpdateFormData}
-            handleDetail={this.handleDetail}
-          />
-        </div>
-          {/* place above div inside or with eateries */}
-          {/* below is toggle based on above bottom  */}
-          {this.state.postingEatery && <Eateries
-          handleEateryChange={this.handleEateryChange}
-          handleEaterySubmit={this.handleEaterySubmit}
-          eateryFormData={this.state.eateryFormData}/>}
-          {/* above is toggle based on above bottom  */}
+  
           <Route exact path="/eateries-list" render={() => <EateriesList
             eateries={this.state.eateries}
             eateryUpdateFormData={this.state.eateryUpdateFormData}
@@ -255,4 +230,4 @@ class App extends React.Component {
     );
   }
 }
-export default App;
+export default withRouter(App);
