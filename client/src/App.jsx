@@ -15,7 +15,6 @@ import RegisterUser from "./components/main/RegisterUser";
 import LoginUser from "./components/main/LoginUser"
 import { CommentsForm } from "./components/main/CommentsForm";
 import Eateries from './components/main/Eateries';
-
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -49,7 +48,6 @@ class App extends React.Component {
       eateriesData: []
     }
   }
-
   componentDidMount = async () => {
     const resp = await fetchEateries();
     const eateries = resp.restaurants;
@@ -58,14 +56,12 @@ class App extends React.Component {
       loggedIn: localStorage.getItem('clientId'),
     });
     console.log(`Auth Token: ${getTokenFromStorage()}`)
-
     const token = localStorage.getItem('authToken');
     const userId = localStorage.getItem('clientId');
     if (token !== null) {
       storeToken(token, userId);
     }
   }
-
   // Below is Reigister From 
   handleRegisterChange = (e) => {
     const { target: { name, value } } = e;
@@ -88,7 +84,6 @@ class App extends React.Component {
       },
     })
   }
-
   // Above is Login From 
   handleLoginChange = (e) => {
     const { target: { name, value } } = e;
@@ -99,13 +94,11 @@ class App extends React.Component {
       }
     }));
   }
-
   handleLoginSubmit = async (e) => {
     e.preventDefault()
     const resp = await loginUser(this.state.loginFormData.name, this.state.loginFormData.password)
     this.setState({
       currentUser: resp.data.user.name,
-
       user: resp.data.user.id,
       loginFormData: {
         name: '',
@@ -114,7 +107,6 @@ class App extends React.Component {
     });
     console.log(this.state.currentUser)
   }
-
   handleEateryChange = (e) => {
     const { name, value } = e.target;
     this.setState(prevState => ({
@@ -124,16 +116,12 @@ class App extends React.Component {
       }
     }))
   }
-
-
-
   handleEaterySubmit = async (ev) => {
     ev.preventDefault();
     const eateries = await createEatery(this.state.eateryFormData)
     console.log(eateries)
     this.setState((prevState) => ({
       eateriesData: [...prevState.eateriesData, eateries],
-
       eateryFormData: {
         name: '',
         address: '',
@@ -144,9 +132,6 @@ class App extends React.Component {
     }));
     this.props.history.push('/eateries-list')
   }
-
-
-
   handleDetail = (id) => {
     this.setState(prevState => ({
       currentEatery: {
@@ -155,7 +140,6 @@ class App extends React.Component {
       }
     }));
   }
-
   // below is added for log out. wed night ////////////////////////////////////////
   handleLogOut = () => {
     this.setState({
@@ -164,26 +148,21 @@ class App extends React.Component {
     logoutUser();
   }
   // above is added for log out. wed night ////////////////////////////////////////
-
-
   render() {
     return (
       <div className="App">
         <header>
-
           <NavigationBar currentUser={this.state.currentUser}
             loggedIn={this.state.loggedIn}
             handleLogOut={this.handleLogOut}
             handleLoginChange={this.handleLoginChange}
             handleLoginSubmit={this.handleLoginSubmit}
             loginFormData={this.state.loginFormData}
-
             registerFormData={this.state.registerFormData}
             handleRegisterChange={this.handleRegisterChange}
             handleRegisterSubmit={this.handleRegisterSubmit}
           />
         </header>
-
         <main>
           <Route exact path="/" render={() => <Home
             handleEateryChange={this.handleEateryChange}
@@ -202,36 +181,25 @@ class App extends React.Component {
             handleSubmit={this.handleCommentUpdateSubmit}
             handleCancel={this.handleCommentCancel}
           />} />
-
           <Route exact path="/eateries-list" render={() => <EateriesList
             eateries={this.state.eateries}
             eateryUpdateFormData={this.state.eateryUpdateFormData}
             handleDetail={this.handleDetail}
           />} />
-
           <Route exact path='/addEatery' render={() => <Eateries
             handleEateryChange={this.handleEateryChange}
             handleEaterySubmit={this.handleEaterySubmit}
             eateryFormData={this.state.eateryFormData}
           />} />
-
-
-          <Route path="/register" exact render={() => <RegisterUser
-            formData={this.state.registerFormData}
-            handleChange={this.handleRegisterChange}
-            handleSubmit={this.handleRegisterSubmit} />} />
-
           <Route path="/single-eatery/:id" exact render={(props) => <SingleEatery
             {...props}
             currentEatery={this.state.currentEatery}
-
           />} />
         </main>
         <footer>
           <HireUs />
         </footer>
       </div>
-
     );
   }
 }

@@ -7,6 +7,8 @@ class Eateries extends React.Component {
 
 
   render() {
+
+
     return (
       <div className='eatery-form'>
 
@@ -18,7 +20,8 @@ class Eateries extends React.Component {
 
           <label htmlFor="name">Name</label>
           <input
-            value={this.props.eateryFormData.name}
+
+            // value={this.props.eateryFormData.name}
             type="text"
             name="name"
 
@@ -33,7 +36,7 @@ class Eateries extends React.Component {
           <label htmlFor="address">Address</label>
           <input
 
-            value={this.props.eateryFormData.address}
+            // value={this.props.eateryFormData.address}
             type="text"
             name="address"
             placeholder='enter the address of the restaurant'
@@ -47,7 +50,7 @@ class Eateries extends React.Component {
           <input
             type="url"
             name="website"
-            value={this.props.eateryFormData.website}
+            // value={this.props.eateryFormData.website}
             placeholder='enter the website of the restaurant'
             onChange={this.props.handleEateryChange}
             id="website" />
@@ -87,7 +90,7 @@ class Eateries extends React.Component {
             onChange={this.props.handleEateryChange}
             name="category"
 
-            value={this.props.eateryFormData.category}
+          // value={this.props.eateryFormData.category}
           >
             <option
               value="start">Please select one</option>
