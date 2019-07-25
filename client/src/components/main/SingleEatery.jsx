@@ -173,7 +173,7 @@ class SingleEatery extends React.Component {
   }
 
   handleCommentUpdateSubmit = async (ev) => {
-    // ev.preventDefault();
+    ev.preventDefault();
     console.log('clicked');
     const data = { ...this.state.commentUpdateFormData, id: this.state.updatingcommentId };
     console.log(data);
@@ -211,6 +211,7 @@ class SingleEatery extends React.Component {
           <p className='eateryPriceTitle'>Price Range:</p> <p className='eateryPriceResponse'>{this.state.eateryData.price_range}</p>
           <p className='eateryWebTitle'>Website:</p> <p className='eateryWebResponse'>{this.state.eateryData.website}</p>
           <div className='eateryButtons'>
+            {}
             {!this.state.updating &&
               <button className='updateEateryButton' onClick={() => { this.handleUpdate(this.state.eateryData) }}> Update </button>}
             {!this.state.updating &&

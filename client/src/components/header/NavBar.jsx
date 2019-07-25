@@ -1,4 +1,4 @@
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import React from 'react';
 import './style.css';
 import NavBarSide from "./NavBarSide";
@@ -6,6 +6,7 @@ import LoginUser from "../main/LoginUser";
 import RegisterUser from "../main/RegisterUser";
 
 export default class NavigationBar extends React.Component {
+
     constructor(props) {
         super(props);
 
@@ -58,30 +59,78 @@ export default class NavigationBar extends React.Component {
             showLogin: false
         })
     };
-
-    hideRegister = () => {
-        this.setState({
-            showRegister: false
-        })
+    this.state = {
+      showLogin: false,
+      showRegister: false,
     };
 
-    showLogin = () => {
-        this.setState(
-            {
-                showLogin: true,
-                showRegister: false
-            }
-        )
-    };
+    this.tabs = [
+      // {
+      //   link: '/',
+      //   label: 'Home',
+      // },
+      // {
+      //   link: '/introduction',
+      //   label: 'Introduction'
+      // },
+      // {
+      //   link: '/addEatery',
+      //   label: 'Eatery',
+      // },
+      // {
+      //   link: '/eateries-list',
+      //   label: 'Eatery List',
+      // },
+      // {
+      //   link: '/login',
+      //   label: 'Login',
+      // },
+      // {
+      //   link: '/register',
+      //   label: 'Register',
+      // }
+    ]
+  }
 
-    hideLogin = () => {
-        this.setState(
-            {
-                showLogin: false
-            }
-        )
-    };
+  //
+  // linkOrButton(tab) {
+  //   if (tab.link) {
+  //     return <Link to={tab.link}>{tab.label}</Link>
+  //   } else {
+  //     return <button>{tab.label}</button>
+  //   }
+  // }
+  // this.tabs.map(tab => this.linkOrButton(tab))
 
+  showRegister = () => {
+    this.setState({
+      showRegister: true,
+      showLogin: false
+    })
+  };
+
+  hideRegister = () => {
+    this.setState({
+      showRegister: false
+    })
+  };
+
+  showLogin = () => {
+    this.setState(
+      {
+        showLogin: true,
+        showRegister: false
+      }
+    )
+  };
+
+  hideLogin = () => {
+    this.setState(
+      {
+        showLogin: false
+      }
+    )
+  };
 
     render() {
 
