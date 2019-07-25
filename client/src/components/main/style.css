@@ -215,6 +215,11 @@ cursor: pointer;
   display: flex;
   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
+
+.intro-section1 {
+  position: relative;
+  top: 120vh;
+}
 #random-and-posting {
   background-color: #B2B3B4;
   width:80vw;
@@ -225,10 +230,14 @@ cursor: pointer;
   flex-direction: row-reverse;
   justify-content: space-between;
   /* align-content: stretch; */
+  top: 140vh;
   position: relative;
   padding: 5vw;
   /*z-index: -4;*/
-
+}
+.intro-section2 {
+  position: relative;
+  top: 150vh;
 }
 
 .flex {

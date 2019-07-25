@@ -3,7 +3,7 @@ import React from 'react';
 export default function Team() {
   return (
     <>
-      <div className='intro-section'> 
+      <div className='intro-section2'> 
     <div className='about-team-intro'>
     <h2>Meet the team</h2>
   </div>

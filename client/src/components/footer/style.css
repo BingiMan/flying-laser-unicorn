@@ -2,6 +2,11 @@
 
 body { background-color: #eee; }
 
+footer {
+  bottom: -140vh;
+  position: relative;
+}
+
 .footer-social-links{
 font-size: 14px;
 text-align: center;
