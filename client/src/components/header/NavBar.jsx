@@ -41,7 +41,7 @@ export default class NavigationBar extends React.Component {
             // }
         ]
     }
-
+    
     //
     // linkOrButton(tab) {
     //   if (tab.link) {
@@ -85,11 +85,11 @@ export default class NavigationBar extends React.Component {
 
     render() {
 
-        let prevScrollpos = window.pageYOffset;
-        window.onload = function(){
-            document.querySelector(".nav-wrapper-left").style.visibility = "hidden";
-        };
-        window.onscroll = function () {
+      let prevScrollpos = window.pageYOffset;
+      window.onload = function(){
+         document.querySelector(".nav-wrapper-left").style.visibility = "hidden";
+      };
+      window.onscroll = function () {
             let currentScrollPos = window.pageYOffset;
             if (prevScrollpos < 200) {
                 document.querySelector(".nav-wrapper-left").style.visibility = "hidden";
@@ -99,7 +99,7 @@ export default class NavigationBar extends React.Component {
             prevScrollpos = currentScrollPos;
         };
 
-        console.log(window.pageYOffset);
+      
         return (
             <>
                 <NavBarSide/>
@@ -117,10 +117,10 @@ export default class NavigationBar extends React.Component {
                             <button className="btn btn2" onClick={this.showRegister}> Register</button>
                         </div>)}
                         {this.props.currentUser !== null &&
-                        <div>Hi, {this.props.currentUser.charAt(0).toUpperCase() + this.props.currentUser.slice(1)} ❤ </div>
+                        <div className="display-username">Hi, {this.props.currentUser.charAt(0).toUpperCase() + this.props.currentUser.slice(1)} ❤ </div>
                         }
                         {this.props.currentUser !== null &&
-                        <div id="logout" onClick={this.props.handleLogOut}> Log Out</div>
+                        <button className="btn3" id="logout" onClick={this.props.handleLogOut}> Log Out</button>
                         }
 
                     </div>
