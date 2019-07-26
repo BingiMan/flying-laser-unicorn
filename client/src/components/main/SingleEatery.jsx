@@ -87,7 +87,7 @@ class SingleEatery extends React.Component {
   }
 
   handleEateryUpdateSubmit = async (ev) => {
-    ev.preventDefault();
+    // ev.preventDefault();
     const data = this.state.eateryUpdateFormData;
     const resp = await updateEatery(data);
 
@@ -130,7 +130,7 @@ class SingleEatery extends React.Component {
   };
 
   handleCommentFormSubmit = async (ev) => {
-    ev.preventDefault();
+    // ev.preventDefault();
     const data = { ...this.state.commentFormData, id: this.state.eateryData.id };
     console.log(data);
     const newComment = await createComment(data);
@@ -171,7 +171,7 @@ class SingleEatery extends React.Component {
   }
 
   handleCommentUpdateSubmit = async (ev) => {
-    ev.preventDefault();
+    // ev.preventDefault();
     console.log('clicked');
     const data = { ...this.state.commentUpdateFormData, id: this.state.updatingcommentId };
     console.log(data);
