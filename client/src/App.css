@@ -49,6 +49,7 @@ input[type=url], select, textarea {
   position: relative;
   line-height: 3vh;
   text-align: center;
+  background-color: seashell;
 }
 
 #postingEatery:hover {
@@ -81,7 +82,8 @@ input[type=url], select, textarea {
  border: black solid 2px;
  border-radius: 5px;
  padding: 1vw;
- background-color: rgba(160, 159, 159, 0.6);
+  color: black;
+  background-color: seashell;
  width: 10vw;
  text-align: center;
 }
