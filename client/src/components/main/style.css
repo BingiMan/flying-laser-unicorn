@@ -62,6 +62,7 @@
   width: 230px; 
   height: 230px;
   display: flex;
+  border-radius: 20px;
 }
 
 .team-button {
@@ -76,7 +77,7 @@
   font-weight: bolder;
   align-content: center;
   margin-top: 10px;
-margin-left: 50px;
+margin-left: 20px;
 }
 
 .team-button:hover {
@@ -524,6 +525,8 @@ input[name='updateAddress'] {
   .random-section{
     font-size: 2vw;
     font-weight: 900;
+    position: absolute;
+    margin: -53px 0px 14px -481px;
   }
 
   /* Media Queries */
