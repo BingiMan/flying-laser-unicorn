@@ -6,22 +6,20 @@
 
 /* below is to make nav bar stay in place*, might conflict with you, luis */
 .nav-wrapper {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 10;
-  width: 100%;
-  height: 50px;
-  background-color: #ededed;
-    display: flex;
-    background-color: rgba(46, 105, 12, 0.7);
-
-
+position: fixed;
+top: 0;
+left: 0;
+z-index: 10;
+width: 100%;
+height: 50px;
+background-color: #ededed;
+display: flex;
+background-color: rgba(46, 105, 12, 0.7);
 }
 
 .nav-opts{
-    margin-left: auto;
-    display: flex;
+margin-left: auto;
+display: flex;
 }
 /* below is to make nav bar stay in place, sorry git szar */
 
@@ -37,13 +35,13 @@ margin: auto 50px;
  
  #menuToggle
  {
-   display: block;
-   position: absolute;
-   top: 16px;
-   left: 18px;
-   z-index: 13;
-   -webkit-user-select: none;
-   user-select: none;
+display: block;
+position: absolute;
+top: 16px;
+left: 18px;
+z-index: 13;
+-webkit-user-select: none;
+user-select: none;
  }
  
  #menuToggle input
@@ -114,7 +112,7 @@ margin: auto 50px;
  }
  
  /*
-  * Ohyeah and the last one should go the other direction
+  * Oh yeah and the last one should go the other direction
   */
  #menuToggle input:checked ~ span:nth-last-child(2)
  {
@@ -130,7 +128,7 @@ margin: auto 50px;
    position: absolute;
    width: 300px;
    margin: -43px 0 0 -80px;
-     border-radius: 10px 10px 10px 10px;
+  border-radius: 10px 10px 10px 10px;
    padding: 50px;
    padding-top: 85px;
    background: rgba(46, 105, 12, 0.7);
@@ -227,12 +225,15 @@ margin: auto 50px;
   a {
    font-size: 1px;
   }
-  .btn1 {
-margin-left: 100px;
-  }
-  .btn2 {
+
+  .btn1, .btn2 {
+    height: 20px;
+    margin-left: 100px;
     margin-right: 100px;
-   
-    
   }
+.login-dialog, .register-dialog {
+  margin-top: 10px;
+  margin-right: 70px;
+  /* padding: 28px 0; */
+}
  }

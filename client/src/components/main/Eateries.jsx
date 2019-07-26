@@ -5,42 +5,29 @@ class Eateries extends React.Component {
     super(props);
   }
 
-
   render() {
-
-
     return (
+
       <div className='eatery-form'>
-
-
         <h3>Submit a place to eat</h3>
 
         <form>
 
-
           <label htmlFor="name">Name</label>
           <input
-
-            // value={this.props.eateryFormData.name}
             type="text"
             name="name"
-
             placeholder="enter the name of the restaurant"
-
             onChange={this.props.handleEateryChange}
-
             id="name" />
 
           <br />
 
           <label htmlFor="address">Address</label>
           <input
-
-            // value={this.props.eateryFormData.address}
             type="text"
             name="address"
             placeholder='enter the address of the restaurant'
-
             onChange={this.props.handleEateryChange}
             id="address" />
 
@@ -50,14 +37,11 @@ class Eateries extends React.Component {
           <input
             type="url"
             name="website"
-            // value={this.props.eateryFormData.website}
             placeholder='enter the website of the restaurant'
             onChange={this.props.handleEateryChange}
             id="website" />
 
           <br />
-
-
 
           <input
             type="radio"
@@ -88,10 +72,8 @@ class Eateries extends React.Component {
           <label htmlFor="category">Category</label>
           <select className='categoryEats'
             onChange={this.props.handleEateryChange}
-            name="category"
+            name="category">
 
-          // value={this.props.eateryFormData.category}
-          >
             <option
               value="start">Please select one</option>
             <option
@@ -111,11 +93,12 @@ class Eateries extends React.Component {
             <option
               value="deli">Deli</option>
           </select>
+
           <br />
+
           <div className='eatButton'>
             <button onClick={this.props.handleEaterySubmit} className='submit-resto'>Submit Eatery</button>
           </div>
-
         </form>
       </div >
     );

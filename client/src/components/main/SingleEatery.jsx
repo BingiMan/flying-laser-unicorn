@@ -38,11 +38,9 @@ class SingleEatery extends React.Component {
       comments: [],
       commentFormData: {
         message: "",
-        yaynay: ""
       },
       commentUpdateFormData: {
         message: "",
-        yaynay: ""
       }
     }
   }
@@ -182,21 +180,16 @@ class SingleEatery extends React.Component {
     this.setState({
       commentUpdateFormData: {
         message: "",
-        yaynay: ""
       },
       updatingcommentId: ''
     })
   }
-
 
   handleCommentCancel = () => {
     this.setState({
       updatingcommentId: ''
     });
   }
-
-
-
 
   render() {
     return (

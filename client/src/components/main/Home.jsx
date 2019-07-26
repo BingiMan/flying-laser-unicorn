@@ -29,7 +29,7 @@ export default class Home extends React.Component {
         <div>
           
           <div className='header-img'>
-            <img className='intro-image'/>
+            <img className='intro-image' />
           </div>
           <About />
 
@@ -37,7 +37,7 @@ export default class Home extends React.Component {
             <div id="postingEatery"
               onClick={this.postingEatery}>
               {this.state.posting ?
-                "Cancel Posting" : "Posting an Eatery"}
+                "Cancel Post" : "Post Eatery"}
             </div>
             {this.state.posting && <Eateries
               handleEateryChange={this.props.handleEateryChange}
@@ -45,10 +45,10 @@ export default class Home extends React.Component {
               eateryFormData={this.props.eateryFormData} />}
             {!this.state.posting && <RandomEatery />}
           </div>
-            <div className="backdrop-wrapper2">
-              <div class="backdrop2">
+          <div className="backdrop-wrapper2">
+            <div class="backdrop2">
               <p class="text lighten"> THE TEAM </p>
-             </div>
+            </div>
           </div>
           <Team />
         </div>

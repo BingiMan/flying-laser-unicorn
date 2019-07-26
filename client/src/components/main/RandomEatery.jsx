@@ -46,7 +46,7 @@ export default class RandomEatery extends React.Component {
     return (
       <>
         <div className="random-section">Random Pick for You</div>
-        <div className="random-pick eatery">
+        <div className="random-pick-eatery">
           <div className="random-eatery-name">{this.state.eatery.name}</div>
           <p> <span>Address:</span> {this.state.eatery.address}</p>
           <p> <span>Category:</span> {this.state.eatery.category}</p>
