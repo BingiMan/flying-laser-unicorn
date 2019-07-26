@@ -222,38 +222,38 @@ class SingleEatery extends React.Component {
               <input
                 type="text"
                 value={this.state.eateryUpdateFormData.name}
-                name="updateName"
+                name="name"
                 placeholder="name of the restraurant"
                 onChange={this.handleEateryUpdateChange}
               />
               <input
                 type="text"
                 value={this.state.eateryUpdateFormData.address}
-                name="updateAddress"
+                name="address"
                 placeholder="address of the restraurant"
                 onChange={this.handleEateryUpdateChange}
               />
               <input
                 type="radio"
-                name="priceRange"
+                name="price_range"
                 value={this.state.eateryUpdateFormData.price_range}
                 onChange={this.handleEateryUpdateChange}
                 id="priceRange" /> <span>Basically free</span>
               <input
                 type="radio"
-                name="priceRange"
+                name="price_range"
                 value={this.state.eateryUpdateFormData.price_range}
                 onChange={this.handleEateryUpdateChange}
                 id="priceRange" /> <span>Cheap as chips</span>
               <input
                 type="radio"
-                name="priceRange"
+                name="price_range"
                 value={this.state.eateryUpdateFormData.price_range}
                 onChange={this.handleEateryUpdateChange}
                 id="priceRange" /> <span>Won't break the bank</span>
               <input
                 type="radio"
-                name="priceRange"
+                name="price_range"
                 value={this.state.eateryUpdateFormData.price_range}
                 onChange={this.handleEateryUpdateChange}
                 id="priceRange" /> <span>Fancy AF</span>
@@ -298,6 +298,7 @@ class SingleEatery extends React.Component {
 
         {this.state.commenting &&
           <CommentsForm
+            commentFormData={this.state.commentFormData}
             handleChange={this.handleCommentFormChange}
             handleSubmit={this.handleCommentFormSubmit} />
         }
