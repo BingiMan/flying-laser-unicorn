@@ -38,31 +38,23 @@ https://i.imgur.com/LlbuOWI.png
 First draft sketch: 
 https://i.imgur.com/IHwPrJ3.jpg
 
-
-< Header >
-< Nav Bar>
-< Hero >
-< Intro >
-< Register From >
-< Log In From >
-< Eatery >
-< Comments >
-< Comment Form >
-< Contact Us >
-< Contact Form >
-< Footer >
-< Header > <br />
-< Nav Bar> <br />
-< Hero > <br />
+< App > <br />
+< NavBar > <br />
+< NavBarSide > <br />
+<Home > <br />
+< About > <br />
 < Intro > <br />
-< Register From > <br />
-< Log In From > <br />
-< Eatery > <br />
-< Comments > <br />
+< RegisterUser > (Register From)  <br />
+< LogInUser > (Login Form) <br />
+< Eateries > (post an eatery) <br />
+< EateriesList > <br />
+< SingleEatery > <br />
+< Random Eatery > <br />
+< CommentList > <br />
 < Comment Form > <br />
-< Contact Us > <br />
-< Contact Form > <br />
-< Footer > <br />
+
+< Team > <br />
+< HireUs > (footer) <br />
 
 ###### List Dependencies
 express <br />
@@ -75,6 +67,6 @@ bcrypt <br />
 jsonwebtoken <br />
 cors <br />
 axios <br />
-react: react-router-dom react-transition-group
+
 
 
