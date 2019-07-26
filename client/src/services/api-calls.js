@@ -1,5 +1,5 @@
 const axios = require('axios');
-const URL = 'http://localhost:3000'
+const URL = 'https://radiant-thicket-83421.herokuapp.com/'
 const api = axios.create({
   baseURL: URL,
 });

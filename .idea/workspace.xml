@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="141166d0-c29f-4a1a-ba23-58bc7ab2a496" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/main/SingleEatery.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/main/SingleEatery.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/services/api-calls.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/services/api-calls.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models.js" beforeDir="false" afterPath="$PROJECT_DIR$/models.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -15,13 +15,13 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.4481268">
+    <splitter split-orientation="horizontal" split-proportion="0.23894349">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/client/src/components/main/EateriesList.jsx">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="483">
+                <state relative-caret-position="455">
                   <caret line="23" column="34" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
                   <folding>
                     <element signature="e#0#26#0" expanded="true" />
@@ -94,6 +94,15 @@
               </provider>
             </entry>
           </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/client/src/services/api-calls.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="20">
+                  <caret line="1" column="57" selection-start-line="1" selection-start-column="57" selection-end-line="1" selection-end-column="57" />
+                </state>
+              </provider>
+            </entry>
+          </file>
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/client/src/components/main/RandomEatery.jsx">
               <provider selected="true" editor-type-id="text-editor">
@@ -121,14 +130,23 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/client/src/components/main/SingleEatery.jsx">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="996">
+                <state relative-caret-position="1152">
                   <caret line="89" column="4" selection-start-line="89" selection-start-column="7" selection-end-line="89" selection-end-column="27" />
                   <folding>
                     <element signature="e#0#26#0" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/models.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="195">
+                  <caret line="8" column="5" lean-forward="true" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
                 </state>
               </provider>
             </entry>
@@ -190,10 +208,8 @@
         <option value="$PROJECT_DIR$/client/.gitignore" />
         <option value="$PROJECT_DIR$/routes/eateryRouter.js" />
         <option value="$PROJECT_DIR$/client/src/components/main/EateriesList.jsx" />
-        <option value="$PROJECT_DIR$/client/src/services/api-calls.js" />
         <option value="$PROJECT_DIR$/routes/commentRouter.js" />
         <option value="$PROJECT_DIR$/server.js" />
-        <option value="$PROJECT_DIR$/models.js" />
         <option value="$PROJECT_DIR$/client/src/components/main/Modal.jsx" />
         <option value="$PROJECT_DIR$/client/src/components/main/LoginUser.jsx" />
         <option value="$PROJECT_DIR$/client/src/components/main/RegisterUser.jsx" />
@@ -208,6 +224,8 @@
         <option value="$PROJECT_DIR$/client/src/components/main/style.css" />
         <option value="$PROJECT_DIR$/client/src/App.css" />
         <option value="$PROJECT_DIR$/client/src/components/main/SingleEatery.jsx" />
+        <option value="$PROJECT_DIR$/models.js" />
+        <option value="$PROJECT_DIR$/client/src/services/api-calls.js" />
       </list>
     </option>
   </component>
@@ -518,17 +536,18 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78794000" />
+    <option name="totallyTimeSpent" value="79422000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1680" height="939" extended-state="0" />
+    <frame x="0" y="23" width="1920" height="969" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.49802372" visible="true" weight="0.16335142" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.49802372" visible="true" weight="0.14270669" />
       <window_info id="Structure" order="2" sideWeight="0.5019763" side_tool="true" weight="0.16335142" />
       <window_info anchor="bottom" id="TypeScript" order="0" />
       <window_info anchor="bottom" id="REST Client" order="1" weight="0.33817428" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="2" visible="true" weight="0.24669074" />
+      <window_info anchor="bottom" id="Terminal" order="2" visible="true" weight="0.23809524" />
       <window_info anchor="bottom" id="Event Log" order="3" sideWeight="0.50030136" side_tool="true" weight="0.24789411" />
       <window_info anchor="bottom" id="Version Control" order="4" weight="0.6141079" />
       <window_info anchor="bottom" id="Docker" order="5" show_stripe_button="false" />
@@ -719,13 +738,6 @@
     <entry file="file://$PROJECT_DIR$/client/src/auth.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/services/api-calls.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="66" column="13" selection-start-line="66" selection-start-column="13" selection-end-line="66" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/main/CommentsList.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="321">
@@ -770,13 +782,6 @@
     <entry file="file://$PROJECT_DIR$/client/src/components/footer/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-88" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="10" column="25" lean-forward="true" selection-start-line="10" selection-end-line="11" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/assets/img/street.jpg">
@@ -841,9 +846,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/components/main/SingleEatery.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1152">
+          <caret line="89" column="4" selection-start-line="89" selection-start-column="7" selection-end-line="89" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="8" column="5" lean-forward="true" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/main/EateriesList.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
+        <state relative-caret-position="455">
           <caret line="23" column="34" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
@@ -851,13 +873,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/components/main/SingleEatery.jsx">
+    <entry file="file://$PROJECT_DIR$/client/src/services/api-calls.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="996">
-          <caret line="89" column="4" selection-start-line="89" selection-start-column="7" selection-end-line="89" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="20">
+          <caret line="1" column="57" selection-start-line="1" selection-start-column="57" selection-end-line="1" selection-end-column="57" />
         </state>
       </provider>
     </entry>
