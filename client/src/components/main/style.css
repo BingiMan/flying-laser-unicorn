@@ -542,14 +542,16 @@ and (max-width: 825px) {
 /* comments in single eatery */
 .comment {
   width: 80vw;
-  background: purple;
+  background: lightgrey;
   border-radius: 10px;
   padding: 10vh;
   margin: 10vw;
+  width: 60vw;
+  margin-left: 10vw;
 }
 
 .comment h3 {
-  margin-left: -50vw;
+  margin-left: -10vw;
 }
 
 

@@ -27,6 +27,7 @@ export default class Home extends React.Component {
       <section>
 
         <div>
+          
           <div className='header-img'>
             <img className='intro-image'/>
           </div>
