@@ -1,12 +1,13 @@
 const axios = require('axios');
-const URL = 'https://radiant-thicket-83421.herokuapp.com/'
+const URL = 'https://radiant-thicket-83421.herokuapp.com';
+// const URL='http://localhost:3000'
 const api = axios.create({
   baseURL: URL,
 });
 
 
 export const fetchEateries = async () => {
-  const resp = await axios.get(`${URL}/restaurants`);
+  const resp = await api.get(`${URL}/restaurants`);
   return resp.data;
 }
 export const fetchComments = async (id) => {
