@@ -25,7 +25,7 @@ top: 0;
   position: absolute;
   color: white;
   font-size: 30px;
-  margin: -600px 0px 20px 280px;
+  margin: -600px 0 20px 280px;
 }
 
 .about-team-intro {
@@ -558,6 +558,10 @@ input[name='updateAddress'] {
     height: 150px;
     width: 150px;
   }
+}
+#random-eatery-details{
+  font-size: 20px;
+  font-weight: 600;
 }
 @media only screen
   and (max-width: 1120px) {
