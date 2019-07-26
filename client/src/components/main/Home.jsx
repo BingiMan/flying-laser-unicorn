@@ -28,7 +28,7 @@ export default class Home extends React.Component {
 
         <div>
           <div className='header-img'>
-            <img className='intro-image' src="https://i.imgur.com/lD9dGJ9.jpg" alt="Panda and bamboo" />
+            <img className='intro-image'/>
           </div>
           <About />
 
@@ -43,6 +43,11 @@ export default class Home extends React.Component {
               handleEaterySubmit={this.props.handleEaterySubmit}
               eateryFormData={this.props.eateryFormData} />}
             {!this.state.posting && <RandomEatery />}
+          </div>
+            <div className="backdrop-wrapper2">
+              <div class="backdrop2">
+              <p class="text lighten"> THE TEAM </p>
+             </div>
           </div>
           <Team />
         </div>

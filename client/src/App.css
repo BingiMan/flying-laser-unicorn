@@ -1,3 +1,4 @@
+
 a {
   margin: 10px;
   text-decoration: none;
@@ -40,13 +41,15 @@ input[type=url], select, textarea {
 #postingEatery {
   cursor: pointer;
   font-weight: bold;
-  padding: 10px;
-  height: 6vh;
-  width: 10vw;
+  padding: 7px;
+  height: 3vh;
+  width: 9vw;
   border: 2px black solid;
   border-radius: 10px;
   position: relative;
-  line-height:6vh;
+  line-height: 3vh;
+  text-align: center;
+  background-color: seashell;
 }
 
 #postingEatery:hover {
@@ -72,15 +75,15 @@ input[type=url], select, textarea {
 } 
 .eatery span {
   font-weight: bold;
-  margin: 0 1vw;
+  margin: 0 3vw;
 }
 
 #detail-button {
  border: black solid 2px;
  border-radius: 5px;
  padding: 1vw;
- background-color: rgba(160, 159, 159, 0.6);
- margin-left: 50vw;
+  color: black;
+  background-color: seashell;
  width: 10vw;
  text-align: center;
 }
@@ -117,12 +120,24 @@ flex-direction: column;
   margin-top: 40px;
   width: 75vw;
 }
+.backdrop2 {
+  background: url("https://media.giphy.com/media/HDR31jsQUPqQo/giphy.gif") center;
+  background-size: contain;
+  margin: auto;
+  margin-top: 40px;
+  width: 75vw;
+  position: relative;
+  top: 200vh;
+  border-radius:30px;
+}
+
 
 .text {
   font: bolder 12vw "Alfa Slab One";
   text-align: center;
   margin: 0;
   border: 4px solid;
+  border-radius: inherit;
 }
 
 .lighten {
@@ -133,6 +148,11 @@ flex-direction: column;
 
 .backdrop-wrapper{
   margin: 10vh auto;
+}
+
+.backdrop-wrapper2{
+  position: relative;
+  top: -40vh;
 }
 
 .knockout {

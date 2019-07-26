@@ -1,15 +1,20 @@
 import React from 'react';
 import './App.css';
-import { createUser, loginUser, createEatery, fetchEateries, storeToken, logoutUser } from './services/api-calls'
+import {
+  createUser,
+  loginUser,
+  createEatery,
+  fetchEateries,
+  storeToken,
+  logoutUser
+} from './services/api-calls'
 import { Route, Link, withRouter } from 'react-router-dom'
 import Home from './components/main/Home';
 import CommentsList from './components/main/CommentsList'
-import Introduction from "./components/main/Introduction";
 import SingleEatery from './components/main/SingleEatery';
 import EateriesList from './components/main/EateriesList';
 import HireUs from "./components/footer/HireUs";
 import NavigationBar from "./components/header/NavBar";
-import NavBarSide from "./components/header/NavBarSide";
 import getTokenFromStorage from './auth';
 import RegisterUser from "./components/main/RegisterUser";
 import LoginUser from "./components/main/LoginUser"
@@ -168,7 +173,7 @@ class App extends React.Component {
             handleEateryChange={this.handleEateryChange}
             handleEaterySubmit={this.handleEaterySubmit}
             eateryFormData={this.eateryFormData} />} />
-          <Route exact path="/introduction" render={() => <Introduction />} />
+
           <Route exact path="/comments" render={() => <CommentsForm
             handleChange={this.handleCommentFormChange}
             handleSubmit={this.handleCommentFormSubmit}
