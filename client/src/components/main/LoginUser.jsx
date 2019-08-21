@@ -12,7 +12,7 @@ class LoginUser extends React.Component {
     this.props.history.push('/');
     this.props.hideLogin();
   };
-  handleClose = (e)=>{
+  handleClose = (e) => {
     e.preventDefault();
     this.props.hideLogin();
   }
@@ -21,18 +21,18 @@ class LoginUser extends React.Component {
     return (
       <div className="login-dialog">
         <div className="close-thik" onClick={this.handleClose} ></div>
-          <form className="login-form">
-            <div className="flex">
-              <h1 className="form-title">
-                Login
-              </h1>
-            </div>
-            <input className="modern-input-text" onChange={this.props.handleChange} type="text" name="name" value={this.props.formData.name} placeholder="Username" />
-            <input className="modern-input-text" onChange={this.props.handleChange} type="password" name="password" value={this.props.formData.password} placeholder="Password" />
-           <div className="flex">
+        <form className="login-form">
+          <div className="flex">
+            <h1 className="form-title">
+              Login
+            </h1>
+          </div>
+          <input className="modern-input-text" onChange={this.props.handleChange} type="text" name="name" value={this.props.formData.name} placeholder="Username" />
+          <input className="modern-input-text" onChange={this.props.handleChange} type="password" name="password" value={this.props.formData.password} placeholder="Password" />
+          <div className="flex">
             <button className="btn form-btn" onClick={this.handleRedirect}>Login</button>
-           </div>
-          </form>
+          </div>
+        </form>
       </div>
     )
   }

@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="141166d0-c29f-4a1a-ba23-58bc7ab2a496" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/main/About.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/main/About.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/main/RandomEatery.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/main/RandomEatery.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/main/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/main/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/services/api-calls.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/services/api-calls.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models.js" beforeDir="false" afterPath="$PROJECT_DIR$/models.js" afterDir="false" />
-    </list>
+    <list default="true" id="141166d0-c29f-4a1a-ba23-58bc7ab2a496" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -27,7 +19,7 @@
             <entry file="file://$PROJECT_DIR$/client/src/components/main/EateriesList.jsx">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="798">
-                  <caret line="38" column="1" lean-forward="true" selection-start-line="38" selection-start-column="1" selection-end-line="38" selection-end-column="1" />
+                  <caret line="38" column="1" selection-start-line="38" selection-start-column="1" selection-end-line="38" selection-end-column="1" />
                   <folding>
                     <element signature="e#0#26#0" expanded="true" />
                   </folding>
@@ -102,10 +94,29 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/client/src/services/api-calls.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="42">
-                  <caret line="2" column="32" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="32" />
+                <state relative-caret-position="63">
+                  <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
                 </state>
               </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/models.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="378">
+                  <caret line="18" selection-start-line="18" selection-end-line="18" selection-end-column="1" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/client/src/assets/img/street.jpg">
+              <provider selected="true" editor-type-id="images" />
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/client/src/assets/img/pandaeatscover.jpg">
+              <provider selected="true" editor-type-id="images" />
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
@@ -120,38 +131,17 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/client/src/components/main/style.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="179">
-                  <caret line="22" column="1" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
+                <state relative-caret-position="277">
+                  <caret line="27" column="18" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/client/src/App.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="200">
-                  <caret line="68" column="16" lean-forward="true" selection-start-line="68" selection-start-column="16" selection-end-line="68" selection-end-column="16" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/client/src/components/main/SingleEatery.jsx">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1152">
-                  <caret line="89" column="4" selection-start-line="89" selection-start-column="7" selection-end-line="89" selection-end-column="27" />
-                  <folding>
-                    <element signature="e#0#26#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/models.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="558">
-                  <caret line="18" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="4" />
+                <state relative-caret-position="237">
+                  <caret line="68" column="16" selection-start-line="68" selection-start-column="16" selection-end-line="68" selection-end-column="16" />
                 </state>
               </provider>
             </entry>
@@ -235,9 +225,10 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
     <option name="width" value="1680" />
-    <option name="height" value="1050" />
+    <option name="height" value="939" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -279,44 +270,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="assets" type="462c0819:PsiDirectoryNode" />
               <item name="img" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="project3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project3" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="project3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project3" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="footer" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="project3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project3" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="header" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="project3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project3" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="project3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project3" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="project3" type="b2602c69:ProjectViewProjectNode" />
@@ -542,10 +495,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="81198000" />
+    <option name="totallyTimeSpent" value="81867000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1680" height="939" extended-state="6" />
+    <frame x="0" y="23" width="1680" height="939" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
@@ -790,9 +743,6 @@
         <state relative-caret-position="-88" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/assets/img/street.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/header/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="179">
@@ -836,22 +786,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/models.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="18" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="4" />
+        <state relative-caret-position="378">
+          <caret line="18" selection-start-line="18" selection-end-line="18" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/services/api-calls.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="32" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="32" />
+        <state relative-caret-position="63">
+          <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/main/EateriesList.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="798">
-          <caret line="38" column="1" lean-forward="true" selection-start-line="38" selection-start-column="1" selection-end-line="38" selection-end-column="1" />
+          <caret line="38" column="1" selection-start-line="38" selection-start-column="1" selection-end-line="38" selection-end-column="1" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -874,17 +824,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/components/main/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="22" column="1" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
+        <state relative-caret-position="277">
+          <caret line="27" column="18" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/App.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="68" column="16" lean-forward="true" selection-start-line="68" selection-start-column="16" selection-end-line="68" selection-end-column="16" />
+        <state relative-caret-position="237">
+          <caret line="68" column="16" selection-start-line="68" selection-start-column="16" selection-end-line="68" selection-end-column="16" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/assets/img/street.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/assets/img/pandaeatscover.jpg">
+      <provider selected="true" editor-type-id="images" />
     </entry>
   </component>
 </project>

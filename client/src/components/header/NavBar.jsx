@@ -13,9 +13,6 @@ export default class NavigationBar extends React.Component {
       showLogin: false,
       showRegister: false,
     };
-
-    this.tabs = [
-    ]
   }
 
   showRegister = () => {

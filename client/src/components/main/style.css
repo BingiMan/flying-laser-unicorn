@@ -247,8 +247,8 @@ cursor: pointer;
   font-weight: 900;
   cursor: pointer;
   transition: color 0.3s ease;
-
 }
+
 .form-btn:hover {
   background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #c62d1f), color-stop(1, #f24537));
   background:-moz-linear-gradient(top, #c62d1f 5%, #f24537 100%);
